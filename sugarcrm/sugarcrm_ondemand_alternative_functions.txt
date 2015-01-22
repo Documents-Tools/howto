@@ -1,0 +1,179 @@
+
+################################################
+### SugarCrm on Demand Alternative Functions ###
+################################################
+
+   	Invalid usage of a function ziparchive()
+
+	# before
+	$path_file = pathinfo($somefile);
+
+	# after
+	/include/utils/php_zip_utils.php  	--> function zip_files_list()
+	/include/utils/zip_utils.php		--> function zip_files_list()
+	
+........................................................
+
+    	Invalid usage of a function pathinfo()
+
+	# before
+	$path_file = pathinfo($somefile);
+
+	# after
+	/include/upload_file.php 	   	--> function getMime()
+	/ModuleInstall/ModuleScanner.php   	--> function isValidExtension()
+
+........................................................
+
+    	Invalid usage of a function file_exists()
+
+	# before
+	if(file_exists($file)){	
+
+	# after
+	require_once("include/utils.php");	--> if (SugarAutoloader::fileExists($file){
+
+........................................................
+
+	Invalid usage of a file_get_contents()
+
+	# before
+	$file_content = file_get_contents($myfile);
+
+	# after
+	require_once('include/parsecsv.lib.php');
+	$pcsv = new parseCSV();
+	$file_contents = $pcsv->_rfile($myfile);
+
+........................................................
+
+	Invalid usage of a unlink (delete)
+	# before
+	@unlink
+
+	# after
+	SugarAutoloader::unlink()
+
+........................................................
+
+	Invalid usage of a fwrite() and fopen()
+	
+	# before
+	$f = fopen($pth, "w+");
+	fwrite($f, $file_cont);
+	fclose($f);
+	
+	# after
+	//SugarAutoloader::put()
+	SugarAutoloader::put($pth,$file_cont,false );
+
+........................................................
+
+	Read external file url and write local
+
+	#before
+
+	$handle = sugar_fopen($filename, "r");
+	if ($handle != false) {
+	    echo $contents = fread($handle, 8192);
+	    fclose($handle);
+
+		$filename1 = "cache/images/skype_" . $args["skype_user_c"] . "_" . microtime() . ".png";
+		    $handle1 = sugar_fopen($filename1, "w+");
+		    fwrite($handle1, $contents);
+		    fclose($handle1);
+	}
+
+
+	#after
+
+	require_once('include/upload_file.php');
+	$file = new UploadFile();
+	//get the file location
+	$file->temp_file_location = $filename;
+	//alternatively you can do the following if you know the upload file id
+	//$file->temp_file_location = UploadFile::get_upload_path($file_id);
+	echo $file_contents = $file->get_file_contents();
+	if($file_contents){   
+	    $filename1 = "cache/images/skype_" . $args["skype_user_c"] . "_emil_" . microtime() . ".png";
+	    SugarAutoloader::put($filename1,$file_contents,false );
+	}
+
+........................................................
+
+	Invalid usage of a copy() file
+
+	# before
+	copy($filename, $newfile);
+
+    	# after
+	require_once('include/parsecsv.lib.php');
+    	$pcsv = new parseCSV();
+	$file_contents = $pcsv->_rfile($filename);
+    	$pcsv->_wfile($newfile,$file_contents);
+
+........................................................
+
+	Invalid usage of a remove file / dir
+	
+	# before
+	unlink(....)
+
+	# after
+	//SugarAutoloader::unlink($filename);
+	//require_once("include/dir_inc.php");
+	//rmdir_recursive($filename);
+
+	require_once("include/upload_file.php");
+	$us = new UploadStream();
+	$us->unlink($filename);   
+
+
+........................................................
+
+	Invalid usage of a  put() / fput() 
+
+	#before
+	fput($fp,$content)
+	
+	#after
+	//SugarAutoloader::put($filename,$fc,false );
+	require_once('include/parsecsv.lib.php');
+   	$pcsv = new parseCSV();         
+   	$pcsv->_wfile($newfile,$file_contents);
+
+
+........................................................
+
+	Invalid usage of init class 
+
+	# before
+	$class_name = $beanList[$module_name];
+	require_once($beanFiles[$class_name]);
+	$seed = new $class_name();
+
+	# after
+	$class_name = $beanList[$module_name];
+	require_once($beanFiles[$class_name]);
+
+	if($class_name=="Accounts"){
+	    $seed = new Accounts();
+	}
+	else if($class_name=="Contacts"){
+	    $seed = new Contacts();
+	}
+	else if($class_name=="Leads"){
+	    $seed = new Leads();
+	}
+
+
+........................................................
+
+// require_once("include/utils/sugar_file_utils.php");
+// sugar_file_get_contents
+// sugar_file_put_contents
+// sugar_is_file
+
+
+
+
