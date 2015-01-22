@@ -6,7 +6,10 @@
    	Invalid usage of a function ziparchive()
 
 	# before
-	$path_file = pathinfo($somefile);
+	$za = new ZipArchive();
+    $za->open($unzip_dir);
+    for( $i = 0; $i < $za->numFiles; $i++ ){
+        $stat = $za->statIndex( $i );
 
 	# after
 	/include/utils/php_zip_utils.php  	--> function zip_files_list()
