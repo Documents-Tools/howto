@@ -34,7 +34,7 @@
 	if(file_exists($file)){	
 
 	# after
-	require_once("include/utils.php");	--> if (SugarAutoloader::fileExists($file){
+	require_once("include/utils.php");	--> if (SugarAutoloader::fileExists($file)){
 
 ........................................................
 
@@ -168,6 +168,20 @@
 	else if($class_name=="Leads"){
 	    $seed = new Leads();
 	}
+
+
+........................................................
+
+	Invalid usage of simplexml_load_string function
+
+    # before
+	//return $a = (array) simplexml_load_string($xml_string);
+
+    # after
+	require_once("include/connectors/sources/loc/xml.php");
+    $xmls = new loc_xml();
+    return $a = (array)  $xmls->__parse($xml_string);
+
 
 
 ........................................................
