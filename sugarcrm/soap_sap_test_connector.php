@@ -183,7 +183,7 @@ try {
 
     try {
 
-        $result = (array) $client->Z_SEARCH_CUST_BY_ADDRESS($paramsSAP);
+        $result = (array) $client->Z_GET_INFO_SAP($paramsSAP);
         //$result = $client->__call(?);
         //$result = $client->__soapCall(?);
 
