@@ -1,0 +1,56 @@
+
+find /home -type f -iname '*.txt' -exec grep -i 'php.ini' {} +
+
+------------------------------
+
+Start Xampp:
+
+sudo /opt/lampp/xampp start
+sudo /opt/lampp/xampp stopftp
+sudo /opt/lampp/xampp status
+
+------------------------------
+
+Find Xampp php.ini:
+
+sudo find / -name "php.ini"
+
+/opt/lampp/etc/php.ini
+/etc/php5/cli/php.ini
+/etc/php5/apache2/php.ini
+
+------------------------------
+
+php -v
+
+------------------------------
+
+Change in sugarcrm config.php "localhost" into "127.0.0.1" to solve error for "mysqld.sock"
+
+Run Repair in terminal:
+
+sudo php -c /opt/lampp/etc/php.ini -f repair2.php
+sudo php -c /opt/lampp/etc/php.ini -f repair2.php 2>&1
+
+------------
+
+php -i | grep "mysqld.sock"
+
+MYSQL_SOCKET => /var/run/mysqld/mysqld.sock
+mysql.default_socket => /var/run/mysqld/mysqld.sock => /var/run/mysqld/mysqld.sock
+MYSQLI_SOCKET => /var/run/mysqld/mysqld.sock
+mysqli.default_socket => /var/run/mysqld/mysqld.sock => /var/run/mysqld/mysqld.sock
+pdo_mysql.default_socket => /var/run/mysqld/mysqld.sock => /var/run/mysqld/mysqld.sock
+
+------------------------
+
+Connect to Xampp MySQL:
+
+sudo mysql --user=root  --socket=/opt/lampp/var/mysql/mysql.sock --password= --default-character-set=utf8
+sudo mysql -u root --socket=/opt/lampp/var/mysql/mysql.sock -p
+
+
+
+
+
+
