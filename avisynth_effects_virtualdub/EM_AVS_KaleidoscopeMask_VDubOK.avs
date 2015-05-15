@@ -28,3 +28,9 @@ Layer(bg,top).Sharpen(0.76)
 #480p: 854x480
 #360p: 640x360
 #240p: 426x240
+
+# EffectsMany
+# http://www.avisynth.nl/users/vcmohan/EffectsMany/EffectsMany_index.html
+
+# Fizick's AviSynth plugins
+# http://avisynth.org.ru/fizick.html
