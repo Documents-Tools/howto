@@ -230,4 +230,9 @@ http://www.brettworks.net/kb/concrete5-cheat-sheet/
 https://mikeyhogarth.wordpress.com/2013/03/16/concrete5-custom-theme-cheat-sheet/
 http://www.mesuva.com.au/blog/concrete5/concrete5-cheat-sheet/
 http://www.webli.us/cheatsheet/doku.php
+
+http://andrewembler.com/posts/creating-a-simple-concrete5-wrapper-custom-block-template/
+http://www.concrete5tutorials.com/block-tutorials/concrete5-facebook-comments-block-tutorial/
+http://www.concrete5tutorials.com/block-tutorials/interfacing-with-the-database/
+http://codingexplained.com/coding/php/concrete5/creating-a-block-in-concrete5
 */
