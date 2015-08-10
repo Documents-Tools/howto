@@ -1,0 +1,20 @@
+////////////////////////////////////////
+//
+// SkaleTracker FX Settings
+//
+////////////////////////////////////////
+
+mda ThruZero RT.10.23 DP2.52 MX37% FB0%
+
+mda Delay LD340 RD133 FB82% FBT0 FBMIX83% O.0db
+Freeverb2 RS 0.79 DP 100% PD172 LP57 HP 81 WL10
+mda Stereo W65 D 23.2 B.0 M 2.2 RT 3.16 
+mda Delay L107 R107 Fb63 FXMIX 60
+
+Freeverb2 Rs 0.94 D 50%  Lp 14% Hp 25%
+----------------------
+mda Delay L339 R133 FB69% 
+mda Delay L226 R226 FB82%
+
+mda Stereo W55   Delay 9.17 Rate3.16
+Freeverb2 RS0.95 Da.50% PD.128 LP30 HP18 WL1.44
