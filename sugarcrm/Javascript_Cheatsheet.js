@@ -76,3 +76,10 @@ var someVar    = element.toString().split('#YourString/');
 // Replace string
 //---------------------------------------
 var someVar    = element.toString().replace('x','');
+
+
+
+//---------------------------------------
+// Select by value
+//---------------------------------------
+$('#fild :input[value="123"]').show();
