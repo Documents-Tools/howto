@@ -62,9 +62,6 @@ var AjaxCall = app.api.call(
                 });
 
         },
-        complete: function () {
-
-        },
         error: function (response) {
             console.log(response)
         }
