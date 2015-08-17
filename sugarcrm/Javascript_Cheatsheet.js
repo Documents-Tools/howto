@@ -56,7 +56,7 @@ FieldName = FieldName.replace(/\D/g, '');
 
 
 //---------------------------------------
-// Loop thru objects
+// Loop through objects
 //---------------------------------------
 _.each(data, function(item, index){
     //...do someting
