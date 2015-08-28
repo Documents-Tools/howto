@@ -9,8 +9,26 @@
     events: {
         'click [track="click:actiondropdown"]': "UpdateMyButton"
     },
+    /*
+    events:{
+     'click [name=save_button]:not(".disabled")':'save',
+     'click [name=cancel_button]':'cancel',
+     'click a[name=create_button]:not(".disabled")':'create',
+     'click [name=edit_button]':'editClicked',
+     'click [name=delete_button]':'deleteClicked'
+     }
+    */
     initialize: function (options) {
         this._super('initialize', [options]);
+
+        /*this.events = _.extend({}, this.events, {
+            'click [name=save_button]:not(".disabled")':'save',
+            'click [name=cancel_button]':'cancel',
+            'click a[name=create_button]:not(".disabled")':'create',
+            'click [name=edit_button]':'editClicked',
+            'click [name=delete_button]':'deleteClicked'
+        });*/
+
 
     },
     UpdateMyButton:  function () {
