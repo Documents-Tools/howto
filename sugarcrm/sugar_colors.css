@@ -1,0 +1,41 @@
+/*
+How To Change Sugar Colors:
+
+ custom/themes/Sugar/css/style.css
+ by FrancescaS
+
+*/
+
+.dcmenu{
+    color:blue;
+    height:55px;
+    min-width: 950px;
+    background-color: #0d3a62;
+    height: 55px;
+
+    background: -moz-linear-gradient(center top,
+    rgba(48,150,166,.9) 0%,
+    rgba(13,58,98,.9) 78%,
+    rgba(0,0,0,.3) 78%,
+    rgba(0,0,0,0) 100%);
+
+    background-color: transparent;
+    background-image: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            color-stop(0, rgba(48,150,166,.9)),
+            color-stop(0.78, rgba(28,83,92,.9)),
+            color-stop(0.78, rgba(0,0,0,.3)),
+            color-stop(1, rgba(0,0,0,0))
+    );
+    height: 55px;
+}
+
+ul.megamenu a, #moduleList .sf-menu a, #moduleList.sf-menu a:visited {
+    color: #FFFFdd;
+}
+
+div#content,div#main, body {
+    background-color: #ffffdd;
+}
