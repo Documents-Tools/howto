@@ -26,6 +26,7 @@
         $.ajax({
             //url: <your url here>
             //type: POST | GET | PUT | DELETE,
+            timeout: 5,
             success: _.bind(function(data){
                 this.items = data;
                 // or do whatever data manipulation you want here.
