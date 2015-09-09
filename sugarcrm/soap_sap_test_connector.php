@@ -41,6 +41,8 @@ ini_set("soap.wsdl_cache_ttl", "86400");
 ini_set("soap.wsdl_cache_enabled", "0");
 //ini_set('soap.wsdl_cache_ttl', '0');
 
+ini_set('default_socket_timeout', 1); // set timeout
+
 /////////////////////////////////////////////////////
 //
 // Load Soap Classes
@@ -108,6 +110,7 @@ $initSoapOptions = array(
     //'encoding'      => 'ISO-8859-1',
     'cache_wsdl'  => 0,
     //'cache_wsdl'    => WSDL_CACHE_NONE,
+    'connection_timeout' => 5, // timeout 5 second
 
     // Extra Params
     //'proxy_host'  => 'example.com', // Do not add the schema here (http or https). It won't work.
