@@ -1,3 +1,36 @@
+#<IfModule mod_php5.c>
+#php_value zlib.output_compression 4096
+#php_value zlib.output_compression_level -1
+#php_value zlib.output_handler ob_gzhandler
+#</IfModule]>
+
+<IfModule mod_php5.c>
+    Options FollowSymLinks
+    DirectoryIndex index.php
+    AddType application/x-httpd-php .php
+
+    # supress php errors
+    php_flag display_startup_errors Off
+    php_flag display_errors Off
+    php_flag html_errors Off
+    php_flag magic_quotes_gpc Off
+    php_flag track_vars Off
+    php_flag register_globals Off
+    php_flag log_errors Off
+
+    php_flag magic_quotes_gpc Off
+
+    php_value docref_root 0
+    php_value docref_ext 0
+    #php_value max_execution_time 0
+
+    #php_value post_max_size 10M
+    #php_value upload_max_filesize 10M
+    php_value memory_limit 812M
+    php_value max_execution_time 259200
+    php_value max_input_time 12500
+    php_value session.gc_maxlifetime 1200
+</IfModule>
 
 # BEGIN SUGARCRM RESTRICTIONS
 RedirectMatch 403 (?i).*\.log$
@@ -35,29 +68,52 @@ AddType     application/javascript  .js
     RewriteRule ^cache/jsLanguage/(\w*)/(.._..).js$ index.php?entryPoint=jslang&module=$1&lang=$2 [L,QSA]
 </IfModule>
 
+#<ifModule mod_deflate.c>
+    #AddOutputFilterByType DEFLATE text/html text/plain text/xml application/xml application/xhtml+xml text/css text/javascript application/javascript application/x-javascript
+    #<filesMatch ".(css|js|x?html?|php)$">
+        #SetOutputFilter DEFLATE
+    #</filesMatch>
+#</ifModule>
+
 <IfModule mod_mime.c>
     AddType application/x-font-woff .woff
 </IfModule>
+
 #<FilesMatch "\.(jpg|png|gif|js|css|ico|woff)$">
         <IfModule mod_headers.c>
-                #Header set ETag ""
-		#Header append Cache-Control "public"
+            #Header set ETag ""
+            #Header append Cache-Control "public"
 
-		#Header set Cache-Control "max-age=2592000"
+            #Header set Cache-Control "max-age=2592000"
 
-		#Header set Cache-Control "max-age=172800, public, must-revalidate"
-		#Header set Cache-Control "max-age=7200, must-revalidate"
+            #Header set Cache-Control "max-age=172800, public, must-revalidate"
+            #Header set Cache-Control "max-age=7200, must-revalidate"
 
-        Header set Cache-Control "max-age=290304000, public"
-        Header set Expires "01 Jan 2112 00:00:00 GMT"
-		Header unset Last-Modified
+            Header set Cache-Control "max-age=290304000, public"
+            Header set Expires "01 Jan 2112 00:00:00 GMT"
+            Header unset Last-Modified
 
-		#Header unset ETag
-        #FileETag None
+            #Header unset ETag
+            #FileETag None
 
-		Header unset Pragma
-		FileETag None
-		Header unset ETag
+            Header unset Pragma
+            FileETag None
+            Header unset ETag
+
+			# Netscape 4.x has some problems...
+            BrowserMatch ^Mozilla/4 gzip-only-text/html
+
+            # Netscape 4.06-4.08 have some more problems
+            BrowserMatch ^Mozilla/4.0[678] no-gzip
+
+            # MSIE masquerades as Netscape, but it is fine
+            #BrowserMatch bMSIE !no-gzip !gzip-only-text/html
+
+            # Don't compress images
+            SetEnvIfNoCase Request_URI .(?:gif|jpe?g|png|txt|htm|html|php|css|js)$ no-gzip dont-vary
+            # Make sure proxies don't deliver the wrong content
+            Header append Vary User-Agent env=!dont-vary
+
         </IfModule>
 #</FilesMatch>
 
