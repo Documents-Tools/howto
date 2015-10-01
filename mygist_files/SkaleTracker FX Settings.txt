@@ -18,3 +18,25 @@ mda Delay L226 R226 FB82%
 
 mda Stereo W55   Delay 9.17 Rate3.16
 Freeverb2 RS0.95 Da.50% PD.128 LP30 HP18 WL1.44
+
+------------------------
+
+Blue Cat's Freeware Plug-ins Pack II
+http://www.bluecataudio.com/Products/Bundle_FreewarePack/
+
+Stereo Jackie v.1.0 (freeware)
+http://www.vstplanet.com/Effects/Delay.htm
+
+Rock Hardbuns' bundle - Effects (freeware)
+http://www.vstplanet.com/Effects/Bundle.htm
+
+SkaleTracker mda plug-ins
+http://mda.smartelectronix.com/
+
+-------------
+
+Community Based Juce
+https://github.com/kunitoki/juced
+
+RtAudio
+http://sophie.zarb.org/distrib/Fedora/13/x86_64/rpms/rtaudio
