@@ -38,17 +38,11 @@ ini_set('output_handler', '');
 ini_set('output_buffering', false);
 ini_set('implicit_flush', true);
 
-
-
-
-
 /////////////////////////////////////////////////////
 //
 // Overide xdebug PHP Settings
 //
 /////////////////////////////////////////////////////
-
-
 
 ini_set("xdebug.var_display_max_depth", -1);
 ini_set("xdebug.var_display_max_children", -1);
@@ -212,3 +206,36 @@ function INISET() {
     error_reporting(1);
     return;
 }
+
+
+
+apache_setenv('no-gzip', 1);
+
+header("Cache-Control: max-age=2592000"); //30days (60sec * 60min * 24hours * 30days)
+header("Cache-Control: maxage=1, post-check=0, pre-check=0");
+header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
+header("Content-Encoding: none");
+#header("Content-Type: application/force-download");
+#header("Content-type: application/octet-stream");
+#header("Content-Type: multipart/form-data");
+#header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
+header("Pragma: no-cache"); //HTTP 1.0
+header("Pragma: public");
+#header('Content-Type: application/pdf');
+
+
+ini_set ('magic_quotes_gpc', 'On');
+ini_set ('register_globals' , 'On' );
+
+ini_set('implicit_flush', 1);
+ini_set('output_buffering', 'Off');
+ini_set('output_handler', '');
+ini_set('zlib.output_compression', 'Off');
+ini_set('zlib.output_compression', '0 ');
+ini_set('zlib.output_compression_level', "-1");
+ini_set("zlib.output_compression", 4096);
+
+ini_set('display_errors', false);
+ini_set('display_startup_errors', false);
+ini_set('error_reporting', E_ERROR);
+
