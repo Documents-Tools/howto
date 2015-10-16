@@ -3,6 +3,17 @@
 ### SugarCrm on Demand Alternative Functions ###
 ################################################
 
+Module Loader Restrictions 6.7
+http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.7/Application_Framework/Module_Loader/Module_Loader_Restrictions/index.html
+
+Module Loader Restriction Alternatives 6.7
+http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.7/Application_Framework/Module_Loader/Module_Loader_Restriction_Alternatives/
+
+Module Loader Restriction Alternatives 7.6
+http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.6/API/Application/Module_Loader/Module_Loader_Restriction_Alternatives/
+
+--------------------------------------------------
+
    	Invalid usage of a function ziparchive()
 
 	# before
@@ -43,10 +54,18 @@
 	# before
 	$file_content = file_get_contents($myfile);
 
-	# after
+	# after v1
 	require_once('include/parsecsv.lib.php');
 	$pcsv = new parseCSV();
 	$file_contents = $pcsv->_rfile($myfile);
+
+	# after v2
+	require_once('include/upload_file.php');
+    $uploadFile = new UploadFile();
+    //get the file location
+    $uploadFile->temp_file_location = $file_path;
+    $file_contents = $uploadFile->get_file_contents();
+
 
 ........................................................
 
@@ -169,7 +188,6 @@
 	    $seed = new Leads();
 	}
 
-
 ........................................................
 
 	Invalid usage of simplexml_load_string function
@@ -177,12 +195,16 @@
     # before
 	//return $a = (array) simplexml_load_string($xml_string);
 
+    # after --- not working!!!!
+	# require_once("include/connectors/sources/loc/xml.php");
+    # $xmls = new loc_xml();
+    # return $a = (array)  $xmls->__parse($xml_string);
+
     # after
-	require_once("include/connectors/sources/loc/xml.php");
-    $xmls = new loc_xml();
-    return $a = (array)  $xmls->__parse($xml_string);
-
-
+	require_once("clients/base/api/RSSFeedApi.php");
+	$xml = new RSSFeedApi();
+	$b = $xml->getFeedXMLObject($xml_string);
+	return $a = (array) $b;
 
 ........................................................
 
