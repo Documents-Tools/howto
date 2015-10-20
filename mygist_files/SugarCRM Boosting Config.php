@@ -8,6 +8,18 @@
 
 /***CONFIGURATOR***/
 
+$sugar_config['oauth2']['refresh_token_lifetime'] = 1209600;
+$sugar_config['oauth2']['access_token_lifetime'] = 3600;
+$sugar_config['oauth2']['max_session_lifetime'] = 1800;
+$sugar_config['oauth_token_expiry'] = 1800;
+$sugar_config['oauth_token_life'] = 86400;
+
+$sugar_config['disable_persistent_connections'] = false;
+$sugar_config['dbconfigoption']['persistent'] = true;
+$sugar_config['dbconfigoption']['autofree'] = false;
+$sugar_config['dbconfigoption']['debug'] = false;
+$sugar_config['dbconfigoption']['ssl'] = false;
+
 $sugar_config['admin_access_control'] = false;
 $sugar_config['admin_export_only'] = true;
 $sugar_config['cache_dir'] = 'cache/';
