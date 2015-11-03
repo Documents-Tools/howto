@@ -195,16 +195,15 @@ http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_
     # before
 	//return $a = (array) simplexml_load_string($xml_string);
 
-    # after --- not working!!!!
-	# require_once("include/connectors/sources/loc/xml.php");
-    # $xmls = new loc_xml();
-    # return $a = (array)  $xmls->__parse($xml_string);
+    # after sugar 7.6
+	#require_once("clients/base/api/RSSFeedApi.php");
+	#$xml = new RSSFeedApi();
+	#$b = $xml->getFeedXMLObject($xml_string);
+	#return $a = (array) $b;
 
-    # after
-	require_once("clients/base/api/RSSFeedApi.php");
-	$xml = new RSSFeedApi();
-	$b = $xml->getFeedXMLObject($xml_string);
-	return $a = (array) $b;
+	 # after 7.X
+	$b = new SimpleXMLElement($xml_string);
+    $a = (array) $b;
 
 ........................................................
 
