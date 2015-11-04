@@ -45,7 +45,18 @@ http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_
 	if(file_exists($file)){	
 
 	# after
-	require_once("include/utils.php");	--> if (SugarAutoloader::fileExists($file)){
+
+	// SG 7X
+    require_once("include/utils.php");
+	if (!SugarAutoloader::fileExists($scriptPath)){
+			$scriptPath = "include/.....";
+	}
+
+	// SG 6X
+	require_once("modules/Import/ImportFileSplitter.php");
+	if (ImportFileSplitter::fileExists($scriptPath)){
+			$scriptPath = "include/.....";
+	}
 
 ........................................................
 
