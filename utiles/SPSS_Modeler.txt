@@ -53,6 +53,24 @@ http://www.spssdownload.org/Fixes/Modeler15/15.0-IM-S15MODELERS-Linux8664-FP003.
 Lataa SPSS Modeler Server 15.0  FP3, 64-bit Linuxz
 http://www.spssdownload.org/Fixes/Modeler15/15.0-IM-S15MODELERS-LinuxzOS-FP003.bin
 
+
+
+
+
+
+
+
+
+...............................................................................................
+Tutorials Vids:
+http://www.salford-systems.com/videos/tutorials/how-to/how-to-build-a-model
+
+http://dist.salford-systems.com/SPM/SPM7Win32.msi
+http://dist.salford-systems.com/SPM/SPM7Win32.msi
+
+
+
+
 ...............................................................................................
 
 http://www.utm.edu/departments/comstore/downloads/
