@@ -12,3 +12,14 @@ modules/<modulename>/vardefs.php
 // Sugar Repair writes in cache new activity status
 cache/modules/<modulename>/<modulename>vardefs.php
     'activity_enabled' => true,
+
+custom/Extension/modules/ActivityStream/Activities/Ext/Vardefs/vardefs.php
+    $dictionary['Activity']['fields']['<modulename>'] = array(
+    	'name' => '<modulename>',
+    	'type' => 'link',
+    	'relationship' => '<modulename>_activities',
+    	'vname' => 'LBL_NAME',
+    	'module' => 'Activities',
+    	'bean_name' => 'Activity',
+    	'source' => 'non-db',
+    );
