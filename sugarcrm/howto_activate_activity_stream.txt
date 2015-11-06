@@ -23,3 +23,8 @@ custom/Extension/modules/ActivityStream/Activities/Ext/Vardefs/vardefs.php
     	'bean_name' => 'Activity',
     	'source' => 'non-db',
     );
+
+
+How To Recover All Deleted Dashlets/Dashboards:
+
+    UPDATE dashboards SET deleted = '0' WHERE `dashboards`.`id` != ''
