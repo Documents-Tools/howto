@@ -1,10 +1,12 @@
 /*
 How To Change Sugar Colors:
-
  custom/themes/Sugar/css/style.css
  by FrancescaS
-
 */
+
+/*------------------------------------------------
+Sugar 6.X
+-------------------------------------------------*/
 
 .dcmenu{
     color:blue;
@@ -38,4 +40,44 @@ ul.megamenu a, #moduleList .sf-menu a, #moduleList.sf-menu a:visited {
 
 div#content,div#main, body {
     background-color: #ffffdd;
+}
+
+
+/*------------------------------------------------
+Sugar 7.X
+-------------------------------------------------*/
+
+/*
+include/MVC/View/tpls/sidecar.tpl - turbo test
+cache/themes/RacerX/css/style.css
+*/
+
+
+
+/*custom/themes/RacerX/css/style.css*/
+div#main > div, div#main  {
+  background: #ffff00 none repeat scroll 0 0 !important;
+}
+
+
+
+
+/*custom/themes/custom.less*/
+.navbar .nav-collapse > div.module-list {
+   background: #ff9900 none repeat scroll 0 0 !important; /**777777**/
+}
+
+.navbar .nav-collapse #searchForm {
+    background: #ff9900 none repeat scroll 0 0 !important;
+}
+.navbar .btn-group {
+    background: #ff9900 none repeat scroll 0 0 !important;
+}
+
+.navbar ul.nav.megamenu li.dropdown.notification-list .btn.dropdown-toggle {
+    border: 1px solid #fff !important;  background: darkred !important;
+}
+
+.megamenu > .dropdown.active .btn-group:not(.open) {
+    background-color: #777777 !important;
 }
