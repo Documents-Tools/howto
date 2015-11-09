@@ -17,10 +17,11 @@ ini_set('error_reporting', 0);
 ini_set('display_errors', false);
 ini_set('display_startup_errors', false);
 
-ini_set('mysql.connect_timeout', 120);
-ini_set('mysql.cache_size',2000); // '2000'
-ini_set('mysql.cache_type',0);
-ini_set('default_socket_timeout', 120);
+ini_set('max_execution_time', 30);
+ini_set('mysql.connect_timeout', 30);
+ini_set('mysql.cache_size', 16000); // '2000'
+ini_set('mysql.cache_type', 0);
+ini_set('default_socket_timeout', 30);
 
 ini_set('html_errors',FALSE);
 //ini_set('xdebug.default_enable', false);
