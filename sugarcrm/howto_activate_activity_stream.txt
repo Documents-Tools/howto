@@ -13,17 +13,31 @@ modules/<modulename>/vardefs.php
 cache/modules/<modulename>/<modulename>vardefs.php
     'activity_enabled' => true,
 
+
+
+
 custom/Extension/modules/ActivityStream/Activities/Ext/Vardefs/vardefs.php
     $dictionary['Activity']['fields']['<modulename>'] = array(
     	'name' => '<modulename>',
     	'type' => 'link',
     	'relationship' => '<modulename>_activities',
-    	'vname' => 'LBL_NAME',
+    	'vname' => 'LBL_<modulename>',
     	'module' => 'Activities',
     	'bean_name' => 'Activity',
     	'source' => 'non-db',
     );
 
+# Ext/Vardefs extends ActivityStream from modules where:
+modules/ActivityStream/Activities/vardefs.php
+
+    '<modulename>' =>
+        array (
+            'name' => '<modulename>',
+            'type' => 'link',
+            'relationship' => '<modulename>_activities',
+            'source' => 'non-db',
+            'vname' => 'LBL_<modulename>',
+        ),
 
 How To Recover All Deleted Dashlets/Dashboards:
 
