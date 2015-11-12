@@ -128,7 +128,7 @@ http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_
 	//$file->temp_file_location = UploadFile::get_upload_path($file_id);
 	echo $file_contents = $file->get_file_contents();
 	if($file_contents){   
-	    $filename1 = "cache/images/skype_" . $args["skype_user_c"] . "_emil_" . microtime() . ".png";
+	    $filename1 = "cache/images/skype_" . $args["skype_user_c"] . "_" . microtime() . ".png";
 	    SugarAutoloader::put($filename1,$file_contents,false );
 	}
 

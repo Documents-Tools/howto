@@ -14,7 +14,7 @@
     php_flag html_errors Off
     php_flag log_errors Off
     php_value error_reporting -1
-    #php_value error_log  /home/emil/PhpstormProjects/...PHP_errors.log
+    #php_value error_log  /home/user/PhpstormProjects/...PHP_errors.log
     php_value log_errors_max_len 0
 
     php_flag ignore_repeated_errors on
