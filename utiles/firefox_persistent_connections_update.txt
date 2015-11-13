@@ -1,0 +1,23 @@
+#######################
+##
+##  Firefox
+##
+#######################
+
+about:config
+
+network.http.max-persistent-connections-per-server;32 (old value was  6)
+network.http.max-persistent-connections-per-proxy;32
+
+#######################
+##
+##  Chrome
+##
+#######################
+
+chrome://settings
+chrome://chrome-urls/
+
+????
+
+
