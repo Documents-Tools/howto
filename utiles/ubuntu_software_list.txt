@@ -1,0 +1,24 @@
+#########################################
+#
+#   Software Ubuntu
+#
+#########################################
+
+- synaptic
+- htop
+- phpstorm
+- keepass2
+- meld diff
+- virtualbox
+- chromium
+- unity tewak tool
+- compiz config manager
+- krusader commander
+- gnome commander
+- bluefish
+- gimp
+- chrome
+- skype
+- milkytracker
+- mysql workbench
+- xpad (notes)
