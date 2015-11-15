@@ -11,7 +11,7 @@
 - meld diff
 - virtualbox
 - chromium
-- unity tewak tool
+- unity tweak tool
 - compiz config manager
 - krusader commander
 - gnome commander
