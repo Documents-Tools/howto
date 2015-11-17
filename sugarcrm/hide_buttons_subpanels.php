@@ -115,3 +115,8 @@ $subpanel_layout = array(
 // Do QuickRepair.
 // Live test for subpanels names after repair in ext file:
 // custom/modules/Quotes/Ext/Layoutdefs/layoutdefs.ext.php
+
+// SugarCRM Decumentation
+// http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.5/Extension_Framework/Extensions/Layoutdefs/
+// http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.5/Module_Framework/Subpanels/Examples/How_to_Add_a_Target_List_Subpanel_for_Leads_and_Contacts/
+// http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.6/UI_Model/Subpanels/Introduction/
