@@ -120,3 +120,39 @@ $subpanel_layout = array(
 // http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.5/Extension_Framework/Extensions/Layoutdefs/
 // http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.5/Module_Framework/Subpanels/Examples/How_to_Add_a_Target_List_Subpanel_for_Leads_and_Contacts/
 // http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.6/UI_Model/Subpanels/Introduction/
+// http://support.sugarcrm.com/Knowledge_Base/Developers/Customization/Dynamically_Hiding_Subpanels_Based_on_Record_Values/
+// http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.6/UI_Model/Views/Examples/Adding_Field_Validation_to_the_Record_View/
+
+#############################################
+#
+# Remove subpanels from the detailview
+#
+#############################################
+
+# unset array element
+$layout_defs['<modulename>']['subpanel_setup']['<modulename to block>'] = array ();
+
+// or
+# detail view in: custom/modules/Accounts/views/view.detail.php
+class CustomModuleViewDetail extends ModuleViewDetail
+{
+	public function __construct()
+	{
+		parent::ViewDetail();
+        $this->options['show_subpanels'] = false;
+    }
+}
+
+
+# list example:  custom/modules/Accounts/views/view.list.php
+require_once 'include/MVC/View/views/view.list.php';
+class CustomAccountsViewList extends ViewList
+{
+	public function preDisplay()
+	{
+		parent::preDisplay();
+		# Hide Quick Edit Pencil
+		$this->lv->quickViewLinks = false;
+	}
+}
+
