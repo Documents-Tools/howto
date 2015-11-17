@@ -72,3 +72,15 @@ var AjaxCall = app.api.call(
         "type": "GET"
     }
 );
+
+
+/**
+ *
+ * Save Email in Record Sugar 7.6
+ *
+ * */
+
+this.model.set('email', [{email_address: "some@example.com", primary_address: true}]);
+this.model.save();
+//this.render();
+//this.editClicked();
