@@ -23,3 +23,12 @@
 - mysql workbench
 - xpad (notes)
 
+
+Best indicators
+sudo apt-get install indicator-multiload
+sudo apt-get install classicmenu-indicator
+
+numix Theme
+sudo apt-add-repository ppa:numix/ppa
+sudo apt-get update
+sudo apt-get install numix-icon-theme numix-icon-theme-circle
