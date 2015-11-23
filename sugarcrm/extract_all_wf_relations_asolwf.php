@@ -6,6 +6,13 @@
  * Time: 11:48
  */
 
+
+#############################################
+##
+## AlineaSol Extract all WF Info in Table ...
+##
+#############################################
+
 //if(!defined('sugarEntry') || !sugarEntry) die('Not A Valid Entry Point');
 if (!defined('sugarEntry') || !sugarEntry) define('sugarEntry', TRUE);
 
