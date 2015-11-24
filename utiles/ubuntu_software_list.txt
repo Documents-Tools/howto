@@ -23,6 +23,8 @@
 - mysql workbench
 - xpad (notes)
 
+- filezilla
+
 
 Best indicators
 sudo apt-get install indicator-multiload
