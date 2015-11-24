@@ -24,6 +24,7 @@
 - xpad (notes)
 
 - filezilla
+- mono ide
 
 
 Best indicators
