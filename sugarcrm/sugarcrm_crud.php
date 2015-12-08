@@ -131,6 +131,19 @@ $focus->new_with_id = true;
 $focus->save();
 
 
+/*
+---------------------------------------------------
+Include Bean Class
+---------------------------------------------------
+*/
+global $beanList;
+global $beanFiles;
+include_once ($beanFiles [ $bean_name ]) ;
+
+$focus = new $bean_name();
+$focus->retrieve($bean_id);
+$focus->some_field = 'new value';
+$focus->save();
 
 
 /**
