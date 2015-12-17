@@ -1,0 +1,14 @@
+################################
+#
+#  Generate Random Sounds in Ubuntu
+#
+################################
+
+aplay -c 2 -f S16_LE -r 22100 *
+aplay -c 2 -f S16_LE -r 44100 /dev/urandom
+aplay -c 2 -f S16_LE -r 2000 somefile.xm
+aplay -c 2 -f S16_LE -r 5100 somefile.mod
+
+
+
+dd if=/dev/urandom | espeak -g0 -p99 -s390
