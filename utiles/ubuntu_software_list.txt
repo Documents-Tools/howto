@@ -28,9 +28,12 @@
 - darktable
 - krita
 
---------------------------------
+#####################################
+#
+# Best indicators
+#
+#####################################
 
-Best indicators
 sudo apt-get install indicator-multiload
 sudo apt-get install classicmenu-indicator
 
@@ -43,6 +46,12 @@ sudo apt-get install wondershaper
 sudo aptitude install wondershaper
 sudo wondershaper eth0 800 80
 sudo wondershaper clear eth0
+
+#####################################
+#
+# Graphic Tools
+#
+#####################################
 
 sudo add-apt-repository ppa:pmjdebruijn/darktable-release
 sudo apt-get update
