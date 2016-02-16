@@ -87,6 +87,9 @@ div#main > div, div#main  { background: #ffff00 none repeat scroll 0 0 !importan
 .megamenu > .dropdown:hover, .megamenu > .dropdown.active .btn-group {
     background: #ffab02 none repeat scroll 0 0 !important;  outline: medium none;
 }
+.megamenu > .dropdown.active .btn-group:not(.open) .btn.btn-invisible.btn-link:not(.cube) {
+    color: #333 !important;
+}
 /*---------------------------------------------------------------*/
 /* Mega Menu Progress Bar */
 .navbar-inner {  box-shadow: 0 4px 0 #ffab02 !important;  background: #004882 !important; }
