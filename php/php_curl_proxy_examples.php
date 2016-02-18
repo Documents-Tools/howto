@@ -66,14 +66,16 @@ define('COOKIE_FILE', __DIR__.'/cookie.txt');
 @unlink(COOKIE_FILE); //clear cookies before we start
 
 define('CURL_LOG_FILE', __DIR__.'/request.txt');
-@unlink(CURL_LOG_FILE);//clear curl log
+@unlink(CURL_LOG_FILE);  //clear curl log
 
 /**Get simplehtmldom object from url
  * @param $url
  * @param $post
  * @return bool|simple_html_dom
  */
+
 public function getDom($url, $post = false) {
+
 	$f = fopen(CURL_LOG_FILE, 'a+'); // curl session log file
 	if($this->lastUrl) $header[] = "Referer: {$this->lastUrl}";
 	$curlOptions = array(
@@ -94,6 +96,7 @@ public function getDom($url, $post = false) {
 		CURLOPT_STDERR => $f, // log session
 		CURLOPT_VERBOSE => true,
 	);
+
 	if($post) { // add post options
 		$curlOptions[CURLOPT_POSTFIELDS] = $post;
 		$curlOptions[CURLOPT_POST] = true;
