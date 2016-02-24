@@ -1,3 +1,9 @@
+##############################################
+#
+# Print all related actions from WF SugarCRM
+#
+##############################################
+
 SELECT
 #w.id as WID,
 w.name as W_Name,
