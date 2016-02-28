@@ -1,0 +1,53 @@
+sudo apt-get update
+sudo apt-get install postgresql postgresql-contrib
+# sudo apt-get install postgresql-client
+sudo apt-cache search postgres
+sudo -i -u postgres
+sudo apt-get install pgadmin3
+sudo -u postgres psql postgres
+
+psql  #start
+# psql -h server.domain.org database user
+\q   # quit
+\d  # display
+\dt  # display
+\password postgres
+
+sudo -u postgres createdb mydb
+
+createuser --interactive
+man createuser
+createdb test1
+sudo -i -u test1
+
+psql
+psql -d postgres
+\conninfo
+
+CREATE TABLE table_name (
+    column_name1 col_type (field_length) column_constraints,
+    column_name2 col_type (field_length),
+    column_name3 col_type (field_length)
+);
+
+CREATE TABLE playground (
+    equip_id serial PRIMARY KEY,
+    type varchar (50) NOT NULL,
+    color varchar (25) NOT NULL,
+    location varchar(25) check (location in ('north', 'south', 'west', 'east', 'northeast', 'southeast', 'southwest', 'northwest')),
+    install_date date
+);
+
+INSERT INTO playground (type, color, location, install_date) VALUES ('slide', 'blue', 'south', '2014-04-28');
+INSERT INTO playground (type, color, location, install_date) VALUES ('swing', 'yellow', 'northwest', '2010-08-16');
+
+
+SELECT * FROM playground;
+DELETE FROM playground WHERE type = 'slide';
+ALTER TABLE playground ADD last_maint date;
+ALTER TABLE playground DROP last_maint;
+UPDATE playground SET color = 'red' WHERE type = 'swing';
+
+
+https://help.ubuntu.com/community/PostgreSQL
+How To Install and Use PostgreSQL on Ubuntu 14.04 | DigitalOcean
