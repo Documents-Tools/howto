@@ -16,6 +16,12 @@ sudo -u postgres psql postgres # login into postgres
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+sudo -u postgres psql postgres
+\password postgres #reset password!!!!
+Enter new password: ....
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 psql  #start conn postgres
 psql -h server.domain.org database user
 
@@ -61,6 +67,22 @@ sudo -i -u test1
 psql
 psql -d postgres
 \conninfo
+
+
+
+
+
+#\copy import FROM 'file.csv' DELIMITER '^' CSV
+#COPY persons(first_name,last_name,dob,email) FROM 'C:\tmp\persons.csv' DELIMITER ',' CSV HEADER;
+#psql -h localhost -d mydb -U postgres -f import_psql1.sql
+#pgloader --type csv --with "skip header = 1" --with "fields terminated by '^'"  file.csv  postgresql:///pgloader?mydb
+
+sudo -u postgres psql postgres
+\connect mydb;
+INSERT INTO import VALUES(....);
+
+
+
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -113,6 +135,31 @@ OMG
 mysqldump --compatible=postgresql dbname > export.sql
 sed "s/\\\'/\'\'/g" export.sql > export1.sql # escape quotes
 psql -h server -d databasename -U username -f export1.sql
+
+
+
+
+Export from MySQL
+
+
+mysql -u root -p
+SHOW DATABASES;
+CREATE DATABASE import;
+CONNECT import;
+CREATE TABLE import (field1 varchar (255));
+ALTER TABLE import ADD field2 varchar(255);
+...
+ALTER TABLE import ALTER COLUMN field38 DROP NOT NULL;
+...
+exit
+
+cd ~/Downloads
+mysql -u root -p --local-infile import;
+LOAD DATA LOCAL INFILE 'file.csv' INTO TABLE TableName FIELDS TERMINATED BY '^' LINES TERMINATED BY '\n';
+#Query OK, 62381 rows affected, 65535 warning (9,95 sec);
+exit
+
+mysqldump --compatible=postgresql -u root -p import import > import_mysql.sql   # (10sec)
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
