@@ -81,9 +81,6 @@ sudo -u postgres psql postgres
 \connect mydb;
 INSERT INTO import VALUES(....);
 
-
-
-
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 CREATE TABLE table_name (
