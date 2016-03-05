@@ -134,7 +134,7 @@ sed "s/\\\'/\'\'/g" export.sql > export1.sql # escape quotes
 psql -h server -d databasename -U username -f export1.sql
 
 
-
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Export from MySQL
 
@@ -147,6 +147,11 @@ CREATE TABLE import (field1 varchar (255));
 ALTER TABLE import ADD field2 varchar(255);
 ...
 ALTER TABLE import ALTER COLUMN field38 DROP NOT NULL;
+ALTER TABLE `sometable` ADD `id` INT(11) NOT NULL AUTO_INCREMENT FIRST, ADD PRIMARY KEY (`id`) ; # add AI index to table
+
+#SELECT ROUND(23.298, 3) #   CAST(2.5 AS DECIMAL(20,2)) / ROUND(), CEIL() or FLOOR()
+#SELECT SUBSTR(field2,1,11) FROM `sometable` LIMIT 5
+
 ...
 exit
 
@@ -157,6 +162,16 @@ LOAD DATA LOCAL INFILE 'file.csv' INTO TABLE TableName FIELDS TERMINATED BY '^' 
 exit
 
 mysqldump --compatible=postgresql -u root -p import import > import_mysql.sql   # (10sec)
+
+##############################
+# Get size of DBs
+##############################
+SELECT table_schema                                        "DB Name",
+   Round(Sum(data_length + index_length) / 1024 / 1024, 1) "DB Size in MB"
+FROM   information_schema.tables
+GROUP  BY table_schema;
+
+
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
