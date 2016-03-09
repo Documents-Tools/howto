@@ -1,0 +1,11 @@
+http://lxde.org/
+https://www.archlinux.org/download/
+http://www.gutscheindrache.com/mirror/archlinux/iso/2016.03.01/?C=N&O=D
+http://cdimage.debian.org/debian-cd/current-live/i386/iso-hybrid/debian-live-8.3.0-i386-standard.iso 522M
+http://cdimage.debian.org/debian-cd/current-live/amd64/iso-hybrid/debian-live-8.3.0-amd64-standard.iso 416M
+https://antergos.com/blog/iso-refresh-2015-12-29/
+http://archex.exton.net/
+http://manjaro.github.io/download/
+
+
+

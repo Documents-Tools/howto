@@ -8,6 +8,7 @@
 
 /**
  * @author Emil Kilhage <emilkilhage@gmail.com>
+ * https://gist.github.com/kilhage/3414627
  */
 $app_list_strings['iso_3166_1_country_code_list'] = array (
     "SE" => "Sweden",

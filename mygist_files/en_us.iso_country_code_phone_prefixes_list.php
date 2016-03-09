@@ -3,6 +3,8 @@
 ////////////////////////////////////////////
 //
 // iso country code phone prefixes list for SugarCRM
+// https://gist.github.com/kilhage/3502519
+// https://gist.github.com/kilhage/3502559
 //
 ////////////////////////////////////////////
 
