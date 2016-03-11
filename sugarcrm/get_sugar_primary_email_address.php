@@ -71,6 +71,10 @@ foreach ( $addresses as $address ) {
 // Set email
 --------------------------------------------------------
 this.model.set('email', [{email_address: "email@example.com", primary_address: true}]);
+this.$el.find('div[data-name="email"] input').first().val(email);
+#this.render();
+#this.model.save();
+#this.editClicked();
 
 
 
