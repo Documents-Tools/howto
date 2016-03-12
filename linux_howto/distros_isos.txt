@@ -46,3 +46,32 @@ https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/lubuntu/releases/14.
 http://ftp.hosteurope.de/mirror/releases.ubuntu.com/
 
 
+
+
+http://mirror.23media.de/ubuntu-releases/
+http://mirror.23media.de/ubuntu-releases/15.10/
+
+http://cdimage.ubuntu.com/ubuntu-gnome/releases/15.10/release/
+http://cdimage.ubuntu.com/lubuntu/releases/15.10/release/
+http://cdimage.ubuntu.com/ubuntu-mate/releases/15.10/release/
+
+http://ftp.tudelft.nl/releases.ubuntu.com/15.10/
+http://ftp.tudelft.nl/releases.ubuntu.com/14.04/
+
+http://ftp-stud.fht-esslingen.de/Mirrors/releases.ubuntu.com/15.10/
+http://ftp-stud.fht-esslingen.de/Mirrors/releases.ubuntu.com/14.04/
+
+http://releases.ubuntu.com/14.04/
+http://cl.releases.ubuntu.com/14.04/
+http://releases.ubuntu.com/wily/
+http://mirror.umd.edu/ubuntu-iso/15.10/
+
+http://ftp.hosteurope.de/mirror/releases.ubuntu.com/wily/
+http://ftp.hosteurope.de/mirror/releases.ubuntu.com/14.04/
+
+http://mirror.sov.uk.goscomb.net/ubuntu-releases/14.04/
+http://ftp.fau.de/ubuntu-releases/trusty/
+http://ftp.riken.jp/Linux/ubuntu-releases/14.04.2/
+http://ftp.belnet.be/ubuntu.com/releases/14.04/
+
+
