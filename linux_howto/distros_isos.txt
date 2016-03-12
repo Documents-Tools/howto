@@ -44,9 +44,9 @@ http://ftp.tu-chemnitz.de/pub/linux/ubuntu-releases/
 http://www.debiantutorials.com/download-debian-iso/
 https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/lubuntu/releases/14.04/release/
 http://ftp.hosteurope.de/mirror/releases.ubuntu.com/
+http://ftp.uni-kl.de/pub/linux/archlinux/iso/
 
-
-
+-------------------------------------------------
 
 http://mirror.23media.de/ubuntu-releases/
 http://mirror.23media.de/ubuntu-releases/15.10/
