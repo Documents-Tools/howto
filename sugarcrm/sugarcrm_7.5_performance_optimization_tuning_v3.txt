@@ -1,0 +1,75 @@
+<?php
+
+######################################
+##
+## conn tuning test
+##
+######################################
+
+
+ini_set('error_reporting', E_ERROR);
+ini_set('display_errors', true);
+ini_set('display_startup_errors', true);
+
+ini_set('memory_limit', '2G'); // 3 Gigabytes
+ini_set('max_execution_time', 30);
+ini_set('default_socket_timeout', 30);
+
+ini_set('mysql.connect_timeout', 30);
+ini_set('mysql.cache_size', 25000); // '2000'
+//ini_set('mysql.cache_type', 0);
+/*
+ini_set('mysql.default_socket', '/opt/lampp/var/mysql/mysql.sock');
+ini_set('mysql.default_host', '127.0.0.1'); // '2000'
+ini_set('mysql.default_port', '3306');
+ini_set('mysql.default_user', 'root');
+*/
+/*
+ini_set('mysql.max_persistent', 100);
+ini_set('mysql.allow_persistent', true);
+ini_set('mysql.max_links', 100);
+*/
+
+ini_set('mysqli.connect_timeout', 30);
+ini_set('mysqli.cache_size', 25000); // '2000'
+ini_set('mysqli.default_host', '127.0.0.1'); // '2000'
+ini_set('mysqli.default_port', '3306');
+ini_set('mysqli.default_user', 'root');
+ini_set('mysqli.reconnect', true);
+//ini_set('mysqli.allow_persistent', true);
+//ini_set('mysqli.max_persistent', 0);
+
+/*
+ini_set('mysqli.max_links', 100);
+ini_set('mysqli.default_socket', '/opt/lampp/var/mysql/mysql.sock');
+*/
+/*
+ini_set('log_errors', 0);
+ini_set('xdebug.default_enable', false);
+ini_set('track_vars', 'Off');
+ini_set('track_errors', 'Off');
+ini_set('register_globals', 'Off');
+ini_set('report_memleaks', 'Off');
+*/
+ini_set('html_errors', false);
+ini_set('ignore_repeated_errors', true);
+ini_set('ignore_repeated_source', true);
+
+/**
+
+$sugar_config['list_max_entries_per_page'] = '20';
+$sugar_config['list_max_entries_per_subpanel'] = '5';
+$sugar_config['logger']['level'] = 'warn';
+$sugar_config['oauth2']['refresh_token_lifetime'] = 14400;
+$sugar_config['oauth2']['access_token_lifetime'] = 1800;
+$sugar_config['disable_count_query'] = true;
+$sugar_config['verify_client_ip'] = true;
+$sugar_config['developerMode'] = false;
+$sugar_config['full_text_engine']['Elastic']['host'] = 'localhost';
+$sugar_config['full_text_engine']['Elastic']['port'] = '9200';
+$sugar_config['fts_disable_notification'] = true;
+$sugar_config['mysqli_disabled'] = true;
+$sugar_config['disable_vcr'] = true;
+$sugar_config['stack_trace_errors'] = false;
+
+*/
