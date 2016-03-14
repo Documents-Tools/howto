@@ -29,6 +29,7 @@ $sugar_config['save_query'] = 'populate_only'; // disable bwc list on load
 $sugar_config['disable_count_query'] = true;
 $sugar_config['disable_vcr'] = true;
 $sugar_config['verify_client_ip'] = false;
+$sugar_config['mysqli_disabled'] = true;
 
 //$sugar_config['external_cache_disabled'] = true;
 //$sugar_config['external_cache_disabled_apc'] = true;
