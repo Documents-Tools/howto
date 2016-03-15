@@ -79,6 +79,7 @@ ini_set('ignore_repeated_source', true);
 $sugar_config['list_max_entries_per_page'] = '20';
 $sugar_config['list_max_entries_per_subpanel'] = '5';
 $sugar_config['logger']['level'] = 'warn';
+$sugar_config['oauth2']['max_session_lifetime'] = 180000;
 $sugar_config['oauth2']['refresh_token_lifetime'] = 14400;
 $sugar_config['oauth2']['access_token_lifetime'] = 1800;
 $sugar_config['disable_count_query'] = true;
