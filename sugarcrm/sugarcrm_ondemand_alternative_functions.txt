@@ -11,6 +11,7 @@ http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_
 
 Module Loader Restriction Alternatives 7.6
 http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.6/API/Application/Module_Loader/Module_Loader_Restriction_Alternatives/
+http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.5/API/Classes/SugarAutoLoader/File_Check_API/
 
 --------------------------------------------------
 
