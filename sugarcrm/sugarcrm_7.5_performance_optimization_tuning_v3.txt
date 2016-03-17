@@ -81,7 +81,14 @@ ini_set('ignore_repeated_source', true);
 //php_flag magic_quotes_gpc on
 //php_flag magic_quotes_gpc Off # use of ini_set() is not an option.  ENT_QUOTES
 
-
+ini_set('session.gc_probability', 1);
+ini_set('session.gc_divisor', 1);
+ini_set('session.gc_maxlifetime','36000');
+ini_set('session.cookie_lifetime',12*60*60);
+#ini_set("session.save_path","/PATH/TO/SESSIONS");
+# apache htaccess
+#php_value session.gc_maxlifetime 3600
+#php_value session.save_path "/PATH/TO/SESSIONS"
 
 
 /**
