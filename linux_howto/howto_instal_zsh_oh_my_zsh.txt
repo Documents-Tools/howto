@@ -11,6 +11,7 @@ sudo apt-get install zsh
 sudo apt-get install git-core
 
 # install oh-my-zsh
+# sudo apt-get install curl
 sudo curl -L http://install.ohmyz.sh | sh
 #wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 
