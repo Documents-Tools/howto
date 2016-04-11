@@ -1,0 +1,32 @@
+###################################################
+#
+# How To Install and Optimize Ubuntu Xenial 16.04
+# xenial-desktop-i386.iso
+# xenial-desktop-amd64.iso
+#
+####################################################
+
+sudo apt-get install virtualbox-guest-dkms
+sudo apt-get install compizconfig-settings-manager
+sudo apt-get install unity-tweak-tool
+sudo apt-get install gnome-tweak-tool
+
+sudo gedit /etc/sysctl.conf
+vm.swappiness=10
+
+#sudo apt-get autoremove
+sudo apt autoremove
+sudo apt update
+sudo apt list --upgradable
+sudo apt dist-upgrade -y
+sudo apt-get install synaptic
+sudo apt-get install htop
+
+Mirrors:
+http://ftp.uni-stuttgart.de/ubuntu-cdimage/daily-live/
+http://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/lubuntu/daily-live/pending/
+https://www.mirrorservice.org/sites/cdimage.ubuntu.com/cdimage/daily-live/current/
+http://ftp.belnet.be/lubuntu.org/daily-live/pending/
+http://ftp.agdsn.de/pub/mirrors/ubuntu/cdimage/daily-live/current/
+http://mirrors.mit.edu/ubuntu-cdimage/lubuntu/daily-live/pending/
+http://cdimage.ubuntu.com/daily-live/current/
