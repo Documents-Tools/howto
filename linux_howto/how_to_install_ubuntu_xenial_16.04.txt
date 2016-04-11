@@ -18,6 +18,7 @@ vm.swappiness=10
 sudo apt autoremove
 sudo apt update
 sudo apt list --upgradable
+#sudo apt list --upgradable -a
 sudo apt dist-upgrade -y
 sudo apt-get install synaptic
 sudo apt-get install htop
