@@ -43,3 +43,39 @@ sudo apt-get update && sudo apt-get dist-upgrade
 sudo apt-get install unity8-desktop-session-mir  # Unity 8-Mir
 
 http://fossbytes.com/install-unity-8-ubuntu-16-04-lts-ubuntu-15-10-progress-video/
+
+###################################################
+#
+# Lubuntu Utiles
+#
+###################################################
+
+sudo add-apt-repository ppa:mpstark/elementary-tweaks-daily
+sudo apt-get update
+sudo apt-get install elementary-tweaks
+
+
+sudo add-apt-repository ppa:lubuntu-dev/non-official-apps
+sudo apt-get update
+sudo apt-get install lubuntu-tweaks
+
+
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+
+
+sudo apt-get install lubuntu-restricted-extras
+
+
+sudo add-apt-repository ppa:linrunner/tlp
+sudo apt-get update
+sudo apt-get install tlp
+
+
+sudo add-apt-repository ppa:danielrichter2007/grub-customizer
+sudo apt-get update
+sudo apt-get install grub-customizer
+
+
+
