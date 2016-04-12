@@ -38,3 +38,8 @@ sudo update-manager -d
 sudo do-release-upgrade -d
 
 http://www.omgubuntu.co.uk/2016/04/how-to-upgrade-ubuntu-15-10-to-16-04-lts
+
+sudo apt-get update && sudo apt-get dist-upgrade
+sudo apt-get install unity8-desktop-session-mir  # Unity 8-Mir
+
+http://fossbytes.com/install-unity-8-ubuntu-16-04-lts-ubuntu-15-10-progress-video/
