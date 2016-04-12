@@ -31,3 +31,10 @@ http://ftp.belnet.be/lubuntu.org/daily-live/pending/
 http://ftp.agdsn.de/pub/mirrors/ubuntu/cdimage/daily-live/current/
 http://mirrors.mit.edu/ubuntu-cdimage/lubuntu/daily-live/pending/
 http://cdimage.ubuntu.com/daily-live/current/
+
+
+sudo apt-get update && sudo apt-get dist-upgrade
+sudo update-manager -d
+sudo do-release-upgrade -d
+
+http://www.omgubuntu.co.uk/2016/04/how-to-upgrade-ubuntu-15-10-to-16-04-lts
