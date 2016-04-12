@@ -52,3 +52,58 @@ SELECT DATE_SUB(NOW(),INTERVAL 7 DAY) # 7 days ago
 SELECT DATE_SUB(NOW(),INTERVAL 7 HOUR) # 7 hours ago
 SELECT DATE_SUB(NOW(),INTERVAL 1 MONTH) # 7 months ago
 */
+
+
+// date_default_timezone_set('UTC');
+$given = new DateTime("2014-12-12 14:18:00");
+echo $given->format("Y-m-d H:i:s e") . "\n"; // 2014-12-12 14:18:00 Asia/Bangkok
+
+
+$given->setTimezone(new DateTimeZone("UTC"));
+echo $given->format("Y-m-d H:i:s e") . "\n"; // 2014-12-12 07:18:00 UTC
+
+
+
+$nowUtc = new \DateTime( 'now',  new \DateTimeZone( 'UTC' ) );
+echo '$nowUtc'.PHP_EOL;
+var_dump($nowUtc);
+$nowUtc = new \DateTime( 'now',  new \DateTimeZone( 'UTC' ) );
+echo '$nowUtc->format(\'Y-m-d h:i:s\')'.PHP_EOL;
+var_dump($nowUtc->format('Y-m-d h:i:s'));
+$nowUtc->setTimezone( new \DateTimeZone( 'Australia/Sydney' ) );
+echo '$nowUtc->setTimezone( new \DateTimeZone( \'Australia/Sydney\' ) )'.PHP_EOL;
+var_dump($nowUtc);
+echo '$nowUtc->format(\'Y-m-d h:i:s\')'.PHP_EOL;
+var_dump($nowUtc->format('Y-m-d h:i:s'));exit;
+
+
+
+$the_date = strtotime("2010-01-19 00:00:00");
+echo(date_default_timezone_get() . "<br />");
+echo(date("Y-d-mTG:i:sz",$the_date) . "<br />");
+echo(date_default_timezone_set("UTC") . "<br />");
+echo(date("Y-d-mTG:i:sz", $the_date) . "<br />");
+
+
+
+
+echo gmdate('d.m.Y H:i', strtotime('2012-06-28 23:55'));
+
+
+
+date_default_timezone_set('Europe/Stockholm');
+print date('Y-m-d H:i:s',strtotime("2009-01-01 12:00"." UTC"))."\n";
+print date('Y-m-d H:i:s',strtotime("2009-06-01 12:00"." UTC"))."\n";
+
+
+
+// set timezone to user timezone
+date_default_timezone_set($str_user_timezone);
+// create date object using any given format
+$date = DateTime::createFromFormat($str_user_dateformat, $str_user_datetime);
+// convert given datetime to safe format for strtotime
+$str_user_datetime = $date->format('Y-m-d H:i:s');
+// convert to UTC
+$str_UTC_datetime = gmdate($str_server_dateformat, strtotime($str_user_datetime));
+// return timezone to server default
+date_default_timezone_set($str_server_timezone);
