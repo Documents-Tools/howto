@@ -6,6 +6,9 @@
 #
 ####################################################
 
+# Enable "Intel virtual technology" from BIOS!
+# this feature will let you to use more than 1 CPU!
+
 sudo apt-get install virtualbox-guest-dkms
 sudo apt-get install compizconfig-settings-manager
 sudo apt-get install unity-tweak-tool
