@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<!--
+################################################################
+#
+# Autocomplete typeahead
+#
+################################################################
+-->
+
+
+<!--
+Example Nr1
+----------------------------------------------------------------
+-->
+
+<form id="my-form">
+    <input class="form-control typeahead" name="search" type="text"
+           placeholder="type something ..." id="my-autoc">
+    <br>
+</form>
+<div id="log"></div>
+
+<style>
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap.min.css');
+    @import url('https://rawgithub.com/ashleydw/typeahead.js-bootstrap.css/master/typeahead.js-bootstrap.css');
+
+    body {
+        padding: 20px;
+    }
+</style>
+
+<script>
+    $('#my-autoc').typeahead({
+        name: 'search',
+        remote: {
+            url: 'http://suggestqueries.google.com/complete/search?client=chrome&q=%QUERY',
+            dataType: 'jsonp',
+            cache: false,
+            filter: function (parsedResponse) {
+
+                $('#log').html(parsedResponse[1])
+                return (parsedResponse.length > 1) ? parsedResponse[1] : [];
+            }
+        }
+    }).on('typeahead:selected', function (e) {
+//e.target.form.submit();
+
+    });
+
+    // http://jsfiddle.net/handtrix/cnmfl/2/
+    //      http://jsfiddle.net/caim/ktsvbg5p/
+</script>
+
+
+<!--
+Example Nr2
+----------------------------------------------------------------
+-->
+
+<input type="text" class="typeahead"/>
+<input type="text" class="typeahead"/>
+
+<style>body {
+    padding: 40px;
+}</style>
+<script>
+
+    /* Demo data only for jsfiddle */
+    var ajaxData = {json: JSON.stringify(["Alabama", "Alaska", "Arizona", "Arkansas", "California"])};
+    var ajaxUrl = '/echo/json/';
+    /* END demo data */
+
+    $('.typeahead').on('click.typeaheadonce', function () {
+        var $this = $(this)
+        $this.off('click.typeaheadonce'); // Disable this listener so that it's called only once
+        $.ajax(ajaxUrl, {
+            type: 'post',
+            data: ajaxData
+        }).done(function (data) {
+// initialize the typeahead plugin
+            $this.typeahead({
+                source: data
+            });
+            alert('activated!'); // Ok !
+        });
+    });
+
+    // http://jsfiddle.net/Sherbrow/p3wXs/
+</script>
+
+<!--
+Example Nr3
+----------------------------------------------------------------
+-->
+
+<div id="remote">
+    <input class="typeahead" type="text" placeholder="Oscar winners for Best Picture">
+</div>
+
+<script>
+    var bestPictures = new Bloodhound({
+        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+        queryTokenizer: Bloodhound.tokenizers.whitespace,
+        prefetch: '../data/films/post_1960.json',
+        remote: {
+            url: '../data/films/queries/%QUERY.json',
+            wildcard: '%QUERY'
+        }
+    });
+    $('#remote .typeahead').typeahead(null, {
+        name: 'best-pictures',
+        display: 'value',
+        source: bestPictures
+    });
+    // https://twitter.github.io/typeahead.js/examples/#remote
+</script>
+
+
+</body>
+</html>
