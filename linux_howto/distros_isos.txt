@@ -74,4 +74,16 @@ http://ftp.fau.de/ubuntu-releases/trusty/
 http://ftp.riken.jp/Linux/ubuntu-releases/14.04.2/
 http://ftp.belnet.be/ubuntu.com/releases/14.04/
 
+-------------------------------------------------
+
+http://cdimages.ubuntu.com/xubuntu/releases/xenial/beta-2/
+http://cdimage.ubuntu.com/xubuntu/releases/xenial/beta-2/
+http://cdimage.ubuntu.com/xubuntu/daily-live/pending/
+http://releases.ubuntu.com/16.04/
+http://releases.ubuntu.com/
+http://releases.ubuntu.com/xenial/
+
+
+-------------------------------------------------
+
 

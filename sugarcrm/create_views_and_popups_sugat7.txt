@@ -175,6 +175,10 @@ custom/modules/Notes/clients/base/views/quick-create/quick-create.js
 	  saveButton: function() {
   		var createModel = this.context.get('model');
 
+		// app.lang.get('LBL_NAME', 'Accounts');
+		// app.lang.getAppString('LBL_MODULE');
+  		// app.lang.getAppListStrings('sales_stage_dom');
+
   		this.$('[name=save_button]').attr('data-loading-text', app.lang.get('LBL_LOADING'));
   		this.$('[name=save_button]').button('loading');
 
