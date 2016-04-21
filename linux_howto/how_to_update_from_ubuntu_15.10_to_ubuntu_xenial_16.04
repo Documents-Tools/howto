@@ -72,6 +72,11 @@ sudo apt-get install --reinstall  python-aptdaemon python3-aptdaemon
 CTRL+ALT+F1 -> login - open terminal and run :D
 sudo apt dist-upgrade -y
 
+# JDK not found in 16.04 ???!!!!
+sudo apt-get install openjdk-8-jdk
+#sudo apt-get install openjdk-9-jdk
+
+
 ##################################################################
 #
 # Fixing Troubles :/ machine 3
