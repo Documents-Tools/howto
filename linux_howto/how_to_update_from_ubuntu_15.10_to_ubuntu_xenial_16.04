@@ -20,7 +20,7 @@ xenial.tar.gz
 
 ##################################################################
 #
-# Fixing Troubles :/
+# Fixing Troubles :/ machine 1
 #
 ##################################################################
 
@@ -59,7 +59,34 @@ sudo apt-get purge gir1.2-accountsservice-10
 sudo apt-get install gir1.2-accountsservice-10
 sudo apt-get install --reinstall  python-aptdaemon python3-aptdaemon
 
-#####################################################################################
+##################################################################
+#
+# Fixing Troubles :/ machine 2
+#
+##################################################################
+
+# upgrade failed in middle of installation
+
+#solution
+
+CTRL+ALT+F1 -> login - open terminal and run :D
+sudo apt dist-upgrade -y
+
+##################################################################
+#
+# Fixing Troubles :/ machine 3
+#
+##################################################################
+
+# Before Upgrade
+
+sudo apt-get -f install
+sudo apt-get update --fix-missing
+
+
+
+
+
 
 
 sudo apt-get update
