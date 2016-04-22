@@ -6,6 +6,7 @@
 
 sudo apt-get install e2fsprogs
 sudo e4defrag /dev/*
+sudo e4defrag /dev/sda1
 sudo e4defrag -c /dev/sda3
 sudo e4defrag -c /path/to/myfiles
 sudo e4defrag -c /dev/sda1
