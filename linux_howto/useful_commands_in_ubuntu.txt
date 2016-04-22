@@ -1,0 +1,107 @@
+#######################################################
+#
+# Useful Commands in Ubuntu Posted by Nikesh Jauhari
+# http://linuxpoison.blogspot.de/2008/10/useful-commands-in-ubuntu.html
+#
+#######################################################
+
+A comprehensive list of commands needed when using Ubuntu:
+
+Command privileges.
+
+    sudo command - run command as root
+    sudo su – root shell open
+    sudo su user – open shell as a user
+    sudo -k – forget your password sudo
+    gksudo command – sudo visual dialog (GNOME)
+    kdesudo command – sudo visual dialog (KDE)
+    sudo visudo – edit / etc / sudoers
+    gksudo nautilus – root file manager (GNOME)
+    kdesudo konqueror – root file manager (KDE)
+    passwd – change your password
+
+Command Network
+
+    ifconfig – displays information network
+    iwconfig – displays information from wireless
+    sudo iwlist scan – scan wireless networks
+    sudo /etc/init.d/networking restart – reset the network
+    (file) /etc/network/interfaces – manual configuration
+    ifup interface – bring online interface
+    ifdown interface – disable interface
+
+Commands Display
+
+    sudo /etc/init.d/gdm restart – reset X (Gnome)
+    sudo /etc/init.d/kdm restart – reset X (KDE)
+    (file) /etc/X11/xorg.conf – show Configuration
+    sudo dpkg-reconfigure - reconfigure xserver-xorg-phigh - reset configuration X
+    Ctrl+Alt+Bksp – X display reset if frozen
+    Ctrl+Alt+FN – switch to tty N
+    Ctrl+Alt+F7 – switch back to X display
+
+Commands Service System.
+
+    start service – service to start work (Upstart)
+    stop service – service to stop working (Upstart)
+    status service – check if service is running (Upstart)
+    /etc/init.d/service start – start service (SysV)
+    /etc/init.d/service stop – stop service (SysV)
+    /etc/init.d/service status – check service (SysV)
+    /etc/init.d/service restart – reset service (SysV)
+    runlevel – get current runlevel
+
+Commands for Firewall.
+
+    ufw enable – turn on the firewall
+    ufw disable – turn off the firewall
+    ufw default allow – allow all connections by default
+    ufw default deny – drop all connections by default
+    ufw status – current rules and
+    ufw allow port – to allow traffic on port
+    ufw deny port – port block
+    ufw deny from ip – ip block
+
+Command System.
+
+    lsb_release -a – get the version of Ubuntu
+    uname -r – get kernel version
+    uname -a – get all the information kernel
+
+Commands for Package Manager.
+
+    apt-get update – refresh updates available
+    apt-get upgrade – update all packages
+    apt-get dist-upgrade – version update
+    apt-get install pkg – installing pkg
+    apt-get remove pkg – uninstall pkg
+    apt-get autoremove – removing packages obsotletos
+    apt-get -f install – try to fix packages
+    dpkg –configure -a – try to fix a broken package
+    dpkg -i pkg.deb – install file pkg.deb
+    (file) /etc/apt/sources.list – list of repositories APT
+
+Special Packages For commands.
+
+    ubuntu-desktop – Setting the standard Ubuntu
+    kubuntu-desktop – KDE Desktop
+    xubuntu-desktop – desktop XFCE
+    ubuntu-minimal – core earnings Ubuntu
+    ubuntu-standard – the standard utilities Ubuntu
+    ubuntu-restricted-extras – not free, but useful
+    kubuntu-restricted-extras – ditto KDE
+    xubuntu-restricted-extras – ditto XFCE
+    build-essential – packages used to compile
+    linux-image-generic – latest generic kernel image
+    linux-headers-generic – latest headlines
+
+Applications commands.
+
+    nautilus – File Manager (GNOME)
+    dolphin – File Manager (KDE)
+    konqueror – Web browser (KDE)
+    kate – text editor (KDE)
+    gedit – text editor (GNOME)
+
+
+
