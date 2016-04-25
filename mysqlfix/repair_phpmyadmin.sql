@@ -13,15 +13,6 @@
 --
 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 -- http://www.filewatcher.com/m/create_tables.sql.gz.1419-0.html
--
--- usr/usr_/share/doc/phpmyadmin/examples/create_tables.sql.gz
--- cd /usr/share/doc/phpmyadmin/examples
--- sudo gunzip create_tables.sql.gz
--- # import in phpmyadmin -- create_tables.sql.gz
--- mysql -u root -p < create_tables.sql
--- mysql -u root -p -e 'GRANT SELECT, INSERT, DELETE, UPDATE ON phpmyadmin.* TO 'pma'@'localhost' IDENTIFIED BY "pmapassword"'
-
-
 
 -- --------------------------------------------------------
 
