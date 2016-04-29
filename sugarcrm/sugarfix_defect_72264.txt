@@ -8,19 +8,46 @@
 
 /custom/modules/Quotes/DetailView.js
 
+
 $( document ).ready(function() {
+
 	$('#opportunity_id').off("click");
 	$('#opportunity_id').live("click",function(event){
+		var opID = $('#opportunity_id').attr("data-id-value");
+		parent.SUGAR.App.router.navigate("#Opportunities/"+opID, {trigger:true});
+	});
+
+	$('#billing_account_id').off("click");
+	$('#billing_account_id').live("click",function(event){
+		var accID = $('#billing_account_id').attr("data-id-value");
+		parent.SUGAR.App.router.navigate("#Accounts/"+accID, {trigger:true});
+	});
+
+	$('#billing_contact_id').off("click");
+	$('#billing_contact_id').live("click",function(event){
+		var cntID = $('#billing_contact_id').attr("data-id-value");
+		parent.SUGAR.App.router.navigate("#Contacts/"+cntID, {trigger:true});
+	});
+
+	$('.detail.view').find('a').bind("click",function(event){
 
 		//event.stopPropagation();
 		//event.stopImmediatePropagation();
 		//event.preventDefault();
 		//event.isPropagationStopped()
 
-		var opID = $('#opportunity_id').attr("data-id-value");
-		parent.SUGAR.App.router.navigate("#Opportunities/"+opID, {trigger:true});
+		// http://localhost/PhpstormProjects/sugar/#Products/b8fde690-dc2f-2737-a0b1-4c09dc4c13d0
+
+		var urlPG= $(this).attr("href");
+		if(urlPG.match(/Products/)){
+			var arUrlPG = urlPG.split("#")
+			var strUrl = arUrlPG[1];
+			parent.SUGAR.App.router.navigate(strUrl, {trigger:true});
+		}
 	});
+
 });
+
 
 -----------------------------------------------------
 
@@ -29,9 +56,7 @@ custom/modules/Quotes/FixQuoteOpportunityLnk.php
 class FixQuoteOpportunityLnk{
 
 	function FixQuoteOpportunityLnk(){
-
 		echo '<script src="custom/modules/Quotes/DetailView.js"></script>';
-
 	}
 }
 
