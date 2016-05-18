@@ -147,7 +147,10 @@ $focus->save();
 
 
 /**
-http://www.geekgumbo.com/2014/10/07/sugarcrm-the-sugarbean/
-http://developer.sugarcrm.com/2012/03/23/howto-using-the-bean-instead-of-sql-all-the-time/
-http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.5/Application_Framework/SugarBean/CRUD_Handling/
+ * https://developer.sugarcrm.com/2012/03/23/howto-using-the-bean-instead-of-sql-all-the-time/
+ * http://developer.sugarcrm.com/2012/03/23/howto-using-the-bean-instead-of-sql-all-the-time/
+ * http://www.geekgumbo.com/2014/10/07/sugarcrm-the-sugarbean/
+ * http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.5/Application_Framework/Teams/Manipulating_Teams_Programatically/
+ * http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.7/Application_Framework/SugarBean/Fetching_Relationships/
+ * http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.5/Application_Framework/SugarBean/CRUD_Handling/
  */
