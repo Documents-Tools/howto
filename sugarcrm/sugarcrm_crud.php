@@ -6,6 +6,7 @@
  * Time: 09:21
  */
 
+$db = & DBManagerFactory::getInstance();
 
 /*
 ---------------------------------------------------
@@ -146,6 +147,24 @@ $focus->some_field = 'new value';
 $focus->save();
 
 
+/*
+---------------------------------------------------
+BeanFactory
+---------------------------------------------------
+*/
+$bean = BeanFactory::newBean($module);
+$bean = BeanFactory::newBeanByName($name);
+
+$bean = BeanFactory::getBean($module, $record_id);
+$bean = BeanFactory::getBean($module, $record_id, array('disable_row_level_security' => true));
+
+$bean = BeanFactory::retrieveBean($module, $record_id);
+$bean = BeanFactory::retrieveBean($module, $record_id, array('disable_row_level_security' => true));
+
+$moduleKey = BeanFactory::getObjectName($moduleName);
+$moduleClass = BeanFactory::getBeanName($module);
+
+
 /**
  * https://developer.sugarcrm.com/2012/03/23/howto-using-the-bean-instead-of-sql-all-the-time/
  * http://developer.sugarcrm.com/2012/03/23/howto-using-the-bean-instead-of-sql-all-the-time/
@@ -153,4 +172,5 @@ $focus->save();
  * http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.5/Application_Framework/Teams/Manipulating_Teams_Programatically/
  * http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.7/Application_Framework/SugarBean/Fetching_Relationships/
  * http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.5/Application_Framework/SugarBean/CRUD_Handling/
+ * http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.5/API/Classes/BeanFactory/
  */
