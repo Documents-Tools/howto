@@ -84,3 +84,85 @@ this.model.set('email', [{email_address: "some@example.com", primary_address: tr
 this.model.save();
 //this.render();
 //this.editClicked();
+
+/**
+ *
+ * Refresh parent record after update
+ *
+ */
+
+self.model.fetch();
+SUGAR.App.controller.context.reloadData({})
+
+/**
+ *
+ * Search inside Dashlet and modify css
+ *
+ */
+
+self.layout.$el.find('.block-footer').css({"display": "none"});
+
+/**
+ *
+ * Select specific item from list
+ *
+ */
+
+({
+	extendsFrom: 'TabbedDashletView',
+	initialize: function (options) {
+		this._super('initialize', [options]);
+		this.events = _.extend({}, this.events, {
+			'click .list-class-items': 'someFunction',
+		});
+		this.tbodyTag = 'ul[data-action="pagination-body"]';
+		this.on('render', this._renderInitForm, this);
+	},
+	someFunction: function (e) {
+		//e.preventDefault();
+		var self = this
+		var someVar = $(e.currentTarget).attr('data-id');
+	}
+})
+
+
+/**
+ *
+ * Select checkbox values from list view
+ *
+ */
+
+var self = this;
+var selMod = this.module
+var selLst = {};
+var cntLst = 0;
+$("tr[name^='"+selMod+"']").each(function () { //loop over each row
+	var selID = ''
+	if( $(this).find('input[name="check"]').attr("checked")=="checked" ){
+		selID = $(this).attr("name") //.replace(""+selMod+"_","")
+		selLst[cntLst] = selID;
+		cntLst++;
+	}
+});
+
+/** Alternative way to Select List */
+({
+	extendsFrom: 'RecordlistView',
+	initialize: function (options) {
+		this._super('initialize', [options]);
+		this.context.on('list:testlistbutton:fire', this.testlistbuttonFunc, this);
+	},
+	testlistbuttonFunc: function () {
+		console.log("Test button in list view gets called");
+		var massCollection = this.context.get("mass_collection");
+		var id_array = [];
+		massCollection.each(function (data) {
+			id_array.push(data.id); //pushing ids of selected
+		});
+	}
+})
+
+
+
+
+
