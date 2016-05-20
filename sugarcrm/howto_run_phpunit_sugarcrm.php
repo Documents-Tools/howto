@@ -92,6 +92,24 @@
  */
 
 
+/*
+ * http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.7/Application_Framework/Web_Services/Examples/SOAP/PHP/Creating_or_Updating_a_Record/
+ * http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.7/Application_Framework/Web_Services/Examples/SOAP/PHP/
+ * http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.5/Application_Framework/Web_Services/What_is_NuSOAP/
+ *
+ * https://www.sugaroutfitters.com/blog/unit-testing-with-sugarcrm-and-phpunit
+ *
+ * https://phpunit.de/getting-started.html
+ * https://phpunit.de/manual/current/en/appendixes.annotations.html#appendixes.annotations.test
+ * https://phpunit.de/manual/current/en/writing-tests-for-phpunit.html
+ *
+ * https://github.com/amusarra/sugarcrm_dev_PostgreSQL/blob/master/tests/SugarTestHelper.php
+ *
+ * https://developer.sugarcrm.com/2015/09/08/creating-javascript-unit-tests-for-sugar-7/
+ * https://developer.sugarcrm.com/2015/09/28/creating-a-php-unit-test-for-sugar-7/
+ */
+
+
 // create file in tests/Dbest.php
 
 /**
