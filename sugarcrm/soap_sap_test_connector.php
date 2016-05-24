@@ -84,137 +84,141 @@ define("SAP_PWD", 'sappass');
  *
  * 'compression' - Komprimierungs Optionen; das ist eine Kombination von SOAP_COMPRESSION_ACCEPT, SOAP_COMPRESSION_GZIP
  * und SOAP_COMPRESSION_DEFLATE Optionen welche wie folgt verwendet werden können:
-
  */
 
 // Create Params for Soap Connection
 $initSoapOptions = array(
-    "location"      => SAP_WSDL_URI,
-    'uri'         => 'http://sap.server:8000',
-    //'uri'           => "http://localhost/Sugar/",
-    //"soapaction"  => "urn:sap-com:document:sap:rfc:functions",
-    "style"         => SOAP_RPC,
-    //'style'       => SOAP_DOCUMENT,
-    'use'           => SOAP_LITERAL,
-    //"use"         => SOAP_ENCODED,
-    //'soap_version'=> SOAP_1_2,
-    'soap_version'  => SOAP_1_1,
-    "trace"         => true,
-    "exceptions"    => true,
-    'login'         => SAP_USER,
-    'password'      => SAP_PWD,
-    'compression'   => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,
-    //'compression' => SOAP_COMPRESSION_DEFLATE,
-    'features'      => SOAP_SINGLE_ELEMENT_ARRAYS,
-    'encoding'    => 'UTF-8', //
-    //'encoding'      => 'ISO-8859-1',
-    'cache_wsdl'  => 0,
-    //'cache_wsdl'    => WSDL_CACHE_NONE,
-    'connection_timeout' => 5, // timeout 5 second
+	"location" => SAP_WSDL_URI,
+	'uri' => 'http://sap.server:8000',
+	//'uri'           => "http://localhost/Sugar/",
+	//"soapaction"  => "urn:sap-com:document:sap:rfc:functions",
+	"style" => 'SOAP_RPC',
+	//'style'       => 'SOAP_DOCUMENT',
+	'use' => 'SOAP_LITERAL',
+	//"use"         => 'SOAP_ENCODED',
+	//'soap_version'=> 'SOAP_1_2',
+	'soap_version' => 'SOAP_1_2|SOAP_1_1',
+	"trace" => true,
+	"exceptions" => true,
+	'login' => SAP_USER,
+	'password' => SAP_PWD,
+	'compression' => 'SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP',
+	//'compression' => 'SOAP_COMPRESSION_DEFLATE',
+	'features' => 'SOAP_SINGLE_ELEMENT_ARRAYS',
+	'encoding' => 'UTF-8', //
+	//'encoding'      => 'ISO-8859-1',
+	'cache_wsdl' => 0,
+	//'cache_wsdl'    => 'WSDL_CACHE_NONE',
+	'connection_timeout' => 5, // timeout 5 second
 
-    // Extra Params
-    //'proxy_host'  => 'example.com', // Do not add the schema here (http or https). It won't work.
-    //'proxy_port'  => 44300,
-    // Auth credentials for the proxy.
-    //'proxy_login'  => NULL,
-    //'proxy_password' => NULL,
-    //'local_cert'  => 'cert_key.pem'
-    //'passphrase'  => $passphrase
+	// Extra Params
+	//'proxy_host'  => 'example.com', // Do not add the schema here (http or https). It won't work.
+	//'proxy_port'  => 44300,
+	// Auth credentials for the proxy.
+	//'proxy_login'  => NULL,
+	//'proxy_password' => NULL,
+	//'local_cert'  => 'cert_key.pem'
+	//'passphrase'  => $passphrase
 );
 
 //Create Params for SOAP QUERY
 $paramsSAP = array(
-    "IS_MAX_CNT" => "9",
-    "IS_DATA" => array(
-        // new call Exception: SOAP-ERROR: Encoding: object has no 'FIELDNAME' property
-        "FIELDNAME" => "value*",
-    )
+	"IS_MAX_CNT" => "9",
+	"IS_DATA" => array(
+		// new call Exception: SOAP-ERROR: Encoding: object has no 'FIELDNAME' property
+		"FIELDNAME" => "value*",
+	)
 );
 
 /* $params2 = array( new SoapParam("IS_MAX_CNT", "9")); */
 
 try {
-    $client = new SoapClient("http://localhost//Sugar/YourWSDL.xml", $initSoapOptions);
+	$client = new SoapClient("http://localhost//Sugar/YourWSDL.xml", $initSoapOptions);
 
-    /** The solution (as described in https://bugs.php.net/bug.php?id=46130&edit=1)
-     * was to edit the WDSL(xml) file manually to change the following line:
-     *
-    <wsp:UsingPolicy wsdl:required="true"/>
-    to this one
-    <wsp:UsingPolicy wsdl:required="false"/>
-     *
-     */
+	/** The solution (as described in https://bugs.php.net/bug.php?id=46130&edit=1)
+	 * was to edit the WDSL(xml) file manually to change the following line:
+	 *
+	 * <wsp:UsingPolicy wsdl:required="true"/>
+	 * to this one
+	 * <wsp:UsingPolicy wsdl:required="false"/>
+	 *
+	 */
 
-    /*if (!$client){
-        //throw new Exception('Soap Verbindung fehlgeschlagen.');
-        die('Soap Verbindung fehlgeschlagen');
-    }*/
+	/*if (!$client){
+		//throw new Exception('Soap Verbindung fehlgeschlagen.');
+		die('Soap Verbindung fehlgeschlagen');
+	}*/
 
-    // Create Header ...
-    //
-    // https://scn.sap.com/thread/3700576
-    // http://php.net/manual/de/soapheader.soapheader.php
-    // http://algorytmy.pl/doc/php/function.soap-soapheader-construct.php
-    // http://www.php-resource.de/forum/php-developer-forum/96486-php-new-soapheader-print.html
+	// Create Header ...
+	//
+	// https://scn.sap.com/thread/3700576
+	// http://php.net/manual/de/soapheader.soapheader.php
+	// http://algorytmy.pl/doc/php/function.soap-soapheader-construct.php
+	// http://www.php-resource.de/forum/php-developer-forum/96486-php-new-soapheader-print.html
 
-    /*
-    $auth = new stdClass(); //define a basic class object
-    $auth->userName = SAP_USER;
-    $auth->password = SAP_PWD;
-    $authvalues = new SoapVar($auth, SOAP_ENC_OBJECT);
-    $headers[] = new SoapHeader('OpGetIncident', 'AuthenticationInfo', $authvalues, false);
-    $client->__setSoapHeaders($header);
-    */
+	/*
+	$auth = new stdClass(); //define a basic class object
+	$auth->userName = SAP_USER;
+	$auth->password = SAP_PWD;
+	$authvalues = new SoapVar($auth, SOAP_ENC_OBJECT);
+	$headers[] = new SoapHeader('OpGetIncident', 'AuthenticationInfo', $authvalues, false);
+	$client->__setSoapHeaders($header);
+	*/
 
-    /*
-    class SOAPStruct
-    {
-        public function Authentication($user, $pass)
-        {
-            $this ->Username = $user;
-            $this ->Password = $pass;
-        }
-    }
+	/*
+	class SOAPStruct
+	{
+		public function Authentication($user, $pass)
+		{
+			$this ->Username = $user;
+			$this ->Password = $pass;
+		}
+	}
 
-    $auth = new SOAPStruct();
-    $token = $auth->Authentication(SAP_USER, SAP_PWD);
-    $header = new SoapHeader(null, "Authentication", $token, false); // "http://0003427388-one-off.sap.com/YGYHI4A8Y_"
-    SoapHeader ($namespace, $name, $data = null, $mustunderstand = false, $actor = null)
-    //Set SOAPHeader
-    $client -> __setSoapHeaders($header);
-    */
+	$auth = new SOAPStruct();
+	$token = $auth->Authentication(SAP_USER, SAP_PWD);
+	$header = new SoapHeader(null, "Authentication", $token, false); // "http://0003427388-one-off.sap.com/YGYHI4A8Y_"
+	SoapHeader ($namespace, $name, $data = null, $mustunderstand = false, $actor = null)
+	//Set SOAPHeader
+	$client -> __setSoapHeaders($header);
+	*/
 
-    try {
+	try {
 
-        $result = (array) $client->Z_GET_INFO_SAP($paramsSAP);
-        //$result = $client->__call(?);
-        //$result = $client->__soapCall(?);
+		$result = (array)$client->Z_GET_INFO_SAP($paramsSAP);
+		//$result = $client->__call(?);
+		//$result = $client->__soapCall(?);
 
-        //Returns list of available SOAP functions described in the WSDL for the Web service.
-        $resultfuncts = $client->__getFunctions(); # OK
-        //print "Request: \n".htmlspecialchars($client->__getLastRequest()) ."\n";
-        //print "Response: \n".htmlspecialchars($client->__getLastResponse())."\n";
+		//Returns list of available SOAP functions described in the WSDL for the Web service.
+		$resultfuncts = $client->__getFunctions(); # OK
+		//print "Request: \n".htmlspecialchars($client->__getLastRequest()) ."\n";
+		//print "Response: \n".htmlspecialchars($client->__getLastResponse())."\n";
 
-        //$result = $client->__getLastRequest();
-        //$result = $client->Login($params);
-    } catch (Exception $e) {
+		//$result = $client->__getLastRequest();
+		//$result = $client->Login($params);
+	} catch (Exception $e) {
+		/*} catch (SoapFault $e) {}*/
 
-        /*class MyException extends Exception { }
-        throw new MyException('Division durch Null.');
+		echo $e->getMessage();
 
-        $ret_str = "<br>-----------------------------------<br>";
-        $ret_str .= "new call Exception: ";
-        $ret_str .= $e->faultstring . "\n\n";
-        $ret_str .= "<br>----------------------------------<br>";*/
-    }
+		/*class MyException extends Exception { }
+		throw new MyException('Division durch Null.');
+		$ret_str = "<br>-----------------------------------<br>";
+		$ret_str .= "new call Exception: ";
+		$ret_str .= $e->faultstring . "\n\n";
+		$ret_str .= "<br>----------------------------------<br>";*/
+	}
 
 } catch (Exception $e) {
-    //throw new Exception('Soap Verbindung fehlgeschlagen.');
-    //$ret_str = "new SoapClient Exception: ";
-    //$ret_str .= $e->faultstring . "\n\n";
+	echo $e->getMessage();
+	//throw new Exception('Soap Verbindung fehlgeschlagen.');
+	//$ret_str = "new SoapClient Exception: ";
+	//$ret_str .= $e->faultstring . "\n\n";
 }
 
-print "<pre>"; print_r($client); print "</pre>";
+print "<pre>";
+print_r($client);
+print "</pre>";
 print "<hr />";
 echo trim($result[ET_ADDRESSDATA]->item[0]->CITY); // utf8_decode
 print "<hr />";
