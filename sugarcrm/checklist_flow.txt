@@ -33,3 +33,10 @@ Modul Installation Check
 PHP Version			x						x						x					x
 MySQL Version		x						x						x					x
 SugarCRM version	x						x						x					x
+
+
+
+https://support.sugarcrm.com/Resources/Supported_Platforms/Sugar_6.5.x_Supported_Platforms/index.html
+http://support.sugarcrm.com/Resources/Supported_Platforms/Sugar_7.7.x_Supported_Platforms/
+http://support.sugarcrm.com/Resources/Supported_Platforms/Sugar_7.6.x_Supported_Platforms/
+http://support.sugarcrm.com/Resources/Supported_Platforms/Sugar_7.5.x_Supported_Platforms/
