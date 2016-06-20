@@ -67,6 +67,13 @@ var FieldName = FieldName.replace(/(\(\(0\)\)|\(0\))/g, function (m) {
     return m == '(0)' ? '' : m
 });
 FieldName = FieldName.replace(/\D/g, '');
+FieldName = FieldName.replace(/[^0-9]/g, '');
+
+
+//---------------------------------------
+// Remove digits
+//---------------------------------------
+FieldName = FieldName.replace(/[^a-zA-Z]/g, '');
 
 
 //---------------------------------------
