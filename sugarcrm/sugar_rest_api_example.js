@@ -96,6 +96,41 @@ SUGAR.App.controller.context.reloadData({})
 
 /**
  *
+ * Refresh parent record - specify field
+ *
+ */
+
+model.fetch({
+	view: undefined,
+	fields: ['industry']
+});
+
+model.fetch({fields: ['industry']});
+
+var parentmodel = this.context.parent.get('model');
+parentmodel.fetch({
+	view: undefined,
+	fields: ['custom_field_c']
+});
+
+// ---------------------------------------------
+
+({
+	extendsFrom:'SubpanelListView',
+	initialize: function(options){
+		this._super('initialize', [options]);
+		this.context.on('list:deleterow:fire',this.SomeFunctionHere, this);
+	},
+	SomeFunctionHere: function(){
+		var parentModel=this.context.parent.get('model');
+		this.warnDelete;
+		parentModel.fetch();
+	},
+
+})
+
+/**
+ *
  * Search inside Dashlet and modify css
  *
  */

@@ -89,5 +89,15 @@ header('Content-Length: '.strlen($file));
 echo $file;
 
 
+/**
+ * How to prevent logic hooks fire on Import record
+ *
+ */
 
+if($_REQUEST['module'] != 'Import'){
+	//your logic hook code
+}
 
+if ( $do_not_run_logic_hook_c != 1 ){
+	//do your regular logic hook operations here
+}
