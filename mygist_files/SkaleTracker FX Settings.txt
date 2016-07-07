@@ -40,3 +40,102 @@ https://github.com/kunitoki/juced
 
 RtAudio
 http://sophie.zarb.org/distrib/Fedora/13/x86_64/rpms/rtaudio
+
+----------------------------------------------
+
+##############################################
+#
+# FREE VST
+#
+##############################################
+
+1. Molot VST
+2. Nova-67P VST
+3. Proximity VST
+4. SlickEQ  VST
+5. Limiter nr6 VST
+
+https://vladgsound.wordpress.com/plugins/
+
+Molot VST the compressor with character
+https://dl.dropboxusercontent.com/u/18475891/Molot031b.zip
+
+Limiter nr6 VST mastering modular limiter
+https://dl.dropboxusercontent.com/u/18475891/Limiter6-v102b.zip
+
+Nova-67P VST parallel dynamic equalizer
+https://dl.dropboxusercontent.com/u/18475891/Nova67P_v1_0_3b-windows.zip
+
+Proximity VST
+http://www.tokyodawn.net/proximity/
+http://static.kvraudio.com/files/1451/proximity_v1_0_1-windows.zip
+
+TDR VOS SlickEQ VST
+http://www.tokyodawn.net/tdr-vos-slickeq/
+http://www.tokyodawn.net/labs/SlickEQ/release1.2.2/TDR%20VOS%20SlickEQ%20(installer).zip?645f4a
+http://www.tokyodawn.net/labs/SlickEQ/release1.2.2/TDR%20VOS%20SlickEQ%20(no%20installer).zip?645f4a
+
+Nova-67P
+https://dl.dropboxusercontent.com/u/18475891/Nova67P_v1_0_3b-windows.zip
+
+##############################################
+#
+# FREE VST
+#
+##############################################
+
+1. You Wa Shock VST
+2. Stereo Jackie VST by Semerika
+3. Vanilla Surprise VST by Rock Hardbuns
+4. TLS Maximiser Free VST Limiter Plugin Effect
+5. OhmBoyz VST 32-bit
+6. Paulstretch
+
+You Wa Shock VST
+https://sites.google.com/site/youwashockvst/
+https://sites.google.com/site/youwashockvst/YOUWASHOCK.exe
+https://www.kvraudio.com/product/you_wa_shock_by_red_shine_sound
+
+Paulstretch
+https://sourceforge.net/projects/hypermammut/files/paulstretch/
+http://hypermammut.sourceforge.net/paulstretch/
+
+Stereo Jackie by Semerika
+https://www.kvraudio.com/product/stereo_jackie_by_semerika
+
+TLS Maximiser Free VST Limiter Plugin Effect
+http://hem.bredband.net/tbtaudio/archive/oldtbtvstplugins.htm
+http://hem.bredband.net/tbtaudio/archive/files/TLsmaximizer_1-1.zip
+http://www.untidymusic.com/wordpress/2009/06/23/tls-maximiser-free-masteringlimiting-vst-plugin/
+http://www.wavosaur.com/vst/limiter-plugins.php
+
+OhmBoyz VST
+https://www.ohmforce.com/ViewProduct.do?p=OhmBoyz
+
+Vanilla Surprise VST by Rock Hardbuns
+http://www.vstplanet.com/Effects/Bundle.htm
+http://www.vstplanet.com/VST_effects/Bundle/Rock_Hardbuns'bundle-Effects.zip
+
+Wavosaur audio editor
+http://www.wavosaur.com/download.php
+
+Sound Forge Audio Studio 10
+http://www.sonycreativesoftware.com/de/audiostudio
+
+Sound Forge Pro 11
+http://www.sonycreativesoftware.com/de/soundforgepro
+
+Audacity
+http://www.audacityteam.org/
+
+
+
+
+
+
+
+
+
+
+
+
