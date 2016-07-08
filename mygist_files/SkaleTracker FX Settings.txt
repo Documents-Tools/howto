@@ -12,14 +12,14 @@ mda Stereo W65 D 23.2 B.0 M 2.2 RT 3.16
 mda Delay L107 R107 Fb63 FXMIX 60
 
 Freeverb2 Rs 0.94 D 50%  Lp 14% Hp 25%
-----------------------
+--------------------------------------------
 mda Delay L339 R133 FB69% 
 mda Delay L226 R226 FB82%
 
 mda Stereo W55   Delay 9.17 Rate3.16
 Freeverb2 RS0.95 Da.50% PD.128 LP30 HP18 WL1.44
 
-------------------------
+--------------------------------------------
 
 Blue Cat's Freeware Plug-ins Pack II
 http://www.bluecataudio.com/Products/Bundle_FreewarePack/
@@ -33,7 +33,7 @@ http://www.vstplanet.com/Effects/Bundle.htm
 SkaleTracker mda plug-ins
 http://mda.smartelectronix.com/
 
--------------
+--------------------------------------------
 
 Community Based Juce
 https://github.com/kunitoki/juced
@@ -46,6 +46,7 @@ http://sophie.zarb.org/distrib/Fedora/13/x86_64/rpms/rtaudio
 ##############################################
 #
 # FREE VST
+# https://www.youtube.com/watch?v=in46p78teVs
 #
 ##############################################
 
@@ -80,7 +81,7 @@ https://dl.dropboxusercontent.com/u/18475891/Nova67P_v1_0_3b-windows.zip
 
 ##############################################
 #
-# FREE VST
+# My FAV FREE VST
 #
 ##############################################
 
@@ -109,12 +110,59 @@ http://hem.bredband.net/tbtaudio/archive/files/TLsmaximizer_1-1.zip
 http://www.untidymusic.com/wordpress/2009/06/23/tls-maximiser-free-masteringlimiting-vst-plugin/
 http://www.wavosaur.com/vst/limiter-plugins.php
 
-OhmBoyz VST
+OhmBoyz VST (not free)
 https://www.ohmforce.com/ViewProduct.do?p=OhmBoyz
 
 Vanilla Surprise VST by Rock Hardbuns
 http://www.vstplanet.com/Effects/Bundle.htm
 http://www.vstplanet.com/VST_effects/Bundle/Rock_Hardbuns'bundle-Effects.zip
+
+##############################################
+#
+# FREE VST Budget Audio: 5+ Free VST Effects
+# https://www.youtube.com/watch?v=vrDGxwx19kw
+#
+##############################################
+
+PSP Audioware:
+http://www.pspaudioware.com/plugins/reverbs/psp_pianoverb/
+
+Audio Damage: FuzzPlus3 / Rough Rider
+http://www.audiodamage.com/downloads/
+http://www.audiodamage.com/downloads/product.php?pid=ADF02
+http://www.audiodamage.com/downloads/product.php?pid=ADF002
+
+Ignite Amps: Emissary
+http://www.igniteamps.com/en/audio-plug-ins
+http://www.kvraudio.com/product/emissary-by-ignite-amps
+
+TAL Software: TAL-Reverb-2 TAL-Reverb-4 TAL-Filter-2 TAL-Bitcrusher
+https://tal-software.com/Products
+https://tal-software.com/products/tal-reverb
+https://tal-software.com/products/tal-reverb-4
+https://tal-software.com/products/tal-filter
+https://tal-software.com/products/tal-effects
+
+Análisis FerricTDS 1.5
+https://www.youtube.com/watch?v=oVymB1t7z1U
+https://varietyofsound.wordpress.com/downloads/
+http://dl.dropbox.com/u/4063301/FerricTDS_1.5.1.zip
+
+Boot EQ mkII by Bootsy Variety of Sound
+https://www.youtube.com/watch?v=S06tsnO9PRk
+https://varietyofsound.wordpress.com/downloads/
+http://dl.dropbox.com/u/4063301/BootEQmkII_2.1.1.zip
+
+Amplio VST
+http://www.vstzone.sk/#amplio
+http://www.vstzone.sk/eula.php?dl=amplio_2.zip
+https://www.youtube.com/watch?v=NGFTE3mjvek
+
+##############################################
+#
+# VST Host
+#
+##############################################
 
 Wavosaur audio editor
 http://www.wavosaur.com/download.php
@@ -127,6 +175,22 @@ http://www.sonycreativesoftware.com/de/soundforgepro
 
 Audacity
 http://www.audacityteam.org/
+
+##############################################
+#
+# VSTi Trance
+#
+##############################################
+
+T-Force Alpha Plus VSTi
+https://www.kvraudio.com/product/t-force-alpha-plus-by-mastrcode-music
+
+TranceDrive v1.0  VSTi
+http://www.vstplanet.com/Instruments/VST_Synthesizers.htm
+
+Tunefish Version 4.0,
+http://www.vstplanet.com/News/2014/Brain_Control_releases_Tunefish_v4.0_beta
+https://www.youtube.com/watch?v=tJtw9zkvs0g
 
 
 
