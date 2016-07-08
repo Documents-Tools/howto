@@ -107,3 +107,30 @@ $str_user_datetime = $date->format('Y-m-d H:i:s');
 $str_UTC_datetime = gmdate($str_server_dateformat, strtotime($str_user_datetime));
 // return timezone to server default
 date_default_timezone_set($str_server_timezone);
+
+###################################################
+#
+# set date.timezone
+#
+###################################################
+
+if (ini_get('date.timezone')) {
+	echo 'date.timezone: ' . ini_get('date.timezone');
+}
+else{
+	date_default_timezone_set("Europe/Berlin");
+}
+
+$d1=new DateTime("2012-07-08 11:14:15.638276");
+$d1->setTimeZone(new DateTimeZone("Europe/Amsterdam"));
+$d2=new DateTime('NOW');
+$d2->setTimeZone(new DateTimeZone("Europe/Berlin"));
+
+//$diff=$d2->diff($d1);
+//print_r( $diff ) ;
+
+// Output the microseconds.
+echo $d1->format('u'); // 012345
+echo "<br>";
+// Output the date with microseconds.
+echo $d2->format('Y-m-d\TH:i:s.u'); // 2011-01-01T15:03:01.012345
