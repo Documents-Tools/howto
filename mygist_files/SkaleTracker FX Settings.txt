@@ -166,6 +166,7 @@ https://www.youtube.com/watch?v=NGFTE3mjvek
 
 Wavosaur audio editor
 http://www.wavosaur.com/download.php
+https://www.kvraudio.com/product/wavosaur-by-wavosaur
 
 Sound Forge Audio Studio 10
 http://www.sonycreativesoftware.com/de/audiostudio
@@ -175,6 +176,35 @@ http://www.sonycreativesoftware.com/de/soundforgepro
 
 Audacity
 http://www.audacityteam.org/
+https://www.kvraudio.com/product/audacity-by-audacity-team
+
+Skale Tracker Multitrack
+https://www.kvraudio.com/product/skale_tracker_by_skale
+
+Helio Workstation Multitrack
+https://www.kvraudio.com/product/helio-workstation-by-peter-rudenko
+https://www.youtube.com/watch?v=ogjW801357c
+http://helioworkstation.com/
+
+XO Wave Linux
+http://www.xowave.com/
+https://www.kvraudio.com/product/xo_wave_by_xo_audio
+
+Acoustica Basic Edition 6.0 Free
+https://www.kvraudio.com/product/acoustica-by-acon-digital
+https://acondigital.com/products/acoustica-audio-editor/
+
+MuLab Multitrack
+https://www.kvraudio.com/product/mulab-by-mutools
+http://www.mutools.com/mulab-downloads.html
+http://www.mutools.com/mulab-product.html
+https://www.youtube.com/watch?v=JMpAgzNTkV0
+
+Linux MultiMedia Studio :LMMS Multitrack
+https://sourceforge.net/projects/lmms/
+http://www.vst4free.com/free_vst.php?id=901
+http://www.vstwarehouse.com/2011/09/lmms.html
+https://lmms.io/wiki/index.php?title=Tested_VSTs
 
 ##############################################
 #
