@@ -134,3 +134,20 @@ echo $d1->format('u'); // 012345
 echo "<br>";
 // Output the date with microseconds.
 echo $d2->format('Y-m-d\TH:i:s.u'); // 2011-01-01T15:03:01.012345
+
+
+###################################################
+#
+# set + 1 day
+#
+###################################################
+
+$date = new DateTime("2006-12-12");
+$date->modify("+7 day");
+echo $date->format("Y-m-d");
+
+
+// This is what you need for future date from now.
+echo date('Y-m-d H:i:s', strtotime("+7 day"));
+// This is what you need for future date from specific date.
+echo date('Y-m-d H:i:s', strtotime('01/01/2010 +7 day'));
