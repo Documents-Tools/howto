@@ -45,8 +45,7 @@ echo $date; // REF4
 //
 //----------------------------------------------------------------------
 
-/**
-
+/*
 
 MySQL Timezone Cheatsheet
 http://stackoverflow.com/questions/19023978/should-mysql-have-its-timezone-set-to-utc

@@ -46,11 +46,32 @@ SELECT DATE_ADD(NOW(), INTERVAL 5 DAY) # 5 days in future
 SELECT DATE_ADD(NOW(), INTERVAL 1 MONTH) # 1 months in future
 SELECT DATE_ADD(NOW(), INTERVAL 6 HOUR) # 6 hours in future
 
-
 SELECT DATE_SUB(CURDATE(),INTERVAL 7 DAY) # 7 days ago - only date
 SELECT DATE_SUB(NOW(),INTERVAL 7 DAY) # 7 days ago
 SELECT DATE_SUB(NOW(),INTERVAL 7 HOUR) # 7 hours ago
 SELECT DATE_SUB(NOW(),INTERVAL 1 MONTH) # 7 months ago
+
+
+# last_7_days
+date_sent BETWEEN date_sub( now( ) , INTERVAL 1 WEEK ) AND now( )
+
+# last_30_days
+date_sent BETWEEN DATE_FORMAT( NOW( ) , '%Y-%m-01 00:00:00' ) AND DATE_FORMAT( LAST_DAY( NOW( ) - INTERVAL 15 DAY ) , '%Y-%m-%d 23:59:59' )
+
+# last month
+date_sent BETWEEN DATE_FORMAT(NOW() - INTERVAL 1 MONTH, '%Y-%m-01 00:00:00') AND DATE_FORMAT(LAST_DAY(NOW() - INTERVAL 1 MONTH), '%Y-%m-%d 23:59:59')
+
+# this month
+date_sent BETWEEN DATE_FORMAT(NOW() - INTERVAL 1 DAY, '%Y-%m-01 00:00:00') AND DATE_FORMAT(LAST_DAY(NOW() - INTERVAL 1 DAY), '%Y-%m-%d 23:59:59')
+
+# last year
+YEAR(date_sent) = YEAR(DATE_SUB(CURDATE(), INTERVAL 1 YEAR))
+
+# this year
+YEAR(date_sent) = YEAR(CURDATE())
+
+
+
 */
 
 
