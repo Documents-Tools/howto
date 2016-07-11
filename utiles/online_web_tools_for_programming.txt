@@ -5,7 +5,6 @@
 #######################################
 
 http://www.opinionatedgeek.com/dotnet/tools/htmlencode/decode.aspx	- HTML Beautifier - Pretty Formating
-
 http://htmledit.squarefree.com/										- HTML Beautifier - Pretty Formating
 http://codebeautify.org/htmlviewer/									- HTML Beautifier - Pretty Formating
 http://www.freeformatter.com/html-formatter.html 					- HTML Beautifier - Pretty Formating
@@ -45,3 +44,4 @@ http://pythex.org/													- REgex Tester
 http://sqlfiddle.com/												- SQL Tester
 http://requestb.in/													- Inspect HTTP Requests Service
 http://www.onlinehtmleditor.net/									- HTML Realtime Preview
+http://www.unixtimestamp.com/index.php								- Unix Timestamp Calculator
