@@ -343,6 +343,7 @@ https://www.kvraudio.com/product/alter-ego-by-plogue
 http://www.vst4free.com/free_vst.php?plugin=Alter_Ego&id=2338
 https://s3.amazonaws.com/palterego/WIN_AlterEgo_v1.077.exe
 http://www.plogue.com/downloads/
+https://www.plogue.com/products/alterego/
 
 TAL-Flanger TAL-USE TAL-Tube TAL-Bitcrusher VST
 https://tal-software.com/products/tal-effects
