@@ -16,23 +16,23 @@ Line 31:
 
 //print "<pre>"; print_r($_SESSION); print "</pre>";
 $sqlQueryASOLXID = base64_encode($_POST['record']);
-echo '
+if(trim($_SESSION["sqlQueryASOLX"][$sqlQueryASOLXID])!="" ){
+	echo '
     <br><br>
     <button id="sqlreportbtn">Show SQL</button>
-    <div class="sqlreport" width="auto" style="background: #33ccff; padding: 10px 2px; ">
+    <div class="sqlreport" min-height: 5px; width="auto" style="background: #33ccff; padding: 15px 15px; ">
         <pre style="white-space: pre-wrap; word-wrap: break-word; ">
-            <code>
-                ' . $_SESSION["sqlQueryASOLX"][$sqlQueryASOLXID] . '
-            </code>
+            <code>' . trim($_SESSION["sqlQueryASOLX"][$sqlQueryASOLXID]) . '</code>
         </pre>
     </div>
     <br /><br />
 
     <script>
-        $( ".sqlreport" ).hide();
+        $( ".sqlreport" ).show();
         $( "#sqlreportbtn" ).click(function() { $( ".sqlreport" ).slideToggle( "slow" ); });
     </script>';
 
+}
 
 /*
 ---------------------------------------------------------
