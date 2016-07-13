@@ -19,6 +19,18 @@ mda Delay L226 R226 FB82%
 mda Stereo W55   Delay 9.17 Rate3.16
 Freeverb2 RS0.95 Da.50% PD.128 LP30 HP18 WL1.44
 
+////////////////////////////////////////
+//
+//  xm to wav Ubuntu
+//  https://wiki.ubuntuusers.de/Soundconverter/
+//
+////////////////////////////////////////
+
+sudo apt-get install soundconverter
+
+soundconverter -b -m "audio/mpeg" -s ".mp3" /PFAD/ZUR/DATEI/DATEI
+soundconverter -b -m "audio/mpeg" -s ".mp3" /PFAD/ZUM/VERZEICHNIS/VERZEICHNIS/*.DATEIENDUNG
+
 --------------------------------------------
 
 Blue Cat's Freeware Plug-ins Pack II
