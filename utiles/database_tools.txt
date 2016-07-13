@@ -96,3 +96,22 @@ SELECT * FROM TABLE1 TB1 LEFT JOIN TABLE2  TB2 ON TB1.FIELD = TB2.FIELD
 
 // Using REGEX
 SELECT * FROM TABLE1 WHERE REGEXP_LIKE(FIELD,'^[0-9]{1}[a-zA-Z](.*)$')";
+
+
+##########################################
+#
+# 	MySQL Find Items in Table A wich are not in Table B
+#
+############################################
+
+SELECT name
+FROM table2
+WHERE NOT EXISTS
+    (SELECT *
+     FROM table2
+     WHERE table1.name = table2.name)
+
+SELECT table2.name FROM table2 WHERE EXISTS (SELECT * FROM table1  WHERE table1.name = table2.name)
+SELECT table2.name FROM table2 WHERE NOT EXISTS (SELECT * FROM table1  WHERE table1.name = table2.name)
+SELECT name FROM table2 WHERE name NOT IN     (SELECT name  FROM table1)
+SELECT t1.name FROM table1 t1 LEFT JOIN table2 t2 ON t2.name = t1.name WHERE t2.name IS NULL
