@@ -1,0 +1,41 @@
+Drawer in Sugar BWC pages by Matt Marum
+
+
+<script>
+    var app = window.parent.SUGAR.App;
+    app.api.call('read', app.api.buildURL('ping'));
+</script>
+
+-----smarty code--------------
+{literal}
+<script type="text/javascript">
+  var app = window.parent.SUGAR.App;
+  app.alert.show("message-id", {
+    level: "success",
+    messages: "Task completed!",
+    autoClose: true
+  });
+</script>
+{/literal}
+-----smarty code--------------
+
+
+------javascript--------------
+app.drawer.open({
+    layout:'list',
+    context: {
+        module: 'Contacts'}
+    }
+);
+------javascript--------------
+
+
+<script type="text/javascript">
+    var app = window.parent.SUGAR.App;
+    app.drawer.open({
+        layout:'list',
+        context: {
+            module: 'Contacts'
+        }
+    });
+</script>
