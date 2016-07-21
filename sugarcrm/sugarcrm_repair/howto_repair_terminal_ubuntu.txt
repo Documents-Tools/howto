@@ -9,6 +9,27 @@ sudo /opt/lampp/xampp start
 sudo /opt/lampp/xampp stopftp
 sudo /opt/lampp/xampp status
 
+
+
+# https://wiki.ubuntuusers.de/XAMPP/
+Parameter 		Bedeutung
+start 			Startet XAMPP
+stop 			Stoppt XAMPP
+restart 		Stoppt und startet XAMPP
+reload 			Apache, MySQL und – wenn gestartet – ProFTPD lesen die jeweiligen Konfigurationsdateien neu ein
+security 		Führt einen kleinen Sicherheitscheck von XAMPP durch und schließt eventuelle Lücken
+startapache 	Startet nur den Apache
+startssl 		Dadurch wird der Apache mit SSL-Unterstützung gestartet. Unter https://localhost kann man seinen Apache via SSL erreichen. Durch diesen Befehl wird die SSL-Unterstützung permanent aktiviert. D.h. auch beim nächsten Start des XAMPP wird SSL wieder mit gestartet.
+startmysql 		Startet nur die MySQL-Datenbank
+startftp 		Startet nur den ProFTPD-Server. Der FTP-Server ist so vorkonfiguriert, dass man nun mit dem Benutzer nobody und dem Passwort lampp nun z.B. die HTML-Dateien auf den XAMPP-Server hochladen kann. Wichtig: Man sollte schnellstens ein anderes Passwort setzten. (siehe Abschnitt Sicherheit). Durch diesen Befehl wird der FTP-Server permanent aktiviert, das heißt auch beim nächsten Start von XAMPP wird der FTP-Server wieder gestartet.
+stopapache 		Stoppt den Apache
+stopssl 		Stoppt die SSL-Unterstützung des Apache. Auch beim nächsten Start von XAMPP wird die SSL-Unterstützung nicht mehr gestartet.
+stopmysql 		Stoppt die MySQL-Datenbank
+stopftp 		Stoppt den ProFTPD-Server. Auch beim nächsten Start von XAMPP wird der FTP-Server nicht mehr gestartet.
+reloadapache 	Der Apache liest die Konfigurationsdatei neu ein
+reloadmysql 	MySQL liest die Konfigurationsdatei neu ein
+reloadftp 		ProFTPD liest die Konfigurationsdatei neu ein
+
 ------------------------------
 
 Find Xampp php.ini:
