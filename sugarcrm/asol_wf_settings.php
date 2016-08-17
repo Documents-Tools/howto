@@ -103,6 +103,12 @@ $sugar_config['resource_management']['default_limit'] = 1000;
 //------------------------------------------------------------
 
 
+/*
+ * AlineaSol WorkFlowManager Manual
+ * https://ecm2.nl/sites/default/files/download/User_Guide_WorkFlowManager-latest.pdf
+ * */
+
+
 
 
 
