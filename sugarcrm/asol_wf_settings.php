@@ -108,7 +108,36 @@ $sugar_config['resource_management']['default_limit'] = 1000;
  * https://ecm2.nl/sites/default/files/download/User_Guide_WorkFlowManager-latest.pdf
  * */
 
+/* SUGAR SETTINGS - TEST
+$sugar_config['list_max_entries_per_page'] = '25';
+$sugar_config['list_max_entries_per_subpanel'] = '3';
+$sugar_config['max_record_fetch_size'] = 100;
+$sugar_config['max_record_link_fetch_size'] = 100;
+$sugar_config['resource_management']['default_limit'] = 100;
+$sugar_config['api']['timeout'] = 30;
+$sugar_config['history_max_viewed'] = 20;
+*/
 
+// Andere Einstellungen
+// /include/utils.php
+// /include/MetaDataManager/MetaDataManager.php
+
+#$sugar_config['WFM_changeLogLevelFromFlowDebugTo'] = 'warn';
+#$sugar_config['WFM_changeLogLevelFromAsolTo'] = 'warn';
+#$sugar_config['asolLogLevelEnabled'] = false;
+#$sugar_config['WFM_changeLogLevelFromAsolDebugTo'] = 'warn';
+
+#$sugar_config['WFM_MAX_working_nodes_executed_in_one_php_instance'] = '15';
+#$sugar_config['WFM_MAX_loops'] = '2';
+
+//$sugar_config['WFM_development_mode'] = false;
+//$sugar_config['WFM_TranslateLabels'] = true;
+//$sugar_config['WFM_site_url'] = 'http://localhost/PhpstormProjects/SugarPro';
+
+// bean_ungreedy_count - to set 0 in WF
+
+#$sugar_config['full_text_engine']['Elastic']['host'] = 'localhost';
+#$sugar_config['full_text_engine']['Elastic']['port'] = '9200';
 
 
 
