@@ -1,0 +1,34 @@
+#######################################
+# mp4 to mp3 convert
+#######################################
+
+sudo apt-get install ffmpeg
+for f in *.mp4; do ffmpeg -i "$f" -vn -c:a libmp3lame -ar 44100 -ac 2 -ab 192k "${f/%mp4/mp3}"; done
+
+--------------------------------------
+#!/bin/bash
+for f in *.mp4
+do
+    name=`echo "$f" | sed -e "s/.mp4$//g"`
+    ffmpeg -i "$f" -vn -ar 44100 -ac 2 -ab 192k -f mp3 "$name.mp3"
+done
+--------------------------------------
+#!/bin/bash
+for i in *.m4a; do
+    avconv -i "$i" -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 "`basename "$i" .m4a`.mp3"
+done
+--------------------------------------
+ffmpeg -i video.mp4 -f mp3 -ab 192000 -vn music.mp3
+aptitude search codecname
+
+--------------------------------------
+sudo apt-get install soundconverter
+
+soundconverter -b -m "audio/mpeg" -s ".mp3" /PFAD/ZUR/DATEI/DATEI
+soundconverter -b -m "audio/mpeg" -s ".mp3" /PFAD/ZUM/VERZEICHNIS/VERZEICHNIS/*.DATEIENDUNG
+--------------------------------------
+sudo add-apt-repository ppa:ffmulticonverter/stable
+sudo apt-get update
+sudo apt-get install ffmulticonverter
+--------------------------------------
+for f in *.mp4; do name=`echo "$f" | sed -e "s/.mp4$//g"` && ffmpeg -i "$f" -vn -acodec copy "$name.m4a"; done
