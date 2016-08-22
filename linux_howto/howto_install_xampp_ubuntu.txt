@@ -72,3 +72,62 @@ sudo /opt/lampp/lampp backup
 sudo sh xampp-backup-22-01-14.sh
 
 
+
+
+
+
+
+
+
+
+
+
+
+##################################################
+#
+# HOW TO FIX ibdata¹ Problem
+#
+##################################################
+
+###############################
+#	export dbs from xampp
+###############################
+
+mysqldump -u root -p --socket=/opt/lampp/var/mysql/mysql.sock dbname > dbname.sql
+
+###############################
+#	uninstall xampp
+###############################
+
+sudo chmod +x /opt/lampp/uninstall
+sudo /opt/lampp/uninstall
+
+###############################
+#	install xampp
+###############################
+
+#download xampp-linux-1.8.2-0-installer.run
+
+chmod 755 xampp-linux-*-installer.run
+sudo ./xampp-linux-*-installer.run
+
+###############################
+#	import dbs in xampp
+###############################
+
+mysql -u root -p --socket=/opt/lampp/var/mysql/mysql.sock
+create database dbname;
+connect dbname;
+source dbname.sql;
+
+###############################
+#	clear cache ram
+###############################
+
+sync && echo 3 | sudo tee /proc/sys/vm/drop_caches
+
+
+
+
+
+
