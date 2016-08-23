@@ -99,6 +99,63 @@ FSCKFIX=yes
 
 sudo touch /forcefsck
 
+###################################################
+
+tune2fs -l /dev/sdbX | grep Last\ c 	# Last checked
+tune2fs -l /dev/sdbX | grep Mount	# Mount count
+tune2fs -l /dev/sdbX | grep Max		# Maximum mount count
+
+
+blkid | grep sdb1
+
+
+touch /forcefsck			# Force fsck for root partition
+tune2fs -c 1 /dev/sdb1			# set fsck after every 1 reboots
+tune2fs -c 10 /dev/sdb1			# set fsck after every 10 reboots
+
+
+tune2fs -c 1 /dev/sdb1			# Force fsck for all other non-root partitions
+tune2fs -c 5 /dev/sdb1			# check filesystem after every 5 reboots
+
+*** disable fsck run
+# tune2fs -c 0 /dev/sdb1
+OR
+# tune2fs -c -1 /dev/sdb1
+
+####################################
+
+shutdown -rF now
+
+Check the /etc/init/mountall.conf file, for example the file from Ubuntu 14.04 LTS
+
+
+script ***
+    . /etc/default/rcS || true
+    [ -f /forcefsck ] && force_fsck="--force-fsck"
+    [ "$FSCKFIX" = "yes" ] && fsck_fix="--fsck-fix"
+
+    # Doesn not work so well if mountall is responsible for mounting /proc, heh.
+    if [ -e /proc/cmdline ]; then
+        read line < /proc/cmdline
+        for arg in $line; do
+            case $arg in
+                -q|--quiet|-v|--verbose|--debug)
+                    debug_arg=$arg
+                    ;;
+            esac
+        done < /proc/cmdline
+    fi
+    # set $LANG so that messages appearing in plymouth are translated
+    if [ -r /etc/default/locale ]; then
+        . /etc/default/locale || true
+        export LANG LANGUAGE LC_MESSAGES LC_ALL
+    fi
+
+    exec mountall --daemon $force_fsck $fsck_fix $debug_arg
+script ***
+
+http://www.cyberciti.biz/faq/linux-force-fsck-on-the-next-reboot-or-boot-sequence/
+https://linuxconfig.org/how-to-force-fsck-to-check-filesystem-after-system-reboot-on-linux
 https://wiki.ubuntuusers.de/Dateisystemcheck/
 http://www.thegeekstuff.com/2012/08/fsck-command-examples/?utm_source=feedburner
 https://www.maketecheasier.com/check-repair-filesystem-fsck-linux/
