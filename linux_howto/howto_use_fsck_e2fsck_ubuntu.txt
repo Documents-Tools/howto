@@ -1,0 +1,104 @@
+##########################################
+#
+#   fsck /dev/sda2
+#   fsck from util-linux 2.26.2
+#   e2fsck 1.42.12 (29-Aug-2014)
+#
+##########################################
+
+sudo parted /dev/sda 'print'
+
+Number  Start   End     Size    Type      File system     Flags
+ 1      1049kB  14,7GB  14,7GB  primary   ext4            boot
+ 2      14,7GB  17,4GB  2672MB  extended
+ 5      14,7GB  17,4GB  2672MB  logical   linux-swap(v1)
+
+cat /etc/fstab
+
+# fsck -A
+# fsck -AR -y
+# fsck -AR -t ext2 -y
+# fsck -AR -t noext2 -y
+
+# mount | grep "/dev/sd*"
+# fsck -M /dev/sda7
+
+fsck /dev/sda6 -f
+sudo e2fsck /dev/sda5 -f
+
+# mount /dev/sda6 /mydata
+# cd /mydata
+# ls -li
+# ls -lrt
+
+# fsck -y /dev/sda6
+
+# fsck -n /dev/sda6
+# e2fsck -n /dev/sda5
+
+ e2fsck -b 8193 <device>
+ or
+ e2fsck -b 32768 <device>
+
+
+# Automatically Repair the Damaged Portions using Option -a
+# fsck -a -AR
+fsck -a /dev/sda6
+fsck -y /dev/sda6
+# e2fsck -y /dev/sda6
+
+
+
+#################################################################
+
+fsck /dev/sda1
+
+umount /home
+fsck /dev/sda2
+mount /home
+
+umount /dev/sdb1 #thumb drive
+sudo fsck /dev/sdb1
+
+sudo fdisk -l  #  list out all the partitions in the system.
+
+fsck -a /dev/sda1
+fsck -y /dev/sda1
+fsck -A
+fsck -M /dev/sdc1 # Exclude check on mounted filesystem
+
+fsck -t ext4 /dev/sdc1
+fsck -A -t ext4 -y
+
+Force fsck to run everytime during bootup
+sudo touch /forcefsck
+tune2fs -c 30 /dev/sdaX
+sudo tune2fs -i 10d /dev/sdaX
+
+Using fsck with a GUI
+sudo apt-get install gparted
+
+
+############################################################
+
+sudo dumpe2fs -h /dev/sdaX | grep -i "mount count"
+sudo tune2fs -l /dev/sdaX | grep -i "mount count"
+sudo tune2fs -C 20 /dev/sdaX
+sudo tune2fs -c 60 /dev/sdaX
+sudo tune2fs -l /dev/sdaX | grep -i "check"
+sudo tune2fs -T 201110132309 /dev/sdaX
+sudo tune2fs -i 3m /dev/sdaX
+
+/etc/fstab
+
+Fehler sollen automatisch korrigiert werden
+sudo nano /etc/default/rcS
+
+FSCKFIX=no
+FSCKFIX=yes
+
+sudo touch /forcefsck
+
+https://wiki.ubuntuusers.de/Dateisystemcheck/
+http://www.thegeekstuff.com/2012/08/fsck-command-examples/?utm_source=feedburner
+https://www.maketecheasier.com/check-repair-filesystem-fsck-linux/
