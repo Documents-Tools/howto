@@ -32,3 +32,43 @@ sudo apt-get update
 sudo apt-get install ffmulticonverter
 --------------------------------------
 for f in *.mp4; do name=`echo "$f" | sed -e "s/.mp4$//g"` && ffmpeg -i "$f" -vn -acodec copy "$name.m4a"; done
+
+
+
+##############################################
+# Convert webm in mp4
+##############################################
+
+
+sudo add-apt-repository ppa:jon-severinsson/ffmpeg
+sudo apt-get update
+sudo apt-get install ffmpeg
+
+
+# "-sameq" waS replaced with "-qscale 0"
+ffmpeg -i filename.webm -qscale 0 outfile.mp4
+
+ffmpeg -fflags +genpts -i 1.webm -r 24 1.mp4
+
+ffmpeg -i input.webm -c:v libx264 -crf 20 -c:a aac -strict experimental out.mp4
+ffmpeg -i file.webm file.mp4
+ffmpeg -i movie.webm movie.mp4
+ffmpeg -i movie.webm -vcodec libx264 movie.mp4
+ffmpeg -i movie.webm -vcodec libx264 -qscale 0 movie.mp4
+
+-------------------------------------------
+
+## WEBM:
+ffmpeg -i movie.file -vcodec libvpx -b:v 600k -acodec libvorbis -ac 2 -b:a 96k -ar 44100 -vf scale=480:-1 -map 0 out.webm
+## MP4:
+ffmpeg -i movie.file -vcodec libx264 -b:v 600k -acodec libfdk_aac -ac 2 -ar 48000 -b:a 96k  -vf scale=480:-1 -map 0 out.mp4
+## OGV:
+ffmpeg -i movie.file -vcodec libtheora -b:v 600k -acodec libvorbis -b:a 96k -vf scale=480:-1 -map 0 out.ogv
+
+avconv -i 23_1460420555.webm -c:v libx264  -strict experimental out.mp4
+
+ffmpeg -i input.mp4 -c:v libvpx -b:v 1M -c:a libvorbis output.webm
+ffmpeg -i input.mp4 -c:v libvpx -crf 10 -b:v 1M -c:a libvorbis output.webm
+ffmpeg -i input.mp4 -c:v libvpx -qmin 0 -qmax 50 -crf 5 -b:v 1M -c:a libvorbis output.webm
+ffmpeg -i input.mp4 -c:v libvpx -minrate 1M -maxrate 1M -b:v 1M -c:a libvorbis output.webm
+ffmpeg -i %04d.png -c:v libvpx -pix_fmt yuva420p -metadata:s:v:0 alpha_mode="1" output.webm
