@@ -45,25 +45,25 @@
 - PiTiVi video editor       - https://apps.ubuntu.com/cat/applications/pitivi/
 - VideoCut                  - https://apps.ubuntu.com/cat/applications/videocut/
 
-- Bluefish                  - https://apps.ubuntu.com/cat/applications/bluefish/
+- Bluefish *                - https://apps.ubuntu.com/cat/applications/bluefish/
 - Geany                     - http://www.geany.org/Download/Releases
 - Kate                      - https://kate-editor.org/get-it/
 - CodeLite                  - http://codelite.org/
 
 - Anjuta DevStudio          - http://anjuta.org/
 - Aptana Studio             - http://www.aptana.com/products/studio3/download
-- Arduino IDE               - https://apps.ubuntu.com/cat/applications/arduino/
-- MonoDevelop IDE           - https://apps.ubuntu.com/cat/applications/monodevelop/
+- Arduino IDE *             - https://apps.ubuntu.com/cat/applications/arduino/
+- MonoDevelop IDE *         - https://apps.ubuntu.com/cat/applications/monodevelop/
 - Python IDE                - https://apps.ubuntu.com/cat/applications/eric/
 - Gambas IDE                - https://apps.ubuntu.com/cat/applications/gambas3-ide/
 - Lazarus IDE               - https://apps.ubuntu.com/cat/applications/lazarus-ide-0.9.30/
-- Eclipse IDE               - https://apps.ubuntu.com/cat/applications/eclipse-platform/
+- Eclipse IDE *             - https://apps.ubuntu.com/cat/applications/eclipse-platform/
 - PHPStorm                  - https://www.jetbrains.com/phpstorm/download/#section=linux-version
 - Monkey Studio IDE         - https://apps.ubuntu.com/cat/applications/monkeystudio/
 - Netbeans Java IDE         - https://apps.ubuntu.com/cat/applications/netbeans/
 - Project Manager IDE       - https://apps.ubuntu.com/cat/applications/projectmanager.app/
 - IntelliJ IDEA 13 Community Edition - https://apps.ubuntu.com/cat/applications/intellij-idea-ce/
-- KDevelop                  - https://www.kdevelop.org/
+- KDevelop *                - https://www.kdevelop.org/
 
 - All Video Downloader      - https://apps.ubuntu.com/cat/applications/allvideodownloader/
 
@@ -76,6 +76,8 @@
 - LMMS 								https://lmms.io/
 - Mixxx 2.0.0 ( DJ )				http://mixxx.org/download/
 - Sonic Visualiser					http://sonicvisualiser.org/
+
+* official repos
 
 #########################################
 #
@@ -281,7 +283,12 @@ sudo mount /dev/cdrom /media/cdrom
 cd /media/cdrom
 sudo ./VBoxLinuxAdditions-x86.run
 
+
+--------------------------------------------
 # Do FullScreen or Ubuntu/Lubuntu
+virtualbox-guest-dkms virtualbox-guest-utils
+#virtualbox-dbg:i386 virtualbox-dkms
+
 sudo ./VBoxLinuxAddtitions.run
 reboot
 
@@ -331,6 +338,16 @@ chgrp vboxusers /dev/vboxdrv
 gedit /etc/udev/rules.d/40-permissions.rules
 
 # https://www.howtoforge.com/virtualbox_ubuntu
+
+######################
+# Install Java 6.7.8.9
+######################
+sudo add-apt-repository -y ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java6-installer
+sudo apt-get install oracle-java7-installer
+sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java9-installer
 
 
 
