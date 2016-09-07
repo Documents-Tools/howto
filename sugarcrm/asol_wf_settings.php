@@ -6,6 +6,54 @@
  * Time: 13:59
  */
 
+/**
+
+#################################################################
+#
+# [PDF]Alinea's Applications - ECM2
+# Guide AlineaSol SolCRM WorkFlowManager.v5.9.3.doc
+# AlineaSol WorkFlow Manager Guide for release 5.x (release 5.9.3)
+#
+#################################################################
+
+https://ecm2.nl/sites/default/files/download/User_Guide_WorkFlowManager-latest.pdf
+
+################################################################
+#	recommendations
+################################################################
+-----------------------------------------
+WF Logic Hooks with Email
+- Not Required - bean_ungreedy_count	0
+//Not Required - use_curl 0
+- Async Required
+- Stop Task Optional
+-----------------------------------------
+WF Logic Hooks with no Email
+- Async Not Required
+- Required - bean_ungreedy_count	0
+- Stop Task Req? (maybe)
+-----------------------------------------
+WF Scheduler
+- Async Not Required (No sync!)
+- Sequencial Required
+- Stop Task Required (maybe)
+- no bean_ungreedy_count Required!
+-----------------------------------------
+
+bean_ungreedy_count 	0
+use_curl 		1
+
+entryPoint 		wfm_engine
+php_errormsg		Non-static method UploadStream::register() should not be called statically
+$alternative_database	-1
+
+bean_ungreedy_count (if a wfm-process triggers the execution of the same/another wfm-process => bean_ungreedy_count++).
+This wfm-variable is used to limit the impact of “loops”.
+
+
+ */
+
+
 //---------------------------------------------------------------------------
 
 // disable all workflows
