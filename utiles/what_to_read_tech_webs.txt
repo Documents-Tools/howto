@@ -140,6 +140,9 @@ http://www.techinsider.io/
 
 ----------------------------------------------
 
+https://devforum.ro/
+http://bgui.github.io/php-the-right-way//#vagrant
+
 
 
 

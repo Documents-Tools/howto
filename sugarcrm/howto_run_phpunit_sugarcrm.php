@@ -167,3 +167,4 @@ class Sugar_PHPUnit_Framework_TestCase extends PHPUnit_Framework_TestCase
 	}
 }
 
+// $ phpunit && jasmine && casperjs
