@@ -142,6 +142,7 @@ http://www.techinsider.io/
 
 https://devforum.ro/
 http://bgui.github.io/php-the-right-way//#vagrant
+https://www.quora.com/topic/Software-and-Applications
 
 
 
