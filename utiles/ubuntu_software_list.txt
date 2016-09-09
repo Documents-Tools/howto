@@ -18,12 +18,15 @@
 
 - Chrome                    - https://www.google.com/chrome/browser/desktop/index.html
 - Firefox                   - https://apps.ubuntu.com/cat/applications/firefox/
+- Midori                    - https://apps.ubuntu.com/cat/applications/midori/
+
 - Skype                     - https://apps.ubuntu.com/cat/applications/skype/
 - Milkytracker              - https://apps.ubuntu.com/cat/applications/milkytracker/
 - Mysql Workbench           - https://apps.ubuntu.com/cat/applications/mysql-workbench/
 - Xpad (notes)              - https://apps.ubuntu.com/cat/applications/xpad/
 - Filezilla                 - https://apps.ubuntu.com/cat/applications/filezilla/
 - Darktable                 - https://apps.ubuntu.com/cat/applications/darktable/
+
 
 - Backintime rsync snapshots    - https://apps.ubuntu.com/cat/applications/backintime-gnome/
 
@@ -78,6 +81,7 @@
 - Sonic Visualiser					http://sonicvisualiser.org/
 
 * official repos
+https://apps.ubuntu.com/cat/
 
 #########################################
 #
