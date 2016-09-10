@@ -362,5 +362,14 @@ sudo apt-get install oracle-java7-installer
 sudo apt-get install oracle-java8-installer
 sudo apt-get install oracle-java9-installer
 
+######################
+# Linux Admin Tools
+######################
+sudo apt-get install hardinfo # detailed hardware information
+sudo apt-get install pyrenamer # rename file names ion mass
+apt-get install iptraf # IP LAN monitoring
+apt-get install iftop # stats which connection is utilizing more bandwidth
+Vivaldi # fantastic browser
+
 
 
