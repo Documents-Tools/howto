@@ -1,3 +1,35 @@
+sudo apt install tmux
+sudo apt install terminator
+
+# gnome-terminal
+# gnome-terminal -x bash -c "command"
+# xterm
+# tmux
+
+"           Split the current pane into two, top and bottom.
+%           Split the current pane into two, left and right.
+'           Prompt for a window index to select.
+&           Kill the current window.
+0 to 9      Select windows 0 to 9.
+c           Create a new window.
+d           Detach the current client.
+f           Prompt to search for text in open windows.
+i           Display some information about the current window.
+l           Move to the previously selected window.
+n           Change to the next window.
+o           Select the next pane in the current window.
+p           Change to the previous window.
+t           Show the time.
+w           Choose the current window interactively.
+x           Kill the current pane.
+z           Toggle zoom state of the current pane.
+
+tmux kill-window -t :1
+tmux new-window \; split-window -d
+tmux new-window %
+
+-------------------------------------------------------
+
 sudo apt-get install tmux
 tmux
 
