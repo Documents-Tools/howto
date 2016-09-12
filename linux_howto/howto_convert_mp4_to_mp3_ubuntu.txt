@@ -72,3 +72,85 @@ ffmpeg -i input.mp4 -c:v libvpx -crf 10 -b:v 1M -c:a libvorbis output.webm
 ffmpeg -i input.mp4 -c:v libvpx -qmin 0 -qmax 50 -crf 5 -b:v 1M -c:a libvorbis output.webm
 ffmpeg -i input.mp4 -c:v libvpx -minrate 1M -maxrate 1M -b:v 1M -c:a libvorbis output.webm
 ffmpeg -i %04d.png -c:v libvpx -pix_fmt yuva420p -metadata:s:v:0 alpha_mode="1" output.webm
+
+
+
+##############################################
+# Convert wmv in mp4
+##############################################
+
+sudo apt-get install ffmpeg
+
+ffmpeg -i input.wmv -c:v libx264 -crf 23 -c:a libfaac -q:a 100 output.mp4
+ffmpeg -i input.wmv -c:v libx264 -crf 23 -profile:v high -r 30 -c:a libfaac -q:a 100 -ar 48000 output.mp4
+--------------------------------------------------------------
+$ mkdir encoded
+$ for f in *.avi; do ffmpeg -i "$f" -c:v libx264 -crf 23 -preset medium \
+  -c:a libfdk_aac -vbr 4 -movflags +faststart -vf scale=-2:720,format=yuv420p \
+  encoded/"${f%.avi}.mp4"; done
+
+--------------------------------------------------------------
+-s size Set frame size. The format is wxh (avserver default = 160x128, ffmpeg default = same as source).  The following abbreviations are recognized:
+
+sqcif           128x96
+qcif            176x144
+cif 		352x288
+4cif            704x576
+16cif           1408x1152
+qqvga           160x120
+qvga            320x240
+vga 		640x480
+svga            800x600
+xga 		1024x768
+uxga            1600x1200
+qxga            2048x1536
+sxga            1280x1024
+qsxga           2560x2048
+hsxga           5120x4096
+wvga            852x480
+wxga	      	1366x768
+wsxga	        1600x1024
+wuxga	        1920x1200
+woxga	        2560x1600
+wqsxga	        3200x2048
+wquxga	        3840x2400
+whsxga	        6400x4096
+whuxga	        7680x4800
+cga 		320x200
+ega 		640x350
+hd480	        852x480
+hd720	        1280x720
+hd1080	        1920x1080
+
+ffmpeg -i 1920_12000-hd.wmv -vcodec libx264 -preset slow -acodec aac -b 800k output.mp4
+ffmpeg -i input -c:v libx264 -crf 23 -preset medium -c:a libfdk_aac -vbr 4 \ -movflags +faststart -vf scale=-2:720,format=yuv420p output.mp4
+--------------------------------------------------------------
+
+ffmpeg -y -i input.wmv -vcodec libx264 -acodec libfaac -ab 128k -ac 2 -b 300 -threads 4 -flags +loop -cmp +chroma -partitions 0 -subq 1 -trellis 0 -refs 1 -coder 0 -bufsize 10M  -qcomp 0.6 -qmin 10 -qmax 51 -qdiff 4 -level 30 output.mp4
+--------------------------------------------------------------
+File convert.sh
+
+#!/bin/bash
+
+# This script is to convert automatically a folder of video files to MP4.
+# You need to change SRC -- Sourse folder and DEST -- Destination folder
+# The MP4 format is 480x270.
+
+SRC=/home/video/
+DEST=/home/www/mp4files/
+DEST_EXT=mp4
+HANDBRAKE_CLI=HandBrakeCLI
+
+for FILE in `ls $SRC`
+do
+        filename=$(basename $FILE)
+        extension=${filename##*.}
+        filename=${filename%.*}
+
+        $HANDBRAKE_CLI -i $SRC/$FILE -o $DEST/$filename.$DEST_EXT -e x264 -q 22 -r 12 -B 64 -X 480 -O
+done
+-----------------------------------
+ffmpeg -i /var/www/html/vid/upload/inputfile.wmv -s 500x400 -vcodec libx264 -strict -2  /var/www/html/vid/mp4videos/outputfile.mp4
+shell_exec("/usr/bin/ffmpeg -i /var/www/html/vid/upload/inputfile.wmv -f mp4 -s 500x400 -strict -2  /var/www/html/vid/mp4videos/outputfile.mp4 2>&1");
+ffmpeg -i input.wmv -c:v libx264 -crf 23 -preset medium -tune stillimage -an output.mp4
+
