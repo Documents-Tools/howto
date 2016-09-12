@@ -81,7 +81,13 @@ ffmpeg -i %04d.png -c:v libvpx -pix_fmt yuva420p -metadata:s:v:0 alpha_mode="1" 
 
 sudo apt-get install ffmpeg
 
-ffmpeg -i input.wmv -c:v libx264 -crf 23 -c:a libfaac -q:a 100 output.mp4
+ffmpeg -i DLP_PART_2_768k.wmv  -q:a 100  -strict -2 DLP_PART_2_768k.mp4
+ffmpeg -i DLP_PART_2_768k.wmv -c:v libx264 -crf 23 -q:a 100 -strict -2 DLP_PART_2_768kx.mp4
+
+for f in *.wmv; do ffmpeg -i "$f" -c:v libx264  -q:a 100  -strict -2    "${f%.wmv}.mp4"; done
+
+
+ffmpeg -i input.wmv -c:v libx264 -crf 23 -c:a libfaac -q:a 100 -strict -2 output.mp4
 ffmpeg -i input.wmv -c:v libx264 -crf 23 -profile:v high -r 30 -c:a libfaac -q:a 100 -ar 48000 output.mp4
 --------------------------------------------------------------
 $ mkdir encoded
