@@ -110,6 +110,18 @@
  */
 
 
+/*
+ *
+# Sugar Composer Update
+
+curl -sS https://getcomposer.org/installer | php
+php composer.phar update --dev
+
+php -f test.php
+php -c app test.php
+
+*/
+
 // create file in tests/Dbest.php
 
 /**
