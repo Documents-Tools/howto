@@ -1,0 +1,127 @@
+
+
+#################################################
+~/PhpStorm-102.206/bin/webide.vmoptions
+#################################################
+-Xms32m
+-Xmx512m
+-XX:MaxPermSize=512m
+-ea
+-Didea.platform.prefix=PhpStorm
+-Xmx2400m
+-XX:MaxPermSize=2400m
+-XX:ParallelGCThreads=6
+
+# increase Xmx by 25-30%
+
+#################################################
+/opt/PhpStorm-141.2462/bin/phpstorm.vmoptions
+ORIGINAL SETTINGS
+#################################################
+-server
+-Xms128m
+-Xmx512m
+-XX:MaxPermSize=250m
+-XX:ReservedCodeCacheSize=150m
+-XX:+UseConcMarkSweepGC
+-XX:SoftRefLRUPolicyMSPerMB=50
+-ea
+-Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-Dawt.useSystemAAFontSettings=lcd
+
+#################################################
+/opt/PhpStorm-141.2462/bin/phpstorm.vmoptions
+MODIFIED SETTINGS
+#################################################
+-server
+-Xms128m
+-Xmx512m
+-Xss16m
+-XX:MaxPermSize=150m
+-XX:ReservedCodeCacheSize=250m
+-XX:SoftRefLRUPolicyMSPerMB=50
+-XX:+UseCodeCacheFlushing
+
+-XX:+UseParNewGC
+-XX:ParallelGCThreads=2
+-XX:+UseConcMarkSweepGC
+-XX:ConcGCThreads=2
+-XX:MaxTenuringThreshold=1
+
+-ea
+-Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-Dawt.useSystemAAFontSettings=lcd
+-agentlib:yjpagent
+
+-------------------------------------------------
+For the 32-bit systems:
+-agentlib:yjpagent-linux=delay=10000
+
+For the 64-bit systems:
+-agentlib:yjpagent-linux64=delay=10000
+
+CPU Snapshot with Invocation Counts:
+-Dprofile.trace=true
+
+Memory Snapshot:
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:HeapDumpPath=/dumps/folder
+
+jmap Binary Memory Snapshot
+jmap -dump:live,format=b,file=heap.bin <pid>
+
+Profiling Slow Startup
+-agentlib:yjpagent=sampling
+
+################################################
+Best experience with following options (idea64.exe.vmoptions):
+################################################
+
+-server
+-Xms1g
+-Xmx3g
+-Xss16m
+-XX:NewRatio=3
+
+-XX:ReservedCodeCacheSize=240m
+-XX:+UseCompressedOops
+-XX:SoftRefLRUPolicyMSPerMB=50
+
+-XX:+UseParNewGC
+-XX:ParallelGCThreads=4
+-XX:+UseConcMarkSweepGC
+-XX:ConcGCThreads=4
+
+-XX:+CMSClassUnloadingEnabled
+-XX:+CMSParallelRemarkEnabled
+-XX:CMSInitiatingOccupancyFraction=65
+-XX:+CMSScavengeBeforeRemark
+-XX:+UseCMSInitiatingOccupancyOnly
+
+-XX:MaxTenuringThreshold=1
+-XX:SurvivorRatio=8
+-XX:+UseCodeCacheFlushing
+-XX:+AggressiveOpts
+-XX:-TraceClassUnloading
+-XX:+AlwaysPreTouch
+-XX:+TieredCompilation
+
+-Djava.net.preferIPv4Stack=true
+-Dsun.io.useCanonCaches=false
+-Djsse.enableSNIExtension=true
+-ea
+
+################################################
+Debug
+################################################
+
+jps -mv
+jstack -l <PID>
+jstack -l <PID> > dump.txt
+
+12189 Main -Xbootclasspath/a:/opt/PhpStorm-141.2462/bin/../lib/boot.jar -Xms128m -Xmx750m -XX:MaxPermSize=350m -XX:ReservedCodeCacheSize=225m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Dawt.useSystemAAFontSettings=lcd -Djb.vmOptionsFile=/opt/PhpStorm-141.2462/bin/phpstorm64.vmoptions -XX:ErrorFile=/home/robn/java_error_in_WEBIDE_%p.log -Djb.restart.code=88 -Didea.paths.selector=WebIde90 -Didea.platform.prefix=PhpStorm -Didea.no.jre.check=true
+12436 Jps -mv -Dapplication.home=/usr/lib/jvm/java-7-oracle -Xms8m
+
+
