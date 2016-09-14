@@ -1,5 +1,4 @@
 
-
 #################################################
 ~/PhpStorm-102.206/bin/webide.vmoptions
 #################################################
@@ -15,6 +14,7 @@
 # increase Xmx by 25-30%
 
 #################################################
+sudo nano /opt/PhpStorm-141.2462/bin/phpstorm.vmoptions
 /opt/PhpStorm-141.2462/bin/phpstorm.vmoptions
 ORIGINAL SETTINGS
 #################################################
@@ -123,5 +123,121 @@ jstack -l <PID> > dump.txt
 
 12189 Main -Xbootclasspath/a:/opt/PhpStorm-141.2462/bin/../lib/boot.jar -Xms128m -Xmx750m -XX:MaxPermSize=350m -XX:ReservedCodeCacheSize=225m -XX:+UseConcMarkSweepGC -XX:SoftRefLRUPolicyMSPerMB=50 -ea -Dsun.io.useCanonCaches=false -Djava.net.preferIPv4Stack=true -Dawt.useSystemAAFontSettings=lcd -Djb.vmOptionsFile=/opt/PhpStorm-141.2462/bin/phpstorm64.vmoptions -XX:ErrorFile=/home/robn/java_error_in_WEBIDE_%p.log -Djb.restart.code=88 -Didea.paths.selector=WebIde90 -Didea.platform.prefix=PhpStorm -Didea.no.jre.check=true
 12436 Jps -mv -Dapplication.home=/usr/lib/jvm/java-7-oracle -Xms8m
+
+-Xms512m
+-Xmx1024m
+-XX:MaxPermSize=512m
+-ea
+-server
+-XX:+DoEscapeAnalysis
+-XX:+UseCompressedOops
+-XX:+UnlockExperimentalVMOptions
+-XX:+UseParallelGC
+
+
+
+-XX:+UseConcMarkSweepGC //removed
+// removed, because not needed with the lastest JVM.
+    -XX:+UnlockExperimentalVMOptions
+    -XX:+DoEscapeAnalysis
+    -XX:+UseCompressedOops
+
+##############################################################
+ Intellij13
+##############################################################
+
+-ea
+-server
+-Xms1g
+-Xmx1g
+-Xss16m
+-XX:PermSize=256m
+-XX:MaxPermSize=256m
+-XX:+DoEscapeAnalysis
+-XX:+UseCompressedOops
+-XX:+UnlockExperimentalVMOptions
+-XX:+UseConcMarkSweepGC
+-XX:LargePageSizeInBytes=256m
+-XX:ReservedCodeCacheSize=96m
+-XX:+UseCodeCacheFlushing
+-XX:+UseCompressedOops
+-XX:ParallelGCThreads=8
+-XX:+UseParNewGC
+-XX:+UseConcMarkSweepGC
+-XX:+DisableExplicitGC
+-XX:+ExplicitGCInvokesConcurrent
+-XX:+PrintGCDetails
+-XX:+PrintFlagsFinal
+-XX:+AggressiveOpts
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:+CMSClassUnloadingEnabled
+-XX:+CMSPermGenSweepingEnabled
+-XX:CMSInitiatingOccupancyFraction=60
+-XX:+CMSClassUnloadingEnabled
+-XX:+CMSParallelRemarkEnabled
+-XX:+UseAdaptiveGCBoundary
+-XX:+UseSplitVerifier
+-XX:CompileThreshold=10000
+-XX:+UseCompressedStrings
+-XX:+OptimizeStringConcat
+-XX:+UseStringCache
+-XX:+UseFastAccessorMethods
+-XX:+UnlockDiagnosticVMOptions
+
+##############################################################
+phpstorm.vmoptions
+##############################################################
+
+-Xms128m
+-Xmx750m
+-XX:MaxPermSize=350m
+-XX:ReservedCodeCacheSize=240m
+-XX:+UseCompressedOops
+
+##############################################################
+phpstorm.vmoptions
+##############################################################
+
+-Xms256m
+-Xmx1500m
+-XX:MaxPermSize=700m
+-XX:ReservedCodeCacheSize=480m
+-XX:+UseCompressedOops
+-Dawt.useSystemAAFontSettings=lcd
+-Dawt.java2d.opengl=true
+
+
+
+##############################################################
+phpstorm.vmoptions experimentel
+sudo nano /opt/PhpStorm-141.2462/bin/phpstorm.vmoptions
+##############################################################
+
+-server
+-Xms1g
+-Xmx1g
+-Xss16m
+-XX:MaxPermSize=256m
+-XX:ReservedCodeCacheSize=256m
+-XX:SoftRefLRUPolicyMSPerMB=50
+-XX:+UseCodeCacheFlushing
+
+-XX:+UseParNewGC
+-XX:ParallelGCThreads=2
+-XX:+UseConcMarkSweepGC
+-XX:ConcGCThreads=1
+-XX:MaxTenuringThreshold=2
+-XX:+UseCompressedOops
+-XX:+DoEscapeAnalysis
+-XX:+DisableExplicitGC
+
+-ea
+-Dsun.io.useCanonCaches=false
+-Djava.net.preferIPv4Stack=true
+-Dawt.useSystemAAFontSettings=lcd
+-agentlib:yjpagent
+
+
+
 
 
