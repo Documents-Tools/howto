@@ -180,7 +180,6 @@ Usage: qalc 87.12 + 13.3%
 sudo apt-get install gcalccmd  (gnome-calculator)
 Usage: 2+3
 
-
 #####################################
 #
 # Install teamviewer
@@ -206,7 +205,6 @@ sudo dpkg -i *.deb
 
 # https://de.libreoffice.org/get-help/install-howto/linux-2/
 
-
 #####################################
 #
 # Install hipchat4
@@ -218,7 +216,6 @@ sudo sh -c 'echo "deb https://atlassian.artifactoryonline.com/atlassian/hipchat-
 wget -O - https://atlassian.artifactoryonline.com/atlassian/api/gpg/key/public | sudo apt-key add -
 sudo apt-get update
 sudo apt-get install hipchat4
-
 
 #####################################
 #
@@ -256,13 +253,11 @@ sudo dpkg -i *.deb
 
 wget sourceforge.net/projects/openofficeorg.mirror/files/4.1.1/binaries/en-GB/Apache_OpenOffice_4.1.1_Linux_x86_install-deb_en-GB.tar.gz
 
-
 #####################################
 #
 # Install virtualbox
 #
 #####################################
-
 
 sudo apt-get update
 sudo apt-cache search virtualbox
@@ -303,7 +298,6 @@ OpenSuse 13.2
 Manjaro 64x
 Debian 8.5.0
 Lubuntu 15.10
-
 
 #####################################
 #
@@ -355,6 +349,7 @@ gedit /etc/udev/rules.d/40-permissions.rules
 ######################
 # Install Java 6.7.8.9
 ######################
+
 sudo add-apt-repository -y ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get install oracle-java6-installer
@@ -365,11 +360,29 @@ sudo apt-get install oracle-java9-installer
 ######################
 # Linux Admin Tools
 ######################
+
 sudo apt-get install hardinfo # detailed hardware information
 sudo apt-get install pyrenamer # rename file names ion mass
 apt-get install iptraf # IP LAN monitoring
 apt-get install iftop # stats which connection is utilizing more bandwidth
 Vivaldi # fantastic browser
 
+######################################################
+# Dstat – A Resourceful Tool to Monitor Linux Server
+######################################################
+
+# yum install dstat             [On RedHat/CentOS and Fedora]
+$ sudo apt-get install dstat    [On Debian, Ubuntu and Linux Mint]
+dstat --vmstat
+
+dstat -c # cpu usage
+dstat --top-cpu # process using most CPU
+dstat -dn # disk and network stats
+dstat --top-mem # process consuming the most memory
+dstat -c --top-cpu -dn --top-mem
+dstat --time --cpu --mem --load --output report.csv 1 5
+dstat --list
+
+# http://www.tecmint.com/dstat-monitor-linux-server-performance-process-memory-network/
 
 
