@@ -171,3 +171,15 @@ vagrant init gt50/tensorflow; vagrant up --provider virtualbox
 
 sudo apt-get install mc # mc commander
 sudo shutdown now
+
+# Install Desktop
+config.vm.provider :virtualbox do |vb|
+  vb.gui = true
+end
+
+# Install Desktop
+sudo apt-get install xfce4
+sudo startxfce4&
+
+# Get Browser
+sudo apt-get install firefox
