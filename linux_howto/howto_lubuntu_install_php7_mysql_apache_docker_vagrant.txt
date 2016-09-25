@@ -142,3 +142,32 @@ vagrant init inviqa/centos-6-stack-php56; vagrant up --provider virtualbox # Hos
 vagrant init synapsestudios/syn-lmnop; vagrant up --provider virtualbox
 
 https://atlas.hashicorp.com/boxes/search?page=40
+
+--------------------------------------------------------
+
+# https://atlas.hashicorp.com/goc/boxes/gocbox/
+# https://github.com/gorsuch/gobox
+vagrant init goc/gocbox; vagrant up --provider virtualbox
+
+# https://atlas.hashicorp.com/laravel/boxes/homestead?page=2
+vagrant init laravel/homestead; vagrant up --provider virtualbox
+
+# https://atlas.hashicorp.com/mmarum/boxes/sugar7-php54
+vagrant init mmarum/sugar7-php54; vagrant up --provider virtualbox
+
+--------------------------------------------------------
+# https://vagrantcloud.com/rasmus/boxes/php7dev
+vagrant init rasmus/php7dev; vagrant up --provider virtualbox
+
+# https://vagrantcloud.com/DJenkinsDev/boxes/VagrantPHP
+vagrant init DJenkinsDev/VagrantPHP; vagrant up --provider virtualbox
+
+---------------------------------------------------------
+# https://atlas.hashicorp.com/quickstart/boxes/tensorflow
+vagrant init quickstart/tensorflow; vagrant up --provider virtualbox
+
+# https://atlas.hashicorp.com/gt50/boxes/tensorflow
+vagrant init gt50/tensorflow; vagrant up --provider virtualbox
+
+sudo apt-get install mc # mc commander
+sudo shutdown now
