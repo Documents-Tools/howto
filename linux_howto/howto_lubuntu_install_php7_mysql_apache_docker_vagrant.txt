@@ -27,6 +27,7 @@ sh ./AptanaStudio3.sh
 
 ----------------------------------
 sudo apt install docker
+sudo apt install docker.io
 
 # https://hub.docker.com/explore/
 
@@ -71,6 +72,8 @@ sudo apt install vagrant
 # https://www.vagrantup.com/docs/cli/box.html
 # https://www.vagrantup.com/docs/boxes.html
 # https://www.vagrantup.com/docs/getting-started/boxes.html
+
+VM user/passwd: vagrant
 
 vagrant init ubuntu/trusty64; vagrant up --provider virtualbox
 vagrant init laravel/homestead; vagrant up --provider virtualbox
