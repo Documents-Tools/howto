@@ -183,3 +183,27 @@ sudo startxfce4&
 
 # Get Browser
 sudo apt-get install firefox
+
+
+
+########################################################################################
+
+#######################################
+# DOCKER LEMP
+#######################################
+
+sudo docker search lamp
+sudo docker search lemp
+docker pull nickistre/ubuntu-lamp
+docker images
+docker run -it nickistre/ubuntu-lamp /bin/bash
+service apache2 start
+service mysql start
+
+# apache2 -v
+# mysql -v
+# php -v
+
+https://www.unixmen.com/deploy-lamp-andor-lemp-stacks-easily-using-docker/
+
+########################################################################################
