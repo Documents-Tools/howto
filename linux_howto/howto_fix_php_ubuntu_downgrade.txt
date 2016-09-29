@@ -34,3 +34,24 @@ Source: php5
  mbstring mhash openssl pcre Phar posix Reflection session shmop SimpleXML
  soap sockets SPL standard sysvmsg sysvsem sysvshm tokenizer wddx xml
  xmlreader xmlwriter zip zlib.
+
+
+ #########################
+ #
+ # install php5-curl
+ #
+ #########################
+
+ sudo apt-get install php5-curl
+ apt-get install aptitude
+ aptitude install php5-curl
+
+ sudo apt-get update
+ sudo apt-get install php5
+ sudo apt-get install libapache2-mod-php5
+ sudo apt-get install curl libcurl3 libcurl3-dev php5-curl
+ sudo apt-get install curl libcurl3 libcurl3-dev php5-mcrypt php5-curl
+
+ locate php.ini
+ nano /etc/php5/apache2/php.ini
+ extension=curl.so
