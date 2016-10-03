@@ -1,3 +1,113 @@
+
+#################################
+#
+#   DEPLOYING PHP 7
+#
+#################################
+
+http://talks.php.net/afup15#/php7perfdetail
+http://talks.php.net/taiwan15#/
+
+--enable-opcache-file
+opcache.enable_cli = 1
+opcache.file_cache_only = 1
+
+phan -a test.php
+ps ef -o command,vsize,rss,size -C php-fpm
+
+-------------------------------------------------------
+
+zval size reduced from 24 to 16 bytes
+Hashtable size reduced from 72 to 56 bytes
+Hashtable bucket size reduced from 72 to 32 bytes
+Immutable array optimization
+$a = [];
+for($i=0; $i < 100000;$i++) {
+    $a[] = ['abc','def','ghi','jkl','mno','pqr'];
+}
+echo memory_get_usage(true);
+
+// PHP 5.x  109M
+// PHP 7.0   42M no opcache
+// PHP 7.0    6M with opcache enabled
+
+----------------------------------------------------------
+
+Install Vagrant and Virtualbox
+Then:
+$ git clone https://github.com/rlerdorf/php7dev.git
+
+$ cd php7dev
+
+$ vagrant up
+... (takes a bit - it is downloading 1.5G)
+
+$ vagrant ssh
+It will NAT, DHCP and also has a fixed address of 192.168.7.7
+
+------------------------------------------------------------
+
+$ cd php-src
+$ git checkout PHP-5.6
+$ git pull -r
+$ make distclean
+$ ./buildconf -f
+$ ./cn56
+$ make
+$ sudo make install
+
+------------------------------------------------------------
+
+C API FOR THE WEB
+void Cos(void) {
+    Stack *s;
+    char temp[64];
+
+    s = Pop();
+    if(!s) {
+        Error("Stack error in cos");
+        return;
+    }
+    sprintf(temp,"%f",cos(s->douval));
+    Push(temp,DNUMBER);
+}
+AND YOU COULD THEN USE IT LIKE THIS:
+
+<html><head><title>Cos Example</title></head>
+<body><h1>Cos Example</h1>
+<?echo Cos($input)>
+</body></html>
+
+------------------------------------------------------------
+
+zval size reduced from 24 to 16 bytes
+Hashtable size reduced from 72 to 56 bytes
+Hashtable bucket size reduced from 72 to 32 bytes
+Immutable array optimization
+$a = [];
+for($i=0; $i < 100000;$i++) $a[] = ['abc'];
+echo memory_get_usage(true);
+// PHP 5.x  43M
+// PHP 7.0  6M
+
+------------------------------------------------------------
+
+TEST BOX SPECS
+
+Gigabyte Z87X-UD3H i7-4771 4 cores @ 3.50GHz w/ 16G of Ram @ 1600MHz
+Hyperthreading enabled for a total of 8 virtual cores
+Toshiba THNSNHH256GBST SSD
+Linux debian 3.16.0-4-amd64 #1 SMP Debian 3.16.7-ckt9-2 (2015-04-13) x86_64 GNU/Linux
+MySQL 5.6.24
+nginx-1.6.2 + php-fpm for all tests unless indicated otherwise
+Quiet local 100Mbps network
+siege benchmark tool run from a separate machine
+
+------------------------------------------------------------
+
+https://github.com/php/presentations
+
+
 #################################
 #
 #   PHP7 and Beyond 2015
