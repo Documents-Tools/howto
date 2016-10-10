@@ -187,5 +187,17 @@ $sugar_config['history_max_viewed'] = 20;
 #$sugar_config['full_text_engine']['Elastic']['host'] = 'localhost';
 #$sugar_config['full_text_engine']['Elastic']['port'] = '9200';
 
+/*
+ *
+ * PhantomJS Installation for Charts in PDF
+
+(1) Download phantomjs from (http://phantomjs.org/download.html)
+https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2
+
+(2) Extract package and copy phantomjs to the sugar root directory and set chmod/chown.
+
+(3) Add $sugar_config['asolReportsPhantomJsFilePath'] = './phantomjs';  in the config_override.php file
+
+*/
 
 
