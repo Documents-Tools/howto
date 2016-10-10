@@ -6,6 +6,7 @@
 
 
 // http://laurenthinoul.com/how-to-add-a-record-color-to-a-listview-in-sugarcrm/
+// https://gist.github.com/lauhin/e7884975a8619a58b4ad
 
 ({
     extendsFrom: 'RecordlistView',
