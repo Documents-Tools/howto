@@ -201,3 +201,26 @@ https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar
 */
 
 
+
+/*
+ * Test - Avoid Loops in WF
+ *
+    $keyXY =  'cxp'.date('YmdHi');
+	$GLOBALS[$keyXY] = 31;
+	echo $GLOBALS[$keyXY];
+
+	if($GLOBALS[$keyXY]==31){
+		$GLOBALS[$keyXY] = 32;
+		// do something here
+	}
+
+	// show keys
+	foreach($GLOBALS as $GPkey=>$GPx){
+		if(stristr($GPkey,"cxp") ){
+			echo "<br>". $GPkey . " - ". $GPx;
+		}
+	}
+
+
+ * */
+
