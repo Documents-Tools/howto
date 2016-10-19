@@ -162,6 +162,19 @@ app.api.call("create", url, callObject, {
 
 
 
+// Matt Marum - Jun 15, 2015 11:26 PM
+// --------------------------------------------------
+// CREATE NOTIFICATION
+
+var notification = App.data.createBean("Notifications");
+notification.set("name", "matt's test notification");
+notification.set("severity", "alert");
+notification.set("assigned_user_id", App.user.get("id"));
+//notification.set("is_read", true);
+notification.save();
+
+
+
 
 
 

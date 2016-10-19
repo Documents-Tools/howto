@@ -174,3 +174,59 @@ $moduleClass = BeanFactory::getBeanName($module);
  * http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_6.5/Application_Framework/SugarBean/CRUD_Handling/
  * http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.5/API/Classes/BeanFactory/
  */
+
+
+
+
+
+// ---------------------------------------------------------
+// ADD SYSTEM NOTIFICATIONS
+// ---------------------------------------------------------
+
+// hatimalam/customOppLogicHooks.php
+// https://gist.github.com/hatimalam/71b540cebf110aac3239#file-customopplogichooks-php
+// PHP
+$notification_bean = BeanFactory::getBean("Notifications");
+$notification_bean->name = 'Opportunity - {$bean->name} is in danger';
+$notification_bean->description = 'Discount percentage is more than 25%.';
+$notification_bean->parent_id = $bean->id;
+$notification_bean->parent_type = 'Opportunities';
+$notification_bean->assigned_user_id = $manager_id;
+$notification_bean->severity = "warning"; // warning information alert
+$notification_bean->is_read = 0;
+$notification_bean->save();
+
+// ---------------------------------------------------------
+
+// https://gist.github.com/hatimalam/bdfc7929a240db6d78f0#file-testcontactapi-php
+// PHP
+$notification_bean = BeanFactory::getBean("Notifications");
+$notification_bean->name = "Contact updated successfully.";
+$notification_bean->message = "Details of the update can go here.";
+$notification_bean->parent_type = "Contacts";
+$notification_bean->parent_id = "{$contact_id}"; //where $contact_id will come as an argument to api
+$notification_bean->assigned_user_id = "{$contact_assigned_user_id}"; //where $contact_assigned_user_id is assigned user id of contact
+$notification_bean->is_read = 0;
+//set the level of severity
+$notification_bean->severity = "information";
+$notification_bean->save();
+
+// ---------------------------------------------------------
+
+// PHP https://developer.sugarcrm.com/2016/03/14/sugar-notifications-in-action/
+$parent_bean = BeanFactory::getBean($bean->parent_type, $bean->parent_id);
+//initialize notification bean
+$notification_bean = BeanFactory::getBean("Notifications");
+//check if comment or a post
+$notification_bean->name = ($bean->activity_type=="post" && $bean->comment_count==0) ? "New post on {$bean->parent_type}" : "New comment on {$bean->parent_type}";
+$notification_bean->description = "New update has been posted on <a href='#{$bean->parent_type}/{$parent_bean->id}'>{$parent_bean->name}</a>";
+//assigned user should be record assigned user
+$notification_bean->assigned_user_id = $parent_bean->assigned_user_id;
+$notification_bean->parent_id = $bean->parent_id;
+$notification_bean->parent_type =  $bean->parent_type;
+$notification_bean->created_by = $bean->created_by;
+//set is_read to no
+$notification_bean->is_read = 0;
+//set the level of severity
+$notification_bean->severity = "information";
+$notification_bean->save();
