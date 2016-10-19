@@ -38,6 +38,13 @@ req.xhr.success(function (data) {
 	}
 });
 
+// --------------------------------------------------
+// RETRIEVE RECORD BY ID
+var request = app.api.call('read', 'rest/v10/Leads/' + selID, {}, {}, {"dataType": "json", "type": "GET"});
+request.xhr.done(function (data) {
+	// do something
+});
+
 
 //-----------------------------------------------------
 // GET ALL EMAIL FROM USER
