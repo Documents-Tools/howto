@@ -236,7 +236,7 @@ https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar
 				$chartsHtml .= '<chart key="'.$fixedReportId.'_'.$key.'"/>';
 			} else {
 
-                $nvd3['dimensions']['width'] = "800"; // EM161019
+                $nvd3['dimensions']['width'] = "100%"; // EM161019
 
 				$chartsHtml .= '<div class="asolChartContainer" engine="nvd3" style="height: ..
                 ...
