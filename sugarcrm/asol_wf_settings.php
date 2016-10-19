@@ -220,7 +220,27 @@ https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar
 			echo "<br>". $GPkey . " - ". $GPx;
 		}
 	}
-
-
  * */
+
+
+/**
+ * Update Width Reports
+ * modules/asol_Reports/include_basic/generateReportsFunctions.php
+ * Line 138
+ *
+ case "nvd3":
+
+	foreach ($nvd3Chart as $key=>$nvd3) {
+		if (isset($nvd3)) {
+			if ($getExportData) {
+				$chartsHtml .= '<chart key="'.$fixedReportId.'_'.$key.'"/>';
+			} else {
+
+                $nvd3['dimensions']['width'] = "800"; // EM161019
+
+				$chartsHtml .= '<div class="asolChartContainer" engine="nvd3" style="height: ..
+                ...
+         }
+	break;
+ */
 
