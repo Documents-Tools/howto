@@ -5,6 +5,7 @@ crontab -e
 
 */3 * * * * /opt/lampp/bin/php /opt/lampp/htdocs/PhpstormProjects/Sugar/cron.php > /dev/null 2>&1
 */2 * * * * /opt/lampp/bin/php /opt/lampp/htdocs/PhpstormProjects/Sugar/cron.php > /dev/null 2>&1
+*/3 * * * * /opt/lampp/bin/php /opt/lampp/htdocs/PhpstormProjects/Sugar/cron.php > /dev/null 2>&1  #OK
 
 crontab -r # remove all
 crontab -l # list
@@ -14,6 +15,10 @@ sudo service cron restart
 sudo service cron status
 
 php -f cron.php > /dev/null 2>&1
+
+# Update status in job table
+UPDATE job_queue SET status =  'done', resolution =  'success'
+WHERE resolution =  'failure' OR status =  'running'
 
 
 http://www.cyberciti.biz/faq/howto-linux-unix-start-restart-cron/
