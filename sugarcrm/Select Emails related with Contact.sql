@@ -26,3 +26,22 @@ AND ((coalesce(LENGTH(contacts.last_name),0) > 0) )
 AND ((coalesce(LENGTH(l1.email_address),0) > 0) )))
 AND contacts.deleted=0
 
+
+########################################################
+##
+## SugarCRM Override all email addresses with default for test case
+##
+########################################################
+
+# SELECT ONLY USERS EMAIL ADDRESSES
+SELECT *
+FROM  `email_addresses` AS ea
+LEFT JOIN  `email_addr_bean_rel` AS eabr ON eabr.email_address_id = ea.id
+WHERE eabr.bean_module =  'Users'
+LIMIT 0 , 30
+
+# UPDATE ONLY USERS EMAIL ADDRESSES
+UPDATE  `email_addresses` AS ea LEFT JOIN  `email_addr_bean_rel` AS eabr ON eabr.email_address_id = ea.id
+SET ea.`email_address` =  'emil@lol.de',email_address_caps= UPPER('emil@lol.de')
+WHERE eabr.bean_module =  'Users'
+
