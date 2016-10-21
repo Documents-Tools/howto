@@ -121,3 +121,38 @@ LEFT JOIN table2 AS t2 ON t1.id = t2.id
 UNION
 SELECT * FROM table1 AS t1
 RIGHT JOIN table2 AS t2 ON t1.id = t2.id
+
+
+########################################################
+#
+# Reindex AUTO_INCREMENT PRIMARY KEY FIELD
+#
+########################################################
+
+# check for duplicates
+SELECT case_number, COUNT( case_number )  FROM cases GROUP BY case_number HAVING COUNT( case_number ) >1 LIMIT 0 , 30
+
+# set random indexes
+UPDATE cases SET case_number = RAND( ) *99999999 WHERE 1
+
+# set first item index  as 1
+UPDATE cases SET case_number =1 LIMIT 1
+
+# Reset indexes
+SET @count = 0;
+UPDATE IGNORE `cases` SET `cases`.`case_number` = @count:= @count + 1;
+SELECT @count;
+
+# Reset indexes alternative
+ALTER TABLE `cases` DROP PRIMARY KEY , ADD INDEX ( `case_number` );
+SET @count = 0;
+UPDATE IGNORE `cases` SET `cases`.`case_number` = @count:= @count + 1;
+ALTER TABLE `cases` AUTO_INCREMENT = 1;
+ALTER TABLE `cases` DROP INDEX `case_number` , ADD PRIMARY KEY ( `case_number` );
+
+# repair table
+REPAIR TABLE cases QUICK;
+# OPTIMIZE TABLE cases;
+# ANALYZE TABLE cases
+# SHOW TABLE STATUS FROM dbname;
+# SHOW STATUS;
