@@ -104,7 +104,7 @@ $ php bin/console server:run
 
 
 ........................................................................
-
+:: angular2 projects
 https://github.com/mattlewis92/angular2-calendar
 https://github.com/dlizarra/angular2-youtube
 https://github.com/orizens/echoes-ng2
@@ -122,6 +122,9 @@ https://github.com/valor-software/ng2-handsontable
 https://github.com/ziyasal/rdash-angular2
 https://github.com/akveo/ng2-admin
 
+.......................................................................
+:: laravel projects
+https://github.com/alariva/timegrid
 
 
 
