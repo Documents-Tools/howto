@@ -26,6 +26,9 @@
 	},
 	_renderHtml: function (ctx, options) {
 		this._super('_renderHtml', [ctx, options]);
+		/*this.$el.find('.record .record-cell').css('border','1px solid red');
+		var myAddition = app.template.get("my-record.mine");
+		this.$el.prepend(myAddition());*/
 	},
 	OverrideAccountType: function () {
 
