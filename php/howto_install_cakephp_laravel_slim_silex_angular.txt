@@ -6,6 +6,12 @@ http://www.beyondjava.net/blog/getting-started-with-angularjs-2-0-your-first-app
 https://tests4geeks.com/tutorials/angular-2-tutorial/
 http://onehungrymind.com/build-a-simple-website-with-angular-2/
 https://www.sitepoint.com/angular-2-tutorial/
+https://toddmotto.com/angular-2-forms-reactive
+http://blog.thoughtram.io/angular/2016/03/21/template-driven-forms-in-angular-2.html
+https://github.com/IstvanOri/ng2-examples/blob/master/examples/file-upload/src/app.ts
+http://blog.thoughtram.io/angular/2016/06/22/model-driven-forms-in-angular-2.html
+https://scotch.io/tutorials/how-to-build-nested-model-driven-forms-in-angular-2
+https://www.barbarianmeetscoding.com/blog/2016/07/15/updating-your-angular-2-app-to-use-the-new-forms-api-a-practical-guide/
 
 ........................................................................
 
