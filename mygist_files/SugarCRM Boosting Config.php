@@ -38,8 +38,24 @@ $sugar_config['save_query'] = 'populate_only';
 $sugar_config['verify_client_ip'] = false;
 $sugar_config['disable_vcr'] = true;
 
-$sugar_config['external_cache_disabled'] = true; // Disables all external caching
-$sugar_config['external_cache_disabled_apc'] = true; // Disables APC
+
+/**
+ * Memcache config
+ */
+$GLOBALS['sugar_config']['external_cache']['memcache']['host'] = '127.0.0.1'; // <<memcacheserveraddress>>
+// Only need the next line if the memcache server port is different than the default of 11211
+$GLOBALS['sugar_config']['external_cache']['memcache']['port'] = '11211'; // <<memcacheportnumber>>
+/**
+ * Redis config
+ */
+$GLOBALS['sugar_config']['external_cache']['redis']['host'] = '127.0.0.1'; // <<redisserveraddress>>
+// Only need the next line if the redis server port is different than the default of 6379
+$GLOBALS['sugar_config']['external_cache']['redis']['port'] = '6379'; // <<redisportnumber>>
+
+// -----------------------------------
+
+//$sugar_config['external_cache_disabled'] = true; // Disables all external caching
+//$sugar_config['external_cache_disabled_apc'] = true; // Disables APC
 //$sugar_config['external_cache_disabled_memcache'] = true; // Disables Memcache
 //$sugar_config['external_cache_disabled_memcached'] = true; // Disables Memcached
 //$sugar_config['external_cache_disabled_redis'] = true; // Disables Redis
