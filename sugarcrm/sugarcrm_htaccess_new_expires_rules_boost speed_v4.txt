@@ -87,13 +87,21 @@ RedirectMatch 403 (?i)/+vendor/composer/
     RewriteRule ^cache/jsLanguage/(\w*)/(.._..).js$ index.php?entryPoint=jslang&module=$1&lang=$2 [L,QSA]
 </IfModule>
 
+<FilesMatch "\.(jpg|png|gif|js|css|ico|woff|svg)$">
+        <IfModule mod_headers.c>
+                #Header set ETag ""
+                Header set Cache-Control "max-age=2592000"
+                Header set Expires "01 Jan 2112 00:00:00 GMT"
+				Header unset ETag
+				FileETag None
+        </IfModule>
+</FilesMatch>
+
 ###############################################
 ##
 ## Emil Tunning
 ##
 ###############################################
-
-
 
 <IfModule mod_headers.c>
     #Header append X-Robots-Tag "noindex"
