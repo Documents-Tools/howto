@@ -1,4 +1,43 @@
 
+##################################
+#
+#	php7 strict_types
+#
+##################################
+
+declare(strict_types=1);
+$bar = (boolean) $foo;  	// $bar is a boolean
+$bar = (string) $foo; 		// $bar is a string
+$bar = (float) $foo; 		// $bar is a float
+$bar = (int) $foo; 		// $bar is a integer
+
+try {
+    factorial("5");
+} catch (TypeError $e) {
+/*
+// } catch (\TypeError $e) {
+// } catch (\Error $e) {
+// } catch (ParseError $e) {
+*/
+    echo 'Error: '.$e->getMessage();
+}
+
+function stringTest(string $string) {
+    echo $string;
+}
+
+
+// https://gist.github.com/ThijsFeryn/70ca08ad9cbbd65f622c#file-9_throwable-php
+// Exception
+try {
+    throw new Exception("Bla");
+} catch (Error $e) {
+    echo "Error: ".$e->getMessage().PHP_EOL;
+} catch (Exception $e) {
+    echo "Exception: ".$e->getMessage().PHP_EOL;
+}
+
+
 #################################
 #
 #   DEPLOYING PHP 7

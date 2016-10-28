@@ -35,3 +35,35 @@ sudo a2dismod php5.6 ; sudo a2enmod php7.0 ; sudo service apache2 restart
 
 from php7.0 to php5.6:
 sudo a2dismod php7.0 ; sudo a2enmod php5.6 ; sudo service apache2 restart
+
+##################################
+#
+#  php5-xdebug
+#
+##################################
+
+php --ini
+
+sudo apt-get install php5-xdebug
+sudo php5enmod xdebug
+
+zend_extension="/usr/lib/php5/20110331/xdebug.so"
+
+Open your terminal and type:
+sudo gedit /etc/php5/mods-available/xdebug.ini
+
+If the file is empty try this location:
+sudo gedit /etc/php5/conf.d/xdebug.ini
+
+That command should open the text editor with the Xdebug configuration file.
+At the end of the file content append the following text:
+xdebug.remote_enable=on
+xdebug.remote_handler=dbgp
+xdebug.remote_host=localhost
+xdebug.remote_port=9000
+
+Save changes and close the editor.
+In your terminal, type:
+sudo service apache2 restart
+
+html_errors = On # add in php.ini
