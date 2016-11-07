@@ -70,6 +70,21 @@ YEAR(date_sent) = YEAR(DATE_SUB(CURDATE(), INTERVAL 1 YEAR))
 # this year
 YEAR(date_sent) = YEAR(CURDATE())
 
+# This week
+SELECT * FROM accounts WHERE deleted=0 AND WEEK(DATE(NOW())) = WEEK(date_entered) ORDER BY date_entered DESC
+SELECT * FROM accounts WHERE  WHERE date_entered >= DATE(NOW()) + INTERVAL 0 - WEEKDAY(NOW()) DAY AND date_entered <  DATE(NOW()) + INTERVAL 7 - WEEKDAY(NOW()) DAY
+
+# Last Week
+SELECT id FROM tbl WHERE date >= curdate() - INTERVAL DAYOFWEEK(curdate())+6 DAY AND date < curdate() - INTERVAL DAYOFWEEK(curdate())-1 DAY
+SELECT id FROM tbl WHERE date between date_sub(now(),INTERVAL 1 WEEK) and now();
+SELECT id FROM tbl WHERE  WEEK (date) = WEEK( current_date ) - 1 AND YEAR( date) = YEAR( current_date );
+SELECT id FROM tbl WHERE  WEEK (date) = WEEK( current_date ) - 2 AND YEAR( date) = YEAR( current_date );
+
+SELECT YEARWEEK('1987-01-01');
+SELECT WEEKOFYEAR('2008-02-20');
+SELECT YEAR('1987-01-01');
+SELECT WEEKDAY('2008-02-03 22:23:00');
+SELECT WEEK('2000-01-01',2);
 
 
 */
