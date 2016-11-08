@@ -544,6 +544,55 @@ docker logs containerid
 docker run -d -p 80:80 --link phpfpm --volumes-from wordpress alpine/nginx nginx
 docker run -p 80:80 -d -v /Users/vagrant/site:/var/www/site mysite
 
+##############################################
+Docker DOKU
+##############################################
+
+https://docs.docker.com/engine/getstarted/step_six/
+https://docs.docker.com/engine/tutorials/dockerimages/
+https://hub.docker.com/_/mysql/
+https://hub.docker.com/r/vasansr/ubuntu-mysql/
+https://docs.docker.com/engine/reference/commandline/tag/
+https://docs.docker.com/engine/reference/commandline/run/
+https://docs.docker.com/engine/reference/commandline/deploy/
+https://docs.docker.com/engine/reference/commandline/export/
+https://docs.docker.com/engine/reference/commandline/images/
+
+
+##############################################
+Docker GUI
+##############################################
+
+https://shipyard-project.com/
+https://github.com/shipyard/shipyard
+
+http://linoxide.com/linux-how-to/setup-dockerui-web-interface-docker/
+
+url -sSL https://get.docker.com/ | sh
+zypper in docker
+pacman -S docker
+yaourt -S docker-git
+service docker start
+systemctl start docker
+docker run -d -p 9000:9000 --privileged -v /var/run/docker.sock:/var/run/docker.sock uifd/ui-for-docker # Installing DockerUI
+docker ps
+docker pull ubuntu
+
+##########################################
+Seven Graphical Interfaces to Docker
+##########################################
+https://blog.ouseful.info/2015/08/10/seven-graphical-interfaces-to-docker/
+http://www.infoworld.com/article/2839284/application-virtualization/10-open-source-tools-to-make-docker-even-more-powerful.html
+
+1. Kitematic
+2. Panamax
+3. Lorry.io
+4. docker ui
+5a. tutum Docker Cloud
+5b. Rancher
+6. docker Compose UI
+7. ImageLayers
+
 
 
 
