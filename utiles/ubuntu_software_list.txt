@@ -217,6 +217,12 @@ wget -O - https://atlassian.artifactoryonline.com/atlassian/api/gpg/key/public |
 sudo apt-get update
 sudo apt-get install hipchat4
 
+/opt/HipChat4/bin$ ./HipChat4  --debug
+/opt/HipChat4/bin/HipChat4
+http://data.gpo.zugaina.org/hossie/net-im/hipchat/hipchat-4.0.1641.ebuild
+https://git.hossie.de/projects/GEN/repos/gentoo-overlay/browse/net-im/hipchat/hipchat-4.0.1641.ebuild
+https://answers.atlassian.com/questions/43216563/vagrant-hipchat-client-not-connecting
+
 #####################################
 #
 # Install libreoffice openoffice
