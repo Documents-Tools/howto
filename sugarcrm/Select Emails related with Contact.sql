@@ -45,3 +45,27 @@ UPDATE  `email_addresses` AS ea LEFT JOIN  `email_addr_bean_rel` AS eabr ON eabr
 SET ea.`email_address` =  'emil@lol.de',email_address_caps= UPPER('emil@lol.de')
 WHERE eabr.bean_module =  'Users'
 
+
+########################################################
+##
+## SugarCRM Query Get All Emails related with User X
+##
+########################################################
+
+
+SELECT
+IFNULL(users.id,'') primaryid ,
+IFNULL(users.last_name,'') users ,
+IFNULL(users.first_name,'') contacts_first_name ,
+IFNULL(l1.id,'') l1_id ,l1.email_address l1_email_address
+FROM users
+LEFT JOIN email_addr_bean_rel l1_1 ON users.id=l1_1.bean_id AND l1_1.deleted=0
+AND l1_1.primary_address = '1'
+AND l1_1.bean_module = 'Users'
+LEFT JOIN email_addresses l1 ON l1.id=l1_1.email_address_id AND l1.deleted=0
+WHERE ((((coalesce(LENGTH(users.first_name),0) > 0) )
+AND ((coalesce(LENGTH(users.last_name),0) > 0) )
+AND ((coalesce(LENGTH(l1.email_address),0) > 0) )))
+AND users.first_name = 'Sandra'
+AND l1.email_address =  'sandra@example.com‎'
+AND users.deleted=0
