@@ -38,19 +38,22 @@ var SomeId = arr[0].replace("#YourString/","");
 //---------------------------------------
 $('[data-fieldname="somefield_c"]').children().children().attr('readonly',true);
 
-// sugarCRM 7.X
-_renderFields: function(){
-	this._super('_renderFields');
-	var field = this.getField("field_a_c");
-	if(field && this.model.get("field_b_c") ) {
-		//if(field.tplName=="edit"){
+({
+	// sugarCRM 7.X
+	_renderFields: function(){
+		this._super('_renderFields');
+		var field = this.getField("field_a_c");
+		if(field && this.model.get("field_b_c") ) {
+			//if(field.tplName=="edit"){
 			//field.setMode('readonly');
 			field.setMode('disabled');
 			//field.setMode('edit');
 			//field.setMode('detail');
-		//}
+			//}
+		}
 	}
-}
+})
+
 
 
 //---------------------------------------
@@ -105,6 +108,31 @@ var someVar    = element.toString().replace('x','');
 $('#fild :input[value="123"]').show();
 
 
-//--------
+//---------------------------------------
+// Match selected options from select tag element jQuery
+//---------------------------------------
+
+$("#select > option").each(function() {
+	alert(this.text + ' ' + this.value);
+});
+
+$(function() {
+	$("#select option").each(function(i){
+		alert($(this).text() + " : " + $(this).val());
+	});
+});
+
+$('#select').find('option').each(function(index,element){
+	console.log(index);
+	console.log(element.value);
+	console.log(element.text);
+});
+
+$('#select option').each(function(index,element){
+	console.log(index);
+	console.log(element.value);
+	console.log(element.text);
+});
+
 
 
