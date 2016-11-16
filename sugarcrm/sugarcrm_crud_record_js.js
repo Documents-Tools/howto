@@ -180,3 +180,77 @@ notification.save();
 
 
 
+
+// --------------------------------------------------
+// CREATE LINK ACCOUNT FOR CONTACT
+// SEARCH WITH FILTER %web-domain%
+
+var requestX = app.api.call('read', 'rest/v10/SomeModule/' + selAUID,
+	{}, {}, {"dataType": "json", "type": "GET"});
+requestX.xhr.done(function (data) {
+	console.debug(data)
+	var emailAddr = data.email1;
+	if (!_.isEmpty(emailAddr)) {
+		var emailTmp = emailAddr.split("@");
+		var emailDomain = emailTmp[1];
+
+		// RETRIEVE ALL RECORDS BY FILTER
+		var moduleName = "Accounts";
+		var Accounts = App.data.createBeanCollection(moduleName)
+		var req = Accounts.fetch({
+			"filter": [{ "website": { "$contains": emailDomain }}]
+			//"fields":"id,name"
+		});
+		//console.debug(filters)
+		req.xhr.success(function (data) {
+			if (data.records.length > 0) {
+				console.debug(data.records[0])
+				var idAccount = data.records[0].id;
+				var urlRel3 = app.api.buildURL('Contacts', contactNewID);
+				urlRel3 = urlRel3 + '/link/accounts/' + idAccount;
+				app.api.call("create", urlRel3, {
+					parent_type: "Accounts",
+					parent_id: idAccount,
+					contact_id: contactNewID
+				});
+
+			}
+		});
+	}
+});
+
+
+// --------------------------------------------------
+// CREATE LINK ACCOUNT FOR CONTACT
+// SEARCH WITH FILTER "Company Name"
+
+if(!_.isEmpty(searchName)){
+	// RETRIEVE ALL RECORDS BY FILTER
+	var moduleName = "Accounts";
+	var filters = [{'name': searchName}];
+	var AccountsObj = App.data.createBeanCollection(moduleName)
+	var req = AccountsObj.fetch({"filter": filters});
+	req.xhr.success(function (data) {
+		if (data.records.length > 0) {
+			//console.debug(data.records.length)
+			//console.debug(data.records[0])
+			var idAccount = data.records[0].id;
+			var urlRel3 = app.api.buildURL('Contacts', contactNewID);
+			urlRel3 = urlRel3 + '/link/accounts/' + idAccount;
+			app.api.call("create", urlRel3, {
+				parent_type: "Accounts",
+				parent_id: idAccount,
+				contact_id: contactNewID
+			});
+
+		}
+	});
+
+}
+
+
+
+
+
+
+

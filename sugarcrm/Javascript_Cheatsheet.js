@@ -134,5 +134,18 @@ $('#select option').each(function(index,element){
 	console.log(element.text);
 });
 
+//---------------------------------------
+// Match selected checkboxes from select tag element jQuery
+//---------------------------------------
+
+var maxSyncFields = $('.sync_statusbox').length;
+var checked = 0;
+for (var i = 0; i <= maxSyncFields; i++) {
+	if ($('.sync_statusbox').eq(i).attr("checked") == "checked") {
+		var fieldKey = $(".labelname").eq(i).attr("data-labelname");
+		checked++;
+	}
+}
+
 
 
