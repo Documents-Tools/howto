@@ -207,5 +207,40 @@ ffmpeg -i inputfile.avi -codec:v libx264 -profile:v high -preset slower -b:v 100
 https://www.virag.si/2012/01/web-video-encoding-tutorial-with-ffmpeg-0-9/
 
 
+#################################
+#
+#	MP4 Video Compression and Saturation
+#
+#################################
+
+ffmpeg -i input.mp4 -c:v libx264 -crf 18 -b:v 500K -c:a aac -strict -2 output.mp4 # 500mb to 150mb compresson
+ffmpeg -i input.mp4 -c:v libx264 -crf 24 -b:v 1M -c:a aac -strict -2 output.mp4 # 500mb to 140mb compresson
+ffmpeg -i input.mp4  -vf eq=1:0:1.3:1:1:0.9:1:1 -c:v libx264 -strict -2 -threads 2 output.mp4 -y  # saturation
+ffmpeg -i input.mp4 -vf eq=1:0:0:1:1:1:1:1 -strict -2 -threads 2 output.mp4 # bw
+
+DEFAULT VALUES FOR EQ2 FILTER - gamma:contrast:brightness:saturation:rg:gg:bg:weight
+
+initial gamma value (default: 1.0)
+initial contrast, where negative values result in a negative image (default: 1.0)
+initial brightness (default: 0.0)
+initial saturation (default: 1.0)
+gamma value for the red component (default: 1.0)
+gamma value for the green component (default: 1.0)
+gamma value for the blue component (default: 1.0)
+
+
+ffmpeg -i webinar2_The\ Sugar\ Platform_compressed.mp4 -c:v libx264 -vf eq=1:1.2:0.3:1.5:1:0.6:1 -strict -2 -threads 2 foo.mp4
+ffmpeg -i all.MTS -c:v libx264 -c:a libfaac -vf mp=eq2=1:1.68:0.3:1.25:1:0.96:1 foo.mp4
+ffplay -i input.jpg -vf "eq=contrast=1.5:brightness=-0.05:saturation=0.75" # contrast
+ffmpeg -y -loop 1 -i input.jpg -vf "eq=contrast=1" -c:v libx264 \ -pix_fmt yuv420p -t 3 out.mp4
+ffmpeg -i input -vf curves=preset=lighter -c:a copy output
+ffmpeg -i input -vf curves=r='0.4/0.5':g='0.4/0.5':b='0.4/0.5' -c:a copy output
+ffmpeg -i in.mp4 -vf mp=eq2=gamma:contrast:brightness:saturation:rg:gg:bg:weight out.mp4 -y
+
+
+-preset ultrafast
+-preset veryslow
+
+
 
 
