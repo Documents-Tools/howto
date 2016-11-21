@@ -1,5 +1,230 @@
+##############################################
+#
+# FFMPEG EFFECTS
+#
+##############################################
+
+# resize http://randombio.com/linuxsetup141.html
+ffmpeg -i input.mp4 -vf scale=320:240 output.mp4
+ffmpeg -i input.mp4 -vf scale=640:480 output.mp4
+ffmpeg -i input.mkv -vf scale=-1:720 -c:v libx264 -crf 0 -preset veryslow -c:a copy output.mkv
+ffmpeg -i input.mkv -vf scale=-1:720 -c:v libx264 -crf 18 -preset veryslow -c:a copy output.mkv
+
+ffmpeg -i input.jpg -vf scale=w=320:h=240:force_original_aspect_ratio=decrease output_320.png
+ffmpeg -i input.jpg -vf scale=320:-1 output_320.png
+ffmpeg -i input.mp4 -vf scale=640:-1 -strict -2 output.mp4 # ok
+
+# compress v2
+ffmpeg -i input.mp4 -c:v libx264 -crf 18 -b:v 500K -c:a aac -strict -2 -preset ultrafast output.mp4
+
+# compress v1
+ffmpeg -i input.mp4 -c:v libx264 -crf 24 -b:v 1M -c:a aac -strict -2 -preset ultrafast output.mp4
+
+# saturation
+ffmpeg -i input.mp4  -vf eq=1:0:1.3:1:1:0.9:1:1 -c:v libx264 -strict -2 -threads 2 -preset ultrafast output.mp4 -y
+ffplay -i input.mp4  -vf eq=1:0:2.9:1:1:1.1:1:1
+
+# bw - black and white
+ffmpeg -i input.mp4 -vf eq=1:0:0:1:1:1:1:1 -strict -2 -threads 2 -preset ultrafast  output.mp4
+
+# compress & rotate 180
+ffmpeg -i input.MP4 -c:v libx264 -crf 20 -b:v 1M -c:a aac -strict -2 -threads 2 -vf "transpose=2,transpose=2" -preset ultrafast output.mp4
+
+# cut video
+ffmpeg -i input.MP4 -ss 00:05:05 -t 00:30:10 -c copy -threads 2 -preset ultrafast  cut_video.mp4
+
+# speed up 4x (setpts=0.5*PTS) or 2x (setpts=0.25*PTS)
+ffmpeg -i output.mp4 -r 16 -filter:v "setpts=0.25*PTS" -strict -2 -preset ultrafast output2.mp4
+
+# speed down
+ffmpeg -i input.mkv -filter:v "setpts=2.0*PTS" output.mkv
+
+# quadruple the audio speed:
+ffmpeg -i input.mkv -filter:a "atempo=2.0,atempo=2.0" -vn output.mkv
+
+# saturation speed up 4x
+ffmpeg -i input.mp4  -vf eq=1:0:1.9:1:1:0.9:1:1 -c:v libx264 -strict -2 -threads 2 -preset ultrafast -filter:v "setpts=0.25*PTS" output.mp4 -y
+
+# mirror fx https://trac.ffmpeg.org/wiki/FancyFilteringExamples
+ ffmpeg -i input.mp4 -vf "crop=iw/2:ih:0:0,split[left][tmp];[tmp]hflip[right];[left][right] hstack" -strict -2 output.mp4
+
+# AviSynth
+ffmpeg -i "script.avs" -acodec copy -vcodec copy output.mp4
+
+# mirror fx + max saturation
+ffmpeg -i input.mp4 -strict -2 -vf eq=1:0:2.9:1:1:1.1:1:1  output.mp4
+ffmpeg -i input.mp4 -vf "crop=iw/2:ih:0:0,split[left][tmp];[tmp]hflip[right];[left][right] hstack" -strict -2 -preset ultrafast output.mp4
+
+# green filter
+ffmpeg -i input.mp4 -vcodec mjpeg -pix_fmt yuvj422p -q:v 0 -an output.mp4
+
+# invert colors
+ffmpeg -i daymusic.mp4 -vf lutrgb="r=negval:g=negval:b=negval" -preset ultrafast -strict -2 daymusicinvert.mp4
+
+# add watermark
+
+Top Left Corner
+ffmpeg -i input.avi -vf "movie=file.png [watermark]; [in][watermark] overlay=10:10 [out]" output.flv
+
+Top Right Corner
+ffmpeg –i input.avi -vf "movie=watermarklogo.png [watermark]; [in][watermark] overlay=main_w-overlay_w-10:10 [out]" output.flv
+
+Bottom Left Corner
+ffmpeg –i input.avi -vf "movie=watermarklogo.png [watermark]; [in][watermark] overlay=10:main_h-overlay_h-10 [out]" output.flv
+
+Bottom Right Corner
+ffmpeg –i input.avi -vf "movie=watermarklogo.png [watermark]; [in][watermark] overlay=main_w-overlay_w-10:main_h-overlay_h-10 [out]" output.flv
+
+# Rotate Videos 90
+ffmpeg -i input.avi -vf transpose=1 output.avi
+
+# Text Watermarks To Videos
+ffmpeg -i input.mp4 -vf drawtext="fontfile=/usr/share/fonts/truetype/freefont/FreeSans.ttf: text='YOUR TEXT HERE':fontcolor=red@1.0:fontsize=70:x=00: y=40" -y output.mp4
+
+# record your screen
+ffmpeg -f x11grab -follow_mouse 100 -r 25 -s vga -i :0.0 filename.avi
+ffmpeg -f x11grab -s 800x600 -r 25 -i :0.0 -qscale 5 filename.avi
+ffmpeg -f x11grab -follow_mouse centered -show_region 1 -r 25 -s vga -i :0.0 filename.avi
+ffmpeg -f x11grab -s wxga -r 25 -i :0.0 -sameq  video.mp4
+
+# Audio To A Static Picture
+ffmpeg -i audio.mp3 -loop_input -f image2 -i file.jpg -t 188 output.mp4
+
+# Adjust Audio/Video Volume
+ffmpeg -i input.avi -vol 100  output.avi
+ffmpeg -i input.mp3 -vol 100 -ab 128 output.mp3
+
+# Insert A Video Inside Another Video
+ffmpeg -i video1.mp4 -vf "movie=video2.mp4:seek_point=5, scale=200:-1, setpts=PTS-STARTPTS [movie]; [in] setpts=PTS-STARTPTS, [movie] overlay=270:240 [out]" output.mp4
+
+# Add a Rectangle To A Video
+ffmpeg -i input.avi -vf "drawbox=500:150:600:400:orange@0.9" -sameq -y output.avi
+
+# mix 2 videos
+ffmpeg -i input.mp4 -i input.mp4 -filter_complex "[0:v:0]pad=iw*2:ih[bg]; [bg][1:v:0]overlay=w" -strict -2 output.mp4
+
+ffmpeg -i input1 -i input2 -filter_complex "[0:v]setpts=PTS-STARTPTS, pad=iw*2:ih[bg]; [1:v]setpts=PTS-STARTPTS[fg]; [bg][fg]overlay=w" output
+
+ffmpeg -i input1 -i input2 -filter_complex "[0:v]setpts=PTS-STARTPTS, pad=iw*2:ih[bg]; [1:v]setpts=PTS-STARTPTS[fg]; [bg][fg]overlay=w; amerge,pan=stereo:c0<c0+c2:c1<c1+c3" -strict -2 -preset ultrafast output.mp4
+
+
+
+# merging video and audio, with audio re-encoding
+ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental -t 00:11:10 output.mp4
+ffmpeg -i video.mp4 -i audio.wav -c copy output.mkv
+ffmpeg -i video.mp4 -i audio.wav -c:v copy -c:a aac -strict experimental  -map 0:v:0 -map 1:a:0 output.mp4 #ok
+
+extracting frames from video
+ffmpeg -ss 00:00:26.000 -i dance.mp4 -t 00:00:03.000 -r 6 jpg2/dance_%04d.jpg
+
+make video from images
+ffmpeg -f image2 -r 1/3 -i "P1190%03d.JPG" -c:v libx264 -r 30 my_pictures.mp4
+
+make thumb img
+ffmpeg  -itsoffset (time) -i video.avi -vcodec mjpeg -vframes 1 -an -f rawvideo -s (WIDTHxHEIGHT) thumb.jpg
+
+
+#fade in/out
+ffmpeg \
+-loop 1 -t 5 -i input0.png \
+-loop 1 -t 5 -i input1.png \
+-loop 1 -t 5 -i input2.png \
+-loop 1 -t 5 -i input3.png \
+-loop 1 -t 5 -i input4.png \
+-filter_complex \
+"[0:v]fade=t=out:st=4:d=1[v0]; \record your screen
+ [1:v]fade=t=in:st=0:d=1,fade=t=out:st=4:d=1[v1]; \
+ [2:v]fade=t=in:st=0:d=1,fade=t=out:st=4:d=1[v2]; \
+ [3:v]fade=t=in:st=0:d=1,fade=t=out:st=4:d=1[v3]; \
+ [4:v]fade=t=in:st=0:d=1,fade=t=out:st=4:d=1[v4]; \
+ [v0][v1][v2][v3][v4]concat=n=5:v=1:a=0,format=yuv420p[v]" -map "[v]" out.mp4
+
+
+
+# crossfade
+ffmpeg \
+-loop 1 -t 1 -i 001.png \
+-loop 1 -t 1 -i 002.png \
+-loop 1 -t 1 -i 003.png \
+-loop 1 -t 1 -i 004.png \
+-loop 1 -t 1 -i 005.png \
+-filter_complex \
+"[1:v][0:v]blend=all_expr='A*(if(gte(T,0.5),1,T/0.5))+B*(1-(if(gte(T,0.5),1,T/0.5)))'[b1v]; \
+ [2:v][1:v]blend=all_expr='A*(if(gte(T,0.5),1,T/0.5))+B*(1-(if(gte(T,0.5),1,T/0.5)))'[b2v]; \
+ [3:v][2:v]blend=all_expr='A*(if(gte(T,0.5),1,T/0.5))+B*(1-(if(gte(T,0.5),1,T/0.5)))'[b3v]; \
+ [4:v][3:v]blend=all_expr='A*(if(gte(T,0.5),1,T/0.5))+B*(1-(if(gte(T,0.5),1,T/0.5)))'[b4v]; \
+ [0:v][b1v][1:v][b2v][2:v][b3v][3:v][b4v][4:v]concat=n=9:v=1:a=0,format=yuv420p[v]" -map "[v]" out.mp4
+
+
+#melt
+melt -verbose \
+-profile atsc_720p_25 \
+001.png out=50 \
+002.png out=75 -mix 25 -mixer luma \
+003.png out=75 -mix 25 -mixer luma \
+004.png out=75 -mix 25 -mixer luma \
+005.png out=75 -mix 25 -mixer luma \
+-consumer avformat:output.mp4 vcodec=libx264 an=1
+
+
+#mix 2 files
+ffmpeg -i first.ogg -i second.ogg \
+-filter_complex \
+"color=black:WxH:d=Video1Length+Video2Length-FadeDuration[base]; \
+ [0:v]setpts=PTS-STARTPTS[v0]; \
+ [1:v]format=yuva420p,fade=in:st=0:d=FadeDuration:alpha=1, \
+      setpts=PTS-STARTPTS+((Video1Length-FadeDuration)/TB)[v1]; \
+ [base][v0]overlay[tmp]; \
+ [tmp][v1]overlay,format=yuv420p[fv]; \
+ [0:a][1:a]acrossfade=d=Frecord your screenadeDuration[fa]" \
+-map [fv] -map [fa]
+output.ogg
+
+
+# add text
+ffmpeg -i input.mp4 -vf \
+"format=yuv444p, \
+ drawbox=y=ih/PHI:color=black@0.4:width=iw:height=48:t=max, \
+ drawtext=fontfile=OpenSans-Regular.ttf:text='Title of this Video':fontcolor=white:fontsize=24:x=(w-tw)/2:y=(h/PHI)+th, \
+ format=yuv420p" \
+-c:v libx264 -c:a copy -movflags +faststart output.mp4
+
+# add text
+ffmpeg -i input.mp4 -vf drawtext="fontfile=/path/to/font.ttf: \
+text='Stack Overflow': fontcolor=white: fontsize=24: box=1: boxcolor=black@0.5: \
+boxborderw=5: x=(w-text_w)/2: y=(h-text_h)/2" -codec:a copy output.mp4
+
+# add text
+ffmpeg -i input -filter:v "drawtext=fontsize=30:box=1:fontfile=/usr/share/fonts/TTF/Vera.ttf:text='Stack Overflow':x=(w-text_w)/2:y=(h-text_h-line_h)/2" output
+
+# add text
+ffmpeg -f video4linux2 -i /dev/video0 -s 640x480 -r 30 -vf \
+"drawtext=fontfile=/usr/share/fonts/truetype/ttf-dejavu/DejaVuSans-Bold.ttf: \
+text='\%T': fontcolor=white@0.8: x=7: y=460" -vcodec libx264 -vb 2000k \
+-preset ultrafast -f mp4 output.mp4
+
+ffmpeg -f video4linux2 -input_format mjpeg -s 1280x720 -i /dev/video0 \
+-vf "drawtext=fontfile=/usr/share/fonts/dejavu/DejaVuSans-Bold.ttf: \
+text='%{localtime\:%T}': fontcolor=white@0.8: x=7: y=700" -vcodec libx264 \
+-preset veryfast -f mp4 -pix_fmt yuv420p -y output.mp4
+
+ffmpeg -i i.mp4 -i watermarkfile.png -filter_complex \
+"[0:v]drawtext=fontfile=/path/to/fonts/FreeSans.ttf:text='TESTING':fontcolor=black@1.0:fontsize=36:x=00:y=40[text]; \
+[text][1:v]overlay[filtered]" -map "[filtered]" \
+-map 0:a -codec:v libx264 -codec:a copy output.mp4
+
+
+https://trac.ffmpeg.org/wiki/Scaling%20(resizing)%20with%20ffmpeg
+http://www.upubuntu.com/2012/10/some-useful-ffmpeg-commands.html
+https://manned.org/ffmpeg-filters/61c961a5
+https://github.com/uclartsoftware/video-and-image-cli
+http://www.bogotobogo.com/FFMpeg/ffmpeg_fade_in_fade_out_transitions_effects_filters.php
+
+
 #######################################
+#
 # mp4 to mp3 convert
+#
 #######################################
 
 sudo apt-get install ffmpeg
@@ -36,9 +261,10 @@ for f in *.mp4; do name=`echo "$f" | sed -e "s/.mp4$//g"` && ffmpeg -i "$f" -vn 
 
 
 ##############################################
+#
 # Convert webm in mp4
+#
 ##############################################
-
 
 sudo add-apt-repository ppa:jon-severinsson/ffmpeg
 sudo apt-get update
@@ -74,9 +300,10 @@ ffmpeg -i input.mp4 -c:v libvpx -minrate 1M -maxrate 1M -b:v 1M -c:a libvorbis o
 ffmpeg -i %04d.png -c:v libvpx -pix_fmt yuva420p -metadata:s:v:0 alpha_mode="1" output.webm
 
 
-
 ##############################################
+#
 # Convert wmv in mp4
+#
 ##############################################
 
 sudo apt-get install ffmpeg
@@ -207,11 +434,11 @@ ffmpeg -i inputfile.avi -codec:v libx264 -profile:v high -preset slower -b:v 100
 https://www.virag.si/2012/01/web-video-encoding-tutorial-with-ffmpeg-0-9/
 
 
-#################################
+###########################################
 #
 #	MP4 Video Compression and Saturation
 #
-#################################
+###########################################
 
 ffmpeg -i input.mp4 -c:v libx264 -crf 18 -b:v 500K -c:a aac -strict -2 output.mp4 # 500mb to 150mb compresson
 ffmpeg -i input.mp4 -c:v libx264 -crf 24 -b:v 1M -c:a aac -strict -2 output.mp4 # 500mb to 140mb compresson
@@ -240,6 +467,153 @@ ffmpeg -i in.mp4 -vf mp=eq2=gamma:contrast:brightness:saturation:rg:gg:bg:weight
 
 -preset ultrafast
 -preset veryslow
+
+###########################################
+#
+#	FFmpeg cut
+#
+###########################################
+
+
+ffmpeg -i movie.mp4 -ss 00:05:03 -t 00:30:08 -async 1 -threads 2 -strict -2 cut.mp4
+ffmpeg -i movie.mp4 -ss 00:00:03 -t 00:00:08 -async 1 -c copy cut.mp4
+ffmpeg -i 40minvideo.mp4 -t 1500 -acodec copy -vcodec copy 25minvideo.mp4 # -t 1500 processes the first 1500 seconds (25 min * 60 sec/min)
+
+ffmpeg -ss [start] -i in.mp4 -t [duration] -c copy out.mp4
+ffmpeg -i in.mp4 -ss [start] -t [duration] -c copy out.mp4
+ffmpeg -ss [start] -i in.mp4 -t [duration] -c:v libx264 -c:a aac -strict experimental -b:a 128k out.mp4
+ffmpeg -i inputFile -vcodec copy -acodec copy -ss 00:09:23 -to 00:25:33 outputFile
+
+ffmpeg -i input.wmv -ss 00:00:30.0 -c copy -t 00:00:10.0 output.wmv
+ffmpeg -i input.wmv -ss 30 -c copy -t 10 output.wmv
+
+ffmpeg -ss 00:00:00 -t 00:50:00 -i largefile.mp4 -acodec copy \ -vcodec copy smallfile.mp4
+ffmpeg -i largefile.mp4 -t 00:50:00 -c copy smallfile1.mp4 -ss 00:50:00 -c copy smallfile2.mp4
+ffmpeg -ss 00:00:30 -i orginalfile -t 00:00:05 -vcodec copy -acodec copy newfile
+----------------------------------------------------------------------------
+#use FFmpeg cut mp4 video without re-encoding
+ffmpeg -i source.mp4 -ss 00:50:05 -t 00:40:10 -c copy cut_video.mp4
+
+# use FFmpeg cut mp4 video with re-encoding
+ffmpeg -i source.mp4 -ss 00:00:05 -t 00:00:10 -async 1 -strict -2 cut_video.mp4
+----------------------------------------------------------------------------
+ffmpeg -i originalVideo.mp4 -ss 01:34:50 -to 02:22:50 -c:v libx264 -preset ultrafast -qp 0 -c:a libmp3lame -b:a 160k -ac 2 -ar 44100 newStream1.mp4
+ffmpeg -i originalVideo.mp4 -ss 01:34:50 -to 02:22:50 -codec:v copy -codec:a copy newStream1.mp4
+ffmpeg -i newStream1.mp4 -c copy -bsf:v h264_mp4toannexb -f mpegts intermediate1.ts
+ffmpeg -i "concat:newStream1.mp4newStream2.mp4|newStream[...].mp4|newStream[n-part].mp4" -c copy finalVideo.mp4
+ffmpeg -i "concat:intermediate1.ts|intermediate2.ts|intermediate[...].ts|intermediate[n-part].ts" -c copy -bsf:a aac_adtstoasc finalVideo.mp4
+mplayer -ss 00:17:30 -endpos 10 finalVideo.mp4
+
+# fast way to find the codecs through the terminal could be:
+ffmpeg -i originalVideo.mp4 2>&1 | grep Video: | awk '{print $3,$4}' | tr -d ,
+ffmpeg -i originalVideo.mp4 2>&1 | grep Audio: | awk '{print $3,$4}' | tr -d ,
+----------------------------------------------------------------------------
+ffmpeg -i INFILE.mp4 -vcodec copy -acodec copy -ss 00:01:00.000 -t 00:00:10.000 OUTFILE.mp4
+----------------------------------------------------------------------------
+
+
+###########################################
+#
+#	FFmpeg rotate
+#
+###########################################
+
+ffmpeg you have a choice of three methods of using video filters to rotate 180°.
+
+hflip and vflip
+
+ffmpeg -i input.mp4 -vf "hflip,vflip,format=yuv420p" -metadata:s:v rotate=0 \
+-codec:v libx264 -codec:a copy output.mkv
+transpose
+
+ffmpeg -i input.mp4 -vf "transpose=2,transpose=2,format=yuv420p" \
+-metadata:s:v rotate=0 -codec:v libx264 -codec:a copy output.mp4
+rotate
+
+This filter can rotate to any arbitrary angle and uses radians as a unit instead of degrees. This example will rotate π/1 radians, or 180°:
+
+ffmpeg -i input.mp4 -vf "rotate=PI:bilinear=0,format=yuv420p" \ -metadata:s:v rotate=0 -codec:v libx264 -codec:a copy output.mp4
+You can use degrees instead. One degree is equal to π/180 radians. So if you want to rotate 45°:
+------------------------------------------------------
+ffmpeg -i input.mp4 -vf "rotate=45*(PI/180),format=yuv420p" \ -metadata:s:v rotate=0 -codec:v libx264 -codec:a copy output.mp4
+ffplay -vf "hflip,vflip" -i input.mp4
+ffmpeg -i input.mp4 -c copy -metadata:s:v:0 rotate=90 output.mp4
+ffmpeg -noautorotate -i input.mp4 -vf "hflip,vflip,format=yuv420p" -metadata:s:v rotate=0 -codec:v libx264 -codec:a copy output.mkv
+
+--------------------------------------------------------
+Rotate 90 clockwise:
+
+ffmpeg -i in.mov -vf "transpose=1" out.mov
+For the transpose parameter you can pass:
+
+0 = 90CounterCLockwise and Vertical Flip (default)
+1 = 90Clockwise
+2 = 90CounterClockwise
+3 = 90Clockwise and Vertical Flip
+Use -vf "transpose=2,transpose=2" for 180 degrees.
+
+To speed up your video from 1x to 5x, you can type:
+ffmpeg -i input.mkv -vf "setpts=0.2*PTS" -an output.mkv
+--------------------------------------------------------
+Cut your video
+ffmpeg -i input.mp4 -t 4 slow.mp4
+ffmpeg -i input.mp4 -ss 00:00:04 part-2.mp4
+
+Speed up the part
+ffmpeg -i slow.mp4 -filter:v "setpts=0.5*PTS" part-1.mp4
+
+Concatenate
+ffmpeg -f concat -i <(for f in ./part-*.mp4; do echo "file '$PWD/$f'"; done) -c copy output.mp4
+------------------------------------------------------
+ffmpeg -i input.mp4 -filter:a "atempo=0.5" -vn output.aac
+ffmpeg -i input.mp4 -filter:a "atempo=0.5,atempo=0.5" -vn output.aac
+ffmpeg -i input.mp4 -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2[a]" -map "[v]" -map "[a]" -c:v libx264 -c:a aac output.mp4
+
+
+ffmpeg -i TheGoodTheBadAndTheUgly.mp4 -vf  "setpts=0.25*PTS" UpTheGoodTheBadAndTheUgly.mp4 # speed up
+ffmpeg -i TheGoodTheBadAndTheUgly.mp4 -vf  "setpts=4*PTS" DownTheGoodTheBadAndTheUgly.mp4	# speed down
+###########################################
+#
+#	FFmpeg Speeding up down
+#
+###########################################
+
+......................................
+Speeding up/slowing down video
+
+To double the speed of the video, you can use:
+ffmpeg -i input.mkv -filter:v "setpts=0.5*PTS" output.mkv
+
+sped up to 4x that (16 FPS):
+ffmpeg -i input.mkv -r 16 -filter:v "setpts=0.25*PTS" output.mkv
+
+To slow down your video, you have to use a multiplier greater than 1:
+ffmpeg -i input.mkv -filter:v "setpts=2.0*PTS" output.mkv
+
+.......................................
+
+Speeding up/slowing down audio
+
+You can speed up or slow down audio with the ​atempo audio filter. To double the speed of audio:
+
+ffmpeg -i input.mkv -filter:a "atempo=2.0" -vn output.mkv
+The atempo filter is limited to using values between 0.5 and 2.0 (so it can slow it down to no less than half the original speed, and speed up to no more than double the input). If you need to, you can get around this limitation by stringing multiple atempo filters together.
+
+The following with quadruple the audio speed:
+ffmpeg -i input.mkv -filter:a "atempo=2.0,atempo=2.0" -vn output.mkv
+
+Using a complex filtergraph, you can speed up video and audio at the same time:
+ffmpeg -i input.mkv -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2.0[a]" -map "[v]" -map "[a]" output.mkv
+
+
+ffmpeg -i weird.wma -filter:a "atempo=1.7" -c:a libfaac -q:a 100 final.m4a
+ffmpeg -i weird.wma -filter:a "atempo=1.7" -c:a libmp3lame -q:a 4 final.mp3
+
+
+python paulstretch_stereo.py -s 0.59 temp.wav output.wav
+https://github.com/paulnasca/paulstretch_python
+
+
 
 
 
