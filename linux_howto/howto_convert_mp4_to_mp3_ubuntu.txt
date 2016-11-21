@@ -165,3 +165,47 @@ ffmpeg -i /var/www/html/vid/upload/inputfile.wmv -s 500x400 -vcodec libx264 -str
 shell_exec("/usr/bin/ffmpeg -i /var/www/html/vid/upload/inputfile.wmv -f mp4 -s 500x400 -strict -2  /var/www/html/vid/mp4videos/outputfile.mp4 2>&1");
 ffmpeg -i input.wmv -c:v libx264 -crf 23 -preset medium -tune stillimage -an output.mp4
 
+
+
+#################################
+#
+#	MP4 Video Compression
+#
+#################################
+
+ffmpeg -i <inputfilename> -s 640x480 -b 512k -vcodec mpeg1video -acodec copy <outputfilename>
+ffmpeg -i input.mp4 -c:v libx264 -crf 24 -b:v 1M -c:a aac output.mp4
+ffmpeg -i input -c:v libx264 -preset slow -crf 22 -c:a copy output.mkv
+ffmpeg -i input.mp4 -vcodec h264 -acodec mp2 output.mp4
+ffmpeg -i input.mp4 -vcodec libx264 -crf 20 output.mp4
+ffmpeg -i input.mp4 -b 1000000 output.mp4
+ffmpeg -i input.mp4 -acodec mp2 output.mp4
+
+ffmpeg -y -i input -c:v libx264 -preset medium -b:v 555k -pass 1 -c:a libfdk_aac -b:a 128k -f mp4 /dev/null && \
+ffmpeg -i input -c:v libx264 -preset medium -b:v 555k -pass 2 -c:a libfdk_aac -b:a 128k output.mp4
+ffmpeg -i input -c:v libx264 -b:v 4000k -minrate 4000k -maxrate 4000k -bufsize 1835k out.m2v # CBR (Constant Bit Rate
+ffmpeg -i input -c:v libx264 -crf 20 -maxrate 400k -bufsize 1835k output.mp4 # CRF with maximum bit rate
+
+ffmpeg -i input -c:v libx264 -preset ultrafast -crf 0 output.mkv # Lossless Example (fastest encoding)
+ffmpeg -i input -c:v libx264 -preset veryslow -crf 0 output.mkv	# Lossless Example (best compression)
+
+ffmpeg -i input_file.avi -codec:v libx264 -profile:v high -preset slow -b:v 500k -maxrate 500k -bufsize 1000k -vf scale=-1:480 -threads 0 -codec:a libfdk_aac -b:a 128k output_file.mp4
+ffmpeg -i input_file.avi -codec:v libx264 -profile:v high -preset slow -b:v 500k -maxrate 500k -bufsize 1000k -vf scale=-1:480 -threads 0 -pass 1 -an -f mp4 /dev/null
+ffmpeg -i input_file.avi -codec:v libx264 -profile:v high -preset slow -b:v 500k -maxrate 500k -bufsize 1000k -vf scale=-1:480 -threads 0 -pass 2 -codec:a libfdk_aac -b:a 128k -f mp4 output_file.mp4
+
+ffmpeg [input options] -i [input filename] -codec:v [video options] -codec:a [audio options] [output file options] [output filename]
+
+ffmpeg -i input_file.avi -codec:v libx264 -profile: high -preset slow -b:v 500k -maxrate 500k -bufsize 1000k -vf scale=-1:480 -threads 0 -codec:a libfdk_aac -b:a 128k output_file.mp4 # Standard web video
+ffmpeg -i inputfile.avi -codec:v libx264 -profile:v baseline -preset slow -b:v 250k -maxrate 250k -bufsize 500k -vf scale=-1:360 -threads 0 -codec:a libfdk_aac -b:a 96k output.mp4 # 360p video for older mobile phones
+ffmpeg -i inputfile.avi -codec:v libx264 -profile:v main -preset slow -b:v 400k -maxrate 400k -bufsize 800k -vf scale=-1:480 -threads 0 -codec:a libfdk_aac -b:a 128k output.mp4 # 480p video for iPads
+ffmpeg -i inputfile.avi -codec:v libx264 -profile:v high -preset slower -b:v 1000k -vf scale=-1:576 -threads 0 -codec:a libfdk_aac -b:a 196k output.mp4 # High-quality SD video
+
+-b 512k
+-preset veryslow -crf 28
+-profile:v baseline -level 3.0 # highest compatibility with older devices
+
+https://www.virag.si/2012/01/web-video-encoding-tutorial-with-ffmpeg-0-9/
+
+
+
+
