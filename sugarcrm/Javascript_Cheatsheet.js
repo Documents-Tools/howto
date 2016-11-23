@@ -148,4 +148,64 @@ for (var i = 0; i <= maxSyncFields; i++) {
 }
 
 
+//---------------------------------------
+// Match past date
+//---------------------------------------
 
+var ONE_HOUR = 60 * 60 * 1000; /* ms */
+var ONE_DAY = 60 * 60 * 1000 * 24; /* ms */
+var INTERVAL = ONE_DAY * 60;
+var myDate = new Date();
+var now = myDate.getTime();
+var past = myDate.getTime() - INTERVAL
+console.debug(now)
+console.debug(past)
+console.debug(new Date(now))
+console.debug(new Date(past))
+
+// created < pastinterval - refresh
+// created > pastinterval - do nothing
+
+//---------------------------------------
+// Match future date
+//---------------------------------------
+
+var timestamp = new Date().getTime() + (30 * 24 * 60 * 60 * 1000)
+if(timestamp > selectedTimestamp){
+	// The selected time is less than 30 days from now
+}
+else if(timestamp < selectedTimestamp){
+	// The selected time is more than 30 days from now
+}
+else{
+	// -Exact- same timestamps.
+}
+
+// -------------------------------------------
+
+var now = new Date();
+now.setHours(0,0,0,0);
+if (selectedDate < now) {
+	// selected date is in the past
+}
+
+// -------------------------------------------
+// http://jsfiddle.net/3yXCY/3/
+// -------------------------------------------
+var dateStart = new Date(1990,11,01);
+var dateEnd = new Date(1990,11,03);
+
+var dateStart2 = new Date(1990,11,03);
+var dateEnd2 = new Date(1990,11,01);
+
+if(Date.parse(dateStart) < Date.parse(dateEnd)){
+	alert("DateStart: "+ dateStart + " is less than " + dateEnd);
+}else{
+	alert("DateEnd: "+ dateEnd+" is less than "+ dateStart);
+}
+
+if(dateStart2 < dateEnd2){
+	alert("DateStart: "+ dateStart2 + " is less than " + dateEnd2);
+}else{
+	alert("DateEnd: "+ dateEnd2+" is less than "+ dateStart2);
+}
