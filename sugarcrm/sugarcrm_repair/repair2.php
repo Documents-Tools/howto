@@ -115,3 +115,91 @@ if ($exit_on_cleanup) exit;
 //ob_end_flush();
 
 //if($exit_on_cleanup) exit;
+
+
+/*
+ *
+ *
+
+# REPAIR Schedulers
+require_once('install/install_utils.php');
+	$focus = BeanFactory::getBean('Schedulers');
+	$focus->rebuildDefaultSchedulers();
+
+
+# REPAIR Types
+switch($current_action)
+        {
+            case 'repairDatabase':
+                if(in_array($mod_strings['LBL_ALL_MODULES'], $this->module_list)) {
+                    $this->repairDatabase();
+                    // Mark this as called so it doesn't get ran again
+                    $this->called[$current_action] = true;
+                } else {
+                    $this->repairDatabaseSelectModules();
+                }
+                break;
+            case 'rebuildExtensions':
+                if(in_array($mod_strings['LBL_ALL_MODULES'], $this->module_list)) {
+                    $this->rebuildExtensions();
+                    // Mark this as called so it doesn't get ran again
+                    $this->called[$current_action] = true;
+                } else {
+                    $this->rebuildExtensions($this->module_list);
+                }
+                break;
+            case 'clearTpls':
+                $this->clearTpls();
+                break;
+            case 'clearJsFiles':
+                $this->clearJsFiles();
+                break;
+            case 'clearDashlets':
+                $this->clearDashlets();
+                break;
+            case 'clearThemeCache':
+                $this->clearThemeCache();
+                break;
+            case 'clearJsLangFiles':
+                $this->clearJsLangFiles();
+                break;
+            case 'rebuildAuditTables':
+                $this->rebuildAuditTables();
+                break;
+            case 'clearSearchCache':
+                $this->clearSearchCache();
+                break;
+            case 'clearAdditionalCaches':
+                $this->clearAdditionalCaches();
+                break;
+            case 'repairMetadataAPICache':
+                $this->repairMetadataAPICache();
+                break;
+            case 'clearPDFFontCache':
+                $this->clearPDFFontCache();
+                break;
+            case 'resetForecasting':
+                $this->resetForecasting();
+                break;
+            case 'repairConfigs':
+                $this->repairBaseConfig();
+            case 'clearAll':
+                $this->clearTpls();
+                $this->clearJsFiles();
+                $this->clearJsLangFiles();
+                $this->clearDashlets();
+                $this->clearSmarty();
+                $this->clearThemeCache();
+                $this->clearXMLfiles();
+                $this->clearSearchCache();
+                $this->clearExternalAPICache();
+                $this->clearAdditionalCaches();
+                $this->clearPDFFontCache();
+                $this->rebuildExtensions();
+                $this->rebuildFileMap();
+                $this->rebuildAuditTables();
+                $this->repairDatabase();
+                $this->repairBaseConfig();
+                $this->repairMetadataAPICache($metadata_sections);
+                break;
+        }*/

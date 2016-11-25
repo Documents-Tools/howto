@@ -888,6 +888,13 @@ $ sapi/cgi/php-cgi -T 1000 /var/www/wordpress/index.php > /dev/null
 $ make prof-clean
 $ make -j8 prof-use
 
+---------------------------------------------------------------------
+
+.htaccess!!
+# If FastCGI is enabled- HTTP AUTH:
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+
 
 
 
