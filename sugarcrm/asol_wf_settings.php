@@ -39,6 +39,15 @@ WF Scheduler
 - Stop Task Required (maybe)
 - no bean_ungreedy_count Required!
 -----------------------------------------
+Special settings Scheduled Task Cron Alineasol - when every 15 minutes runs:
+
+1. All Scheduled Tasks for Workflows to set at (00,15,30,45)(Min), a must, otherwise will not work at all.
+2. Every time to check if Worflow list has this Module inside as aktive.
+3. Every customised Workflow muss have one unique name for Email Funtion and less code without classes / functions
+4. Task End is a must
+5. bean_ungreedy_count is not required for Scheduled
+6. Option Async to not be used.
+-----------------------------------------
 
 bean_ungreedy_count 	0
 use_curl 		1
