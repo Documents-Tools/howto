@@ -156,10 +156,10 @@ $bean = BeanFactory::newBean($module);
 $bean = BeanFactory::newBeanByName($name);
 
 $bean = BeanFactory::getBean($module, $record_id);
-$bean = BeanFactory::getBean($module, $record_id, array('disable_row_level_security' => true));
+$bean = BeanFactory::getBean($module, $record_id, array('disable_row_level_security' => true, 'use_cache' => false));
 
 $bean = BeanFactory::retrieveBean($module, $record_id);
-$bean = BeanFactory::retrieveBean($module, $record_id, array('disable_row_level_security' => true));
+$bean = BeanFactory::retrieveBean($module, $record_id, array('disable_row_level_security' => true, 'use_cache' => false));
 
 $moduleKey = BeanFactory::getObjectName($moduleName);
 $moduleClass = BeanFactory::getBeanName($module);

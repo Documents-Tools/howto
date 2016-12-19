@@ -34,6 +34,7 @@ class ContactsTeamUpdate
 			require_once("modules/Accounts/Account.php");
 			$ac = new Account();
 			$ac->disable_row_level_security = true;
+			$ac->use_cache = false;
 			$ac->retrieve($bean->account_id);
 
 			//Create a TeamSet bean - no BeanFactory

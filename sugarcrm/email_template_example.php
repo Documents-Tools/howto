@@ -89,6 +89,7 @@
 			include('modules/EmailTemplates/EmailTemplate.php');
 			$emailTemp = new EmailTemplate();
 			$emailTemp->disable_row_level_security = true;
+			$emailTemp->use_cache = false;
 			//This is where we use the ID value of the email template record
 			$emailTemp->retrieve('9940c799-359b-f2fb-2943-4c619dfc696f');
 			require_once('include/SugarPHPMailer.php');
