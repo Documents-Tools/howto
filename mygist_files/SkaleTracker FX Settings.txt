@@ -125,6 +125,7 @@ https://dl.dropboxusercontent.com/u/18475891/Nova67P_v1_0_3b-windows.zip
 4. TLS Maximiser Free VST Limiter Plugin Effect
 5. OhmBoyz VST 32-bit
 6. Paulstretch
+7. After mastering processor
 
 You Wa Shock VST
 https://sites.google.com/site/youwashockvst/
@@ -150,6 +151,9 @@ https://www.ohmforce.com/ViewProduct.do?p=OhmBoyz
 Vanilla Surprise VST by Rock Hardbuns
 http://www.vstplanet.com/Effects/Bundle.htm
 http://www.vstplanet.com/VST_effects/Bundle/Rock_Hardbuns'bundle-Effects.zip
+
+After is a mastering processor.
+http://www.vst4free.com/free_vst.php?plugin=After&id=1728
 
 ##############################################################
 #
@@ -535,7 +539,45 @@ Jump to Square-o-matic (distorsion)			        http://www.audjoo.com/old/software
 Jump to Whix (waveshaper)  				            http://www.audjoo.com/old/software/vst/whix.zip
 
 
+##############################################################
+#
+#   VST Plugins Chain
+#
+##############################################################
 
+Gain Plugins
+EQ
+Stereo FX – such as widening or mastering reverb
+Compressors
+Limiting
+
+http://getthatprosound.com/mastering-like-pro/
+
+Gain
+EQ
+Compression
+Limiting
+
+Gain
+EQ
+Stereo processing
+Compression
+EQ
+Gain
+Soft clip
+Limiting
+
+http://productionadvice.co.uk/mastering-signal-flow/
+
+---------------------
+
+* EQ
+* Distortion
+* EQ
+* Delay
+* Reverb
+* EQ
+* Compressor
 
 
 
