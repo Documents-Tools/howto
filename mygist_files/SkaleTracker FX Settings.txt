@@ -157,6 +157,21 @@ http://www.vst4free.com/free_vst.php?plugin=After&id=1728
 
 ##############################################################
 #
+# 	klanghelm.com
+#
+##############################################################
+
+MJUC jr. - variable-tube* compressor
+http://klanghelm.com/contents/products/MJUCjr/MJUCjr.php#
+
+IVGI - saturation & distortion
+http://klanghelm.com/contents/products/IVGI/IVGI.php
+
+DC1A effortless character comp
+http://klanghelm.com/contents/products/DC1A/DC1A.php
+
+##############################################################
+#
 #   FREE VST Budget Audio: 5+ Free VST Effects
 #   https://www.youtube.com/watch?v=vrDGxwx19kw
 #
