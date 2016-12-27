@@ -594,6 +594,52 @@ http://productionadvice.co.uk/mastering-signal-flow/
 * EQ
 * Compressor
 
+----------------------------
+
+    MASTER SETTINGS
+
+----------------------------
+mda Delay //////////////////
+----------------------------
+Delay L345 R122 ( L185 R107 default )
+Feedbak 69
+FB Tone -19
+FX mix 49
+Output 0dB
+----------------------------
+mda Detune /////////////////
+----------------------------
+Detune 19.2
+Mix 22
+Output -11-2
+Latency 11.6
+----------------------------
+mda Stereo /////////////////
+----------------------------
+Width	84
+Delay 9.17
+Balance 31
+Mod 0.7
+Rate 32.6
+
+-------------------------
+
+SkaleTracker Plugins:
+- mda Delay VST
+- mda Detune VST
+- mda Stereo VST
+
+Soundforge Plugins:
+- You Wa Shock VST 0.25%
+- Vanilla Suprise by Rock Hardbuns
+- After mastering processor by Terry West
+- Waves Maserati GRP VST Group Processor Plugin
+
+
+
+
+
+
 
 
 
