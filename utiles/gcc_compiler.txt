@@ -30,3 +30,18 @@ int main()
 gcc HelloWorld.c
 gcc -o myprog HelloWorld.c
 myprog
+
+##############################################################################
+#
+#	HOW TO SETUP A C++ DEVELOPMENT ENVIRONMENT IN UBUNTU LINUX
+#	January 5, 2017 By Abhishek Prakash
+#	https://itsfoss.com/c-plus-plus-ubuntu/
+#
+##############################################################################
+
+sudo apt-get install build-essential
+g++ -o swap swap.cpp
+./swap
+
+
+sudo apt-get install eclipse
