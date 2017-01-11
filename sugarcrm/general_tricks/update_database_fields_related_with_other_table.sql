@@ -48,3 +48,15 @@ GROUP BY map_quest_datum_c
 ORDER BY Total DESC
 LIMIT 0 , 30
 */
+
+
+##########################################
+#
+# UPDATE WITH JOIN
+#
+##########################################
+
+UPDATE accounts_cstm
+LEFT JOIN accounts ON accounts.id = accounts_cstm.id_c
+SET accounts_cstm.map_quest_token_c = SUBSTR(MD5(CONCAT(TRIM(accounts.billing_address_street),TRIM(accounts.billing_address_postalcode),TRIM(accounts.billing_address_country),TRIM(accounts.billing_address_city))),1,25)
+WHERE accounts.deleted = 0 AND accounts_cstm.map_quest_token_c IS NULL

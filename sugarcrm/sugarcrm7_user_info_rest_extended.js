@@ -30,7 +30,7 @@ usrAcl.Accounts.create = 'no';
 App.user.set("acls", usrAcl);
 
 
-// Get preferences
+// Get preferences in SugarCRM
 // -----------------------------------------------------
 var usrPref = app.user.getPreference('email_client_preference');
 this.model.set('assigned_user_id', app.user.id);
@@ -50,5 +50,70 @@ var user = app.data.createBean('Users', {id: app.user.id});
 user.fetch();
 var user_roles = user.getRelatedCollection('aclroles');
 user_roles.fetch({relate:true});
+
+
+
+
+
+
+
+// Get User Date preferences in SugarCRM
+// -----------------------------------------------------
+var moduleName = "MyCustomModuleRelationships";
+var filters = [{deleted: 0, parent_id: self.model.get("id")}]; // id: app.user.get("id")
+var Users = App.data.createBeanCollection(moduleName)
+var req = Users.fetch({"filter": filters});
+req.xhr.success(function (data) {
+	if (data.records.length > 0) {
+		
+		var refLastDate = data.records[0].last_contact
+		var refNextDate = data.records[0].next_contact
+		
+		var rbDate = new Date();
+		var ONE_DAY = 60 * 60 * 1000 * 24;
+		/* ms */
+		var INTERVAL = ONE_DAY * refNextDate;
+
+		// var lastContactDate = new Date(rbDate.getTime());
+		// var lastContactDate = app.date(rbDate).formatServer()
+		// var lastContactDate = app.date(rbDate).format("YYYYMMDD")
+		//var lastContactDate = app.date.format(rbDate, app.user.getPreference('datepref') + ' ' + app.user.getPreference('timepref'));
+		var lastContactDate = app.date.format(rbDate, app.user.getPreference('datepref'));
+		
+		/*value = {
+		 'date': value.format(app.date.convertFormat(this.getUserDateFormat())),
+		 'time': value.format(app.date.convertFormat(this.getUserTimeFormat()))
+		 };*/
+
+		//var nextContactDate = new Date(rbDate.getTime() + INTERVAL );
+		//var nextContactDate = app.date.format(new Date(rbDate.getTime() + INTERVAL ), app.user.getPreference('datepref') + ' ' + app.user.getPreference('timepref'));
+		var nextContactDate = app.date.format(new Date(rbDate.getTime() + INTERVAL), app.user.getPreference('datepref'));
+
+	}
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
