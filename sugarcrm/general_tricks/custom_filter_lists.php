@@ -57,4 +57,5 @@ $viewdefs['Tasks']['base']['filter']['basic']['filters'][] = array(
 	),
 	'editable' => false,
 	'is_template' => false,
+	'default' => false,
 );
