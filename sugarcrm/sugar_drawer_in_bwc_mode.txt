@@ -38,4 +38,20 @@ app.drawer.open({
             module: 'Contacts'
         }
     });
+
+	// http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.7/User_Interface/Alerts/
+
+    app.alert.show('message-id', {
+        level: 'confirmation',
+        messages: 'Confirm?',
+        autoClose: false,
+        onConfirm: function(){
+             alert("Confirmed!");
+        },
+        onCancel: function(){
+            alert("Cancelled!");
+        }
+    });
+
+
 </script>

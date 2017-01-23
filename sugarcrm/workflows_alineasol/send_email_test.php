@@ -91,3 +91,16 @@ $notification->name = "Notification test ".date("Y-m-d H:i:s");
 $notification->assigned_user_id = 1;
 $notification->severity = "information"; // information warning alert
 $notification->save();
+
+
+
+
+
+$notification_bean = BeanFactory::newBean("Notifications");
+$notification_bean->name = $notifSubject;
+$notification_bean->description = $notifBody;
+$notification_bean->assigned_user_id = $dUser["id"];
+$notification_bean->created_by = $dUser["id"];
+$notification_bean->is_read = 0;
+$notification_bean->severity = "information";
+$notification_bean->save();
