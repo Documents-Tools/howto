@@ -20,8 +20,8 @@ http://www.phpstorm-themes.com/
 
 --- Linux and other Unix sytems ---
 
-sudo rm -rf .WebIde70
-sudo rm -rf .WebIde90
+sudo rm -rf ~/.WebIde70
+sudo rm -rf ~/.WebIde90
 
 --- Mac OS X 10.8 Mountain Lion ---
 
