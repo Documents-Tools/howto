@@ -209,3 +209,43 @@ if(dateStart2 < dateEnd2){
 }else{
 	alert("DateEnd: "+ dateEnd2+" is less than "+ dateStart2);
 }
+
+
+// -------------------------------------------
+//
+// Math expressions Javascript
+//
+// -------------------------------------------
+
+// https://jsfiddle.net/
+
+$(document).ready(function () {
+
+	setTimeout(function(){
+		var srand = Math.floor(Math.random()*20+200); // range 200-220
+		var rem = srand % 2; // 0 or 1 as result from Modulus
+
+		if(rem==0){
+			// do something
+			// parseFloat((737/1070).toFixed(2)) // 0.69
+		}
+
+		$('#result').html(srand );
+	},200);
+
+});
+
+// http://mathjs.org/docs/reference/functions/divide.html
+
+Math.divide(2, 3);            // returns number 0.6666666666666666
+
+var a = math.complex(5, 14);
+var b = math.complex(4, 1);
+math.divide(a, b);            // returns Complex 2 + 3i
+
+var c = [[7, -6], [13, -4]];
+var d = [[1, 2], [4, 3]];
+math.divide(c, d);            // returns Array [[-9, 4], [-11, 6]]
+
+var e = math.unit('18 km');
+math.divide(e, 4.5);          // returns Unit 4 km
