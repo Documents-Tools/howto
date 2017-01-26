@@ -52,6 +52,14 @@ SELECT DATE_SUB(NOW(),INTERVAL 7 HOUR) # 7 hours ago
 SELECT DATE_SUB(NOW(),INTERVAL 1 MONTH) # 7 months ago
 
 
+# SELECT UNIX_TIMESTAMP(  STR_TO_DATE('2011-12-21 02:20pm', '%Y-%m-%d %h:%i%p') );
+# DATE_FORMAT(STR_TO_DATE(t.datestring, '%d/%m/%Y'), '%Y-%m-%d')
+
+DATEDIFF(NOW(),'2016-09-27') = 0 				        // 0 days difference
+DATEDIFF(DATE_FORMAT(NOW(),'%Y-%m-%d'),NOW()) = 0)		// 0 days difference
+
+# fieldx != "" AND fieldx IS NOT NULL
+
 # last_7_days
 date_sent BETWEEN date_sub( now( ) , INTERVAL 1 WEEK ) AND now( )
 
