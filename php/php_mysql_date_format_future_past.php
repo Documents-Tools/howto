@@ -32,11 +32,23 @@ $date_array = explode(" ",$micro_date);
 $date = date("Y-m-d H:i:s",$date_array[1]);
 echo "Date: $date:" . $date_array[0]."<br>";
 
-//Recommended and use dateTime() class from referenced:
+// Recommended and use dateTime() class from referenced:
 $t = microtime(true);
 $micro = sprintf("%06d",($t - floor($t)) * 1000000);
 $d = new DateTime( date('Y-m-d H:i:s.'.$micro, $t) );
 print $d->format("Y-m-d H:i:s.u"); // note at point on "u"
+
+// DATE DIFF PHP
+$dateToday = date_create(date("Y-m-d H:i:s"));
+$dateTime = date_create($rowDCN["date_expires_c"]);
+$interval = date_diff($dateToday, $dateTime);
+if ($interval->format('%d') == 0) { // 0 Days ?
+	$caseWF = 'Case0';
+}
+
+
+
+
 
 //Note u is microseconds (1 seconds = 1000000 µs).
 
