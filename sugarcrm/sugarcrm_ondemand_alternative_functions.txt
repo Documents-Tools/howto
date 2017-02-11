@@ -227,3 +227,9 @@ http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_
 
 
 
+Migration to 7.7 and 7.8
+
+https://developer.sugarcrm.com/2015/11/17/createactionsview-changes-in-sugar-7-7-0/
+http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.6/UI_Model/Views/Examples/Adding_Field_Validation_to_the_Record_View/
+http://support.sugarcrm.com/Documentation/Sugar_Versions/7.8/Pro/Installation_and_Upgrade_Guide/
+https://developer.sugarcrm.com/category/sugar-7-8-0/
