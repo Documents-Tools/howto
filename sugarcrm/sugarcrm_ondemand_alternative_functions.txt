@@ -233,3 +233,9 @@ https://developer.sugarcrm.com/2015/11/17/createactionsview-changes-in-sugar-7-7
 http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.6/UI_Model/Views/Examples/Adding_Field_Validation_to_the_Record_View/
 http://support.sugarcrm.com/Documentation/Sugar_Versions/7.8/Pro/Installation_and_Upgrade_Guide/
 https://developer.sugarcrm.com/category/sugar-7-8-0/
+
+https://developer.sugarcrm.com/2016/07/13/prepare-for-the-backbone-js-upgrade-in-sugar-7-8/
+http://support.sugarcrm.com/Documentation/Sugar_Developer/Sugar_Developer_Guide_7.8/Introduction/Migration_Guide/
+https://developer.sugarcrm.com/category/sugar-7-8-0/
+http://support.sugarcrm.com/Resources/Supported_Platforms/Sugar_7.8.x_Supported_Platforms/index.html
+http://support.sugarcrm.com/Documentation/Sugar_Versions/7.8/Pro/Installation_and_Upgrade_Guide/
