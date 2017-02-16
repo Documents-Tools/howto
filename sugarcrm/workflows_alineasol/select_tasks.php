@@ -7,7 +7,7 @@
  */
 
 
-f (!defined('sugarEntry')) define('sugarEntry', true);
+if (!defined('sugarEntry')) define('sugarEntry', true);
 //change directories to where this file is located.
 #define('ENTRY_POINT_TYPE', 'api');
 //require_once('include/entryPoint.php');

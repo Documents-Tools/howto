@@ -1,0 +1,143 @@
+
+####################################################################################
+#
+#	Install Linux with no cd/usb direcly from Internet
+# 	http://unetbootin.github.io/
+#
+####################################################################################
+------------------------------------------------------------------------------------
+
+sudo dpkg --configure -a"
+sudo apt-get -f install
+sudo apt-get install --reinstall ubuntu-desktop
+
+------------------------------------------------------------------------------------
+
+manjaro Pacman Howto
+https://wiki.manjaro.org/index.php?title=Pacman_Overview
+
+------------------------------------------------------------------------------------
+
+Fedora: vmlinuz and initrd.img
+Suse: linux and initrd
+Mandriva: vmlinuz and all.rdz
+Ubuntu: vmlinuz and initrd.gz
+Gentoo: gentoo and gentoo.igz
+Knoppix: vmlinuz and initrd.img
+Slackware: bzImage and initrd.img
+Debian: vmlinuz and initrd.gz
+http://www.instantfundas.com/2007/08/install-any-linux-distro-directly-from.html
+
+------------------------------------------------------------------------------------
+
+# https://github.com/lawrence-berry/ubuntu_reinstall/blob/master/ubuntu_reinstall.sh
+
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+	sudo apt-get update
+	sudo apt-get install -y sublime-text-installer
+	#~/.local/share/applications/
+ln -s /opt/sublime_text/sublime_text ~/bin/sublime
+
+------------------------------------------------------------------------------------
+
+Install Mint with no cd/usb
+Linux ohne CD direkt aus dem Internet
+
+1. Bootimage herunterladen -> gpxe.usb
+2. Bootimage auf USB-Stick schreiben -> sudo dd if=gpxe.usb of=/dev/sdb
+3. Vorbereitung des Bootvorgangs
+4. System booten
+
+Creating a bootable USB key
+make bin/gpxe.usb
+dd if=bin/gpxe.usb of=/dev/sdX
+
+# dd if=ipxe.usb of=/dev/sdX
+# cat ipxe.usb > /dev/sdX
+
+http://netz10.de/2010/09/23/gpxe/
+https://netboot.xyz/boot-usb/
+https://forums.linuxmint.com/viewtopic.php?f=197&t=96322
+https://community.linuxmint.com/tutorial/view/171
+http://superuser.com/questions/154133/grub-boot-from-iso
+https://apps.ubuntu.com/cat/applications/precise/qemulator/
+
+****
+
+Download and install Qemulator and its extention pack.
+Load the iso as CDROM on the emulator software.
+Ensure your hdd is seen in the Virtual Envionment.
+Load the ISO live session.
+Try install.
+
+****
+
+### Unetbootin ####
+
+To install Ubuntu without CD/DVD or USB pendrive, follow these steps:
+Download Unetbootin from here.
+Run Unetbootin.
+Now, from the drop-down menu under Type: select Hard Disk.
+Press OK.
+Next when you reboot, you will get a menu like this
+Select Unetbootin and you will get the "Try" or "Install" option there.
+Finally, you can install your version of Ubuntu alongside Windows.
+
+
+In manjaro:
+
+sudo pacman -Syy #update
+sudo pacman -Ss Unetbootin # search
+sudo pacman -S unetbootin # install
+unetbootin # start programm and select distro
+
+
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/lubuntu/releases/16.04/release/  (885MB)
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/lubuntu/releases/16.04/release/lubuntu-16.04.1-desktop-i386.iso
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/lubuntu/releases/16.04/release/lubuntu-16.04.1-desktop-amd64.iso
+
+http://cdimage.ubuntu.com/lubuntu/releases/16.04/release/
+http://cdimage.ubuntu.com/lubuntu/releases/16.04/release/lubuntu-16.04.1-desktop-i386.iso
+
+
+http://cdimage.debian.org/cdimage/archive/7.11.0/i386/iso-cd/debian-7.11.0-i386-netinst.iso
+http://cdimage.debian.org/cdimage/archive/7.11.0/i386/iso-cd/
+http://cdimage.debian.org/cdimage/archive/7.11.0/i386/iso-cd/debian-7.11.0-i386-xfce-CD-1.iso  (647MB)
+http://cdimage.debian.org/cdimage/archive/7.11.0/i386/iso-cd/debian-7.11.0-i386-netinst.iso
+http://cdimage.debian.org/cdimage/archive/7.11.0/i386/iso-cd/debian-7.11.0-i386-lxde-CD-1.iso
+http://cdimage.debian.org/cdimage/archive/7.11.0/i386/iso-cd/debian-7.11.0-i386-kde-CD-1.iso
+
+
+http://puppylinux.org/main/Download%20Latest%20Release.htm
+http://ftp.nluug.nl/ftp/pub/os/Linux/distr/puppylinux/puppy-slacko-6.3.0/
+http://ftp.nluug.nl/ftp/pub/os/Linux/distr/puppylinux/puppy-slacko-6.3.0/32/slacko-6.3.0.iso
+http://distro.ibiblio.org/puppylinux/puppy-slacko-6.3.0/32/
+
+****
+
+How to mount an ISO file in Linux, using terminal
+https://dottech.org/127830/how-to-mount-iso-linux-guide/
+
+sudo mkdir /media/iso
+sudo mount -o loop example.iso /media/iso
+sudo mount -o rw,loop example.iso /media/iso
+
+sudo umount /media/iso
+sudo rmdir /media/iso
+
+****
+
+------------------------------------------------------------------------------------
+
+# How to reinstall software in Ubuntu after new Ubuntu Installation
+
+https://github.com/lovromazgon/ubuntu-reinstall-scripts
+https://github.com/colinstern/ubuntu-startup-script/blob/master/install.sh
+https://github.com/dineshadepu/start_apps/blob/master/install.sh
+https://github.com/gjh33/ReInstall
+https://github.com/joaosousa1/boot-iso-grub #  Shell script to update (sync) and boot Ubuntu-daily-live.ISO from GRUB2
+https://github.com/mrwillams/grub-reparo/blob/master/grub_reparo.sh # grub repair
+https://github.com/mhf-ir/ubuntu-overssh-reinstallation # Ubuntu Overssh Reinstallation
+
+https://github.com/LearningRegistry/LearningRegistry/wiki/Linux-Installation-Guide
+https://github.com/Singular/Sources/wiki/Installation-from-GitHub-on-Debian
