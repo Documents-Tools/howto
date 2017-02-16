@@ -84,12 +84,16 @@ Select Unetbootin and you will get the "Try" or "Install" option there.
 Finally, you can install your version of Ubuntu alongside Windows.
 
 
-In manjaro:
+In Manjaro:
 
 sudo pacman -Syy #update
 sudo pacman -Ss Unetbootin # search
 sudo pacman -S unetbootin # install
 unetbootin # start programm and select distro
+
+In Ubuntu:
+sudo apt search  unetbootin
+sudo apt install  unetbootin
 
 
 https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/lubuntu/releases/16.04/release/  (885MB)
@@ -129,15 +133,3 @@ sudo rmdir /media/iso
 
 ------------------------------------------------------------------------------------
 
-# How to reinstall software in Ubuntu after new Ubuntu Installation
-
-https://github.com/lovromazgon/ubuntu-reinstall-scripts
-https://github.com/colinstern/ubuntu-startup-script/blob/master/install.sh
-https://github.com/dineshadepu/start_apps/blob/master/install.sh
-https://github.com/gjh33/ReInstall
-https://github.com/joaosousa1/boot-iso-grub #  Shell script to update (sync) and boot Ubuntu-daily-live.ISO from GRUB2
-https://github.com/mrwillams/grub-reparo/blob/master/grub_reparo.sh # grub repair
-https://github.com/mhf-ir/ubuntu-overssh-reinstallation # Ubuntu Overssh Reinstallation
-
-https://github.com/LearningRegistry/LearningRegistry/wiki/Linux-Installation-Guide
-https://github.com/Singular/Sources/wiki/Installation-from-GitHub-on-Debian
