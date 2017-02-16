@@ -1,5 +1,29 @@
 ##############################################
 #
+# FFMPEG Capture Screen
+#
+##############################################
+
+ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 output.mp4  # vid
+ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f alsa -ac 2 -i hw:0 output.mkv # vid + aud io
+ffmpeg -video_size 1024x768 -framerate 25 -f x11grab -i :0.0+100,200 -f pulse -ac 2 -i default output.mkv # vid + audio pulse
+
+# https://trac.ffmpeg.org/wiki/Capture/Desktop
+# http://ubuntuhandbook.org/index.php/2016/11/install-simple-screen-recorder-0-3-8-in-ubuntu-16-04-16-10/
+# https://wiki.ubuntuusers.de/SimpleScreenRecorder/
+
+sudo apt-get install libavcodec-extra
+sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder
+sudo apt update
+sudo apt install simplescreenrecorder simplescreenrecorder-lib # install
+
+#sudo apt-get install simplescreenrecorder
+#sudo apt-get install simplescreenrecorder-lib:i386
+
+sudo apt remove simplescreenrecorder simplescreenrecorder-lib # remove
+
+##############################################
+#
 # FFMPEG EFFECTS
 #
 ##############################################
