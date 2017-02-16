@@ -45,21 +45,21 @@ sudo apt-get -y install bluefish
 #sudo apt-get -y install deluge # BitTorrent
 #sudo apt-get -y install exuberant-ctags
 
-sudo apt-get install curl
-sudo apt-get install apache2
-sudo apt-get install php5 php5-cli
-sudo apt-get install proftpd
-sudo apt-get install php5-curl 	 # install php-curl
-sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt
-sudo apt-get install php-soap
-sudo apt-get install php5-gd
+sudo apt-get -y install curl
+sudo apt-get -y install apache2
+sudo apt-get -y install php5 php5-cli
+sudo apt-get -y install proftpd
+sudo apt-get -y install php5-curl 	 # install php-curl
+sudo apt-get -y install php5 libapache2-mod-php5 php5-mcrypt
+sudo apt-get -y install php-soap
+sudo apt-get -y install php5-gd
 sudo apt-get -y install mysql-server mysql-client
 sudo apt-get -y install  php5-dev
 sudo apt-get -y install php7.0 php5.6 php5.6-mysql
 sudo apt-get -y install php-gettext php5.6-mbstring php-xdebug
 sudo apt-get -y install libapache2-mod-php5.6 libapache2-mod-php7.0
-sudo apt-get install php5-dev
-sudo apt-get install php7.0-dev
+sudo apt-get install -y php5-dev
+sudo apt-get install -y php7.0-dev
 sudo apt-get install -y mongodb-org
 sudo apt-get install -y mongodb-10gen
 sudo apt-get install -y php-apc
@@ -75,7 +75,7 @@ sudo apt-get -y install docker-engine
 sudo apt-add-repository -y ppa:chris-lea/redis-server
 sudo apt-get -y update
 sudo apt-get -y install redis-server
-sudo aptitude install php5-redis
+sudo aptitude -y install php5-redis
 
 
 # simplescreenrecorder
@@ -117,8 +117,8 @@ sudo apt-get -y install python3-pip
 sudo apt-get -y install python-pip
 pip3 install --upgrade pip -y
 
-#sudo apt-get install nodejs #NodeJS
-#sudo apt-get install postgresql #postgresql
+#sudo apt-get -y install nodejs #NodeJS
+#sudo apt-get -y install postgresql #postgresql
 #sudo apt-get -y install wondershaper
 #sudo apt-get -y install tcpdump
 
@@ -129,14 +129,14 @@ pip3 install --upgrade pip -y
 #sudo apt-get -y install libreoffice libreoffice-l10n-de libreoffice-help-de
 
 # audacity
-#sudo add-apt-repository ppa:audacity-team/daily
+#sudo add-apt-repository -y ppa:audacity-team/daily
 #sudo apt-get -y update
 #sudo apt-get -y install audacity
 
 # openoffice
-#sudo add-apt-repository ppa:upubuntu-com/openoffice
-#sudo apt-get update
-#sudo apt-get install apache-openoffice
+#sudo add-apt-repository -y ppa:upubuntu-com/openoffice
+#sudo apt-get -y update
+#sudo apt-get -y install apache-openoffice
 
 # java
 sudo add-apt-repository -y ppa:webupd8team/java
