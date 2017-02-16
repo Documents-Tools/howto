@@ -64,6 +64,13 @@ sudo apt-get install -y mongodb-org
 sudo apt-get install -y mongodb-10gen
 sudo apt-get install -y php-apc
 
+
+sudo apt-get -y install vagrant
+sudo apt-get -y install docker
+sudo apt-get -y install docker.io
+sudo apt-get -y install docker-engine
+
+
 # redis
 sudo apt-add-repository -y ppa:chris-lea/redis-server
 sudo apt-get -y update
