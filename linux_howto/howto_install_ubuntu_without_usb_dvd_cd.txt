@@ -133,3 +133,104 @@ sudo rmdir /media/iso
 
 ------------------------------------------------------------------------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://help.ubuntu.com/community/Installation/MinimalCD
+https://help.ubuntu.com/community/Lubuntu/Documentation/MinimalInstall
+https://help.ubuntu.com/community/Installation/NetbootInstallFromInternet
+https://help.ubuntu.com/community/Installation/FromUSBStick
+https://help.ubuntu.com/community/PXEInstallServer
+https://wiki.ubuntuusers.de/Ubuntu_Precise_installieren_auf_non-PAE_Systemen/
+https://wiki.ubuntuusers.de/dd/
+
+------------------------------------------------------------------------------------------
+
+# Write the Debian installer to a USB stick - debian-usb-stick.sh
+wget http://tinyurl.com/debian-squeeze-mini-iso -O /dev/sdb ; sync
+
+usb stick grub
+# Config for GNU GRand Unified Bootloader (GRUB)
+# /boot/grub/grub.cfg
+
+set timeout=10
+set default=0
+
+https://gist.github.com/noisufnoc/e0053d738f5fbb679535
+https://gist.github.com/systmkor/7adf17724411dbd79dab
+
+------------------------------------------------------------------------------------------
+
+usb stick grub macos
+
+wget -o ~/Desktop/mini.iso http://ftp.nl.debian.org/debian/dists/wheezy/main/installer-amd64/current/images/netboot/mini.iso
+hdiutil convert -format UDRW -o Desktop/mini.img Desktop/mini.iso
+diskutil list
+diskutil unmountDisk /dev/disk1
+sudo dd if=Desktop/mini.img.dmg of=/dev/disk1 bs=1m
+diskutil eject /dev/disk1
+
+------------------------------------------------------------------------------------------
+
+
+wget http://ports.ubuntu.com/dists/yakkety/main/installer-powerpc/current/images/powerpc64/netboot/mini.iso
+md5sum 'mini.iso'
+sudo -i
+dd if='mini.iso' of=/dev/sdc bs=4096
+
+sudo apt autoremove
+sudo apt-get install grub-pc-bin
+grub-install --target=i386-pc --boot-directory=/mnt/diskname/boot/ /dev/sdc
+
+shutdown -h now
+
+------------------------------------------------------------------------------------------
+
+dd if=MLD.iso of=/mnt/sdX bs=1024
+dd if=MLD.iso of=/dev/sdX  bs=1024
+
+diskutil list
+diskutil unmountDisk /dev/disk5
+sudo dd if=/MLD.iso of=/dev/disk5 bs=1024
+
+------------------------------------------------------------------------------------------
+
+grub > kernel (hd0,0)/boot/linux
+grub > initrd (hd0,0)/boot/initrd
+grub > boot
+
+grub > kernel (hd0,0)/boot/vmlinuz (depending upon your kernel name)
+grub > initrd (hd0,0)/boot/initrd.gz (depending upon your initrd name)
+grub > boot
+
+------------------------------------------------------------------------------------------
+
+grub's menu.lst entry is different
+normal is:
+
+title	Install Ubuntu
+root	(hd0,5)
+kernel	/vmlinuz boot=casper iso-scan/filename=/LinuxMint-6.iso
+initrd	/initrd.gz
+mini is:
+
+title installer
+root (hd0,5)
+kernel /vmlinuz root=/dev/ram ramdisk_size=1048576 rw
+initrd /initrd.gz
