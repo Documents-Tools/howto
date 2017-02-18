@@ -44,7 +44,9 @@ http://musicfans.stackexchange.com/
 http://bitcoin.stackexchange.com/
 http://crypto.stackexchange.com/
 http://ell.stackexchange.com/
-
+----------------------------------------------
+https://medium.com/tag/deep-learning
+https://medium.com/tag/artificial-intelligence
 ----------------------------------------------
 
 https://www.reddit.com/r/videos/
