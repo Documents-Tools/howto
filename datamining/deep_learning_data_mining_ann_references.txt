@@ -1,0 +1,167 @@
+
+###################################################
+#
+#  Tools and Examples
+#
+###################################################
+
+
+https://github.com/eboreapps/Scikit-Learn-Playground
+https://github.com/tensorflow/skflow
+https://github.com/Prooffreader/intro_machine_learning
+https://github.com/Lasagne/Lasagne
+https://github.com/karpathy/char-rnn
+https://github.com/karpathy/char-rnn
+https://gist.github.com/karpathy/d4dee566867f8291f086
+https://gist.github.com/karpathy/d4dee566867f8291f086
+https://github.com/Tetrachrome/subpixel
+https://github.com/rstudio/tensorflow
+https://github.com/hexahedria/biaxial-rnn-music-composition
+https://github.com/perborgen/NeuralNetworkNoob
+https://github.com/dnouri/nolearn
+https://github.com/pfnet/chainer
+https://github.com/nitishsrivastava/deepnet
+https://github.com/sdemyanov/ConvNet
+https://github.com/apache/incubator-singa
+https://github.com/deeplearning4j/deeplearning4j
+https://github.com/karpathy/convnetjs
+https://github.com/torch/torch7
+https://github.com/google/deepdream
+https://github.com/google/deepdream/blob/master/dream.ipynb #Deep Dreams (with Caffe)
+
+https://github.com/drsimonj/ourworldindata
+https://github.com/drsimonj/blogR/blob/master/Rmd/healthcare_investment_and_child_mortality.Rmd
+https://github.com/drsimonj/blogR
+https://github.com/srinikumar/carvaluation
+https://github.com/tensorflow/models/tree/master/im2txt
+https://github.com/soulmachine/machine-learning-cheat-sheet
+https://github.com/brohrer/public-hosting/raw/master/How_CNNs_work.pdf
+https://github.com/Microsoft/CNTK
+https://github.com/pluskid/Mocha.jl
+https://github.com/ajtulloch/dnngraph
+
+http://caffe.berkeleyvision.org/
+http://www.deeplearning.net/software/theano/
+http://deeplearning.net/software/theano/
+http://cs.stanford.edu/people/karpathy/convnetjs/
+http://torch.ch/
+http://lush.sourceforge.net/
+http://accord-framework.net/
+http://cran.um.ac.ir/web/packages/darch/index.html
+
+
+---------------------------------------------------------
+
+###################################################
+#
+#   Relevant Articles with Code Examples
+#
+###################################################
+
+
+Python Machine Learning - Code Examples
+Chapter 2 - Training Machine Learning Algorithms for Classification
+https://github.com/rasbt/python-machine-learning-book/blob/master/code/ch02/ch02.ipynb
+
+Deep Learning with Torch: the 60-minute blitz
+https://github.com/soumith/cvpr2015/blob/master/Deep%20Learning%20with%20Torch.ipynb
+
+Cheat Sheet: Data Visualization with R
+http://www.datasciencecentral.com/m/group/discussion?id=6448529%3ATopic%3A284127
+
+A Neural Network in 11 Lines of Python
+https://fossbytes.com/a-neural-network-in-11-lines-of-python/
+http://iamtrask.github.io/2015/07/12/basic-python-network/?
+
+Machine Learning is Fun!
+https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471#.ur4mej97h
+
+Machine learning on Linux with Python 3 and Scikit-learn
+https://techarena51.com/index.php/getting-started-machine-learning-linux-python-3-scikit-learn/
+
+What I Learned Implementing a Classifier from Scratch in Python
+http://www.jeannicholashould.com/what-i-learned-implementing-a-classifier-from-scratch.html
+
+Intro and Getting Stock Price Data - Python Programming for Finance
+https://pythonprogramming.net/getting-stock-prices-python-programming-for-finance/
+
+Composing Music With Recurrent Neural Networks
+http://www.hexahedria.com/2015/08/03/composing-music-with-recurrent-neural-networks/
+http://www.reddit.com/r/MachineLearning/comments/3gaosx/composing_music_with_recurrent_neural_networks/
+
+Regression - Intro and Data
+https://pythonprogramming.net/regression-introduction-machine-learning-tutorial/
+
+Scaling Machine Learning - Part 1: Naive approach
+http://www.cakesolutions.net/teamblogs/scaling-machine-learning
+
+Machine Learning Made Easy with Talend – Decision Trees
+https://www.talend.com/blog/2016/09/29/machine-learning-made-easy-with-talend-%E2%80%93-decision-trees/
+
+15 Deep Learning Libraries
+http://www.datasciencecentral.com/profiles/blogs/here-are-15-libraries-in-various-languages-to-help-implement-your?overrideMobileRedirect=1
+
+IBM Machine Learning Launch Event
+http://www.ibm.com/analytics/us/en/events/machine-learning/
+
+Machine Learning Patterns for Predictive Analytics
+https://dzone.com/refcardz/machine-learning-predictive
+
+Deep Learning in R
+https://www.r-bloggers.com/deep-learning-in-r-2/amp/
+
+Here’s How to Teach Yourself Physics and Math
+https://futurism.com/want-physicist-heres-guide/
+
+The Unreasonable Effectiveness of Recurrent Neural Networks
+http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+
+What a Deep Neural Network thinks about your #selfie
+http://karpathy.github.io/2015/10/25/selfie/
+
+Getting started with Torch
+http://torch.ch/docs/getting-started.html#_
+
+Learning AI if You Suck at Math
+https://hackernoon.com/learning-ai-if-you-suck-at-math-8bdfb4b79037#.7hnyu4ccc
+
+Deep Learning for Noobs
+https://hackernoon.com/deep-learning-for-noobs-part-2-43d5098e61f6#.vrswqohke
+
+How to Build a Simple Image Recognition System with TensorFlow
+https://medium.freecodecamp.com/how-to-build-a-simple-image-recognition-system-with-tensorflow-part-1-d6a775ef75d#.ov1rzxc02
+https://medium.freecodecamp.com/how-to-build-a-simple-image-recognition-system-with-tensorflow-part-2-c83348b33bce#.f3f5gk1ro
+https://medium.freecodecamp.com/how-to-build-a-simple-image-recognition-system-with-tensorflow-part-2-c83348b33bce#.t0dl0wmu5
+
+
+Learning AI if You Suck at Math — P3 — Building an AI Dream Machine or Budget Friendly Special
+https://hackernoon.com/learning-ai-if-you-suck-at-math-p3-building-an-ai-dream-machine-or-budget-friendly-special-d5a3023140ef#.ask0qcaej
+
+Learning AI if You Suck at Math — Part Two — Practical Projects
+https://hackernoon.com/learning-ai-if-you-suck-at-math-part-two-practical-projects-47d7a1e4e21f#.9aoqylhwd
+
+Generative Adversarial Networks (GANs) in 50 lines of code (PyTorch)
+https://medium.com/@devnag/generative-adversarial-networks-gans-in-50-lines-of-code-pytorch-e81b79659e3f#.m6w09bx3a
+
+Google open-sources its software for making trippy images with deep learning
+http://venturebeat.com/2015/07/01/google-open-sources-its-software-for-making-trippy-images-with-deep-learning/
+
+-----------------------
+###################################################
+#
+#   Videos - Deep Learning - ANN - Neural Networks
+#
+###################################################
+
+CS224D Lecture 1 - 29th Mar 2016 - Introduction
+https://www.youtube.com/watch?v=Qy0oEkCZkBI
+
+How Convolutional Neural Networks work
+https://www.youtube.com/watch?v=FmpDIaiMIeA
+
+Learning to learn and compositionality with deep recurrent neural networks
+https://www.youtube.com/watch?v=x1kf4Zojtb0
+
+Deep learning certificate lesson 0ne
+https://www.youtube.com/watch?v=ACU-T9L4_lI
+
