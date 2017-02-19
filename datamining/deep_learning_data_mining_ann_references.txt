@@ -16,6 +16,7 @@ https://gist.github.com/karpathy/d4dee566867f8291f086
 https://gist.github.com/karpathy/d4dee566867f8291f086
 https://github.com/Tetrachrome/subpixel
 https://github.com/rstudio/tensorflow
+https://github.com/tensorflow/tensorflow/releases
 https://github.com/hexahedria/biaxial-rnn-music-composition
 https://github.com/perborgen/NeuralNetworkNoob
 https://github.com/dnouri/nolearn
@@ -28,6 +29,7 @@ https://github.com/karpathy/convnetjs
 https://github.com/torch/torch7
 https://github.com/google/deepdream
 https://github.com/google/deepdream/blob/master/dream.ipynb #Deep Dreams (with Caffe)
+https://github.com/google/deepdream/blob/master/dream.ipynb
 
 https://github.com/drsimonj/ourworldindata
 https://github.com/drsimonj/blogR/blob/master/Rmd/healthcare_investment_and_child_mortality.Rmd
@@ -39,6 +41,10 @@ https://github.com/brohrer/public-hosting/raw/master/How_CNNs_work.pdf
 https://github.com/Microsoft/CNTK
 https://github.com/pluskid/Mocha.jl
 https://github.com/ajtulloch/dnngraph
+https://github.com/tensorflow/skflow
+https://github.com/alda-lang/alda
+https://github.com/topepo/caret                             # Classification And Regression Training) R package
+https://github.com/krenfro/fannj                            # Java bindings to the Fast Artificial Neural Network (FANN) C library.
 
 http://caffe.berkeleyvision.org/
 http://www.deeplearning.net/software/theano/
@@ -48,8 +54,16 @@ http://torch.ch/
 http://lush.sourceforge.net/
 http://accord-framework.net/
 http://cran.um.ac.ir/web/packages/darch/index.html
-
-
+https://rapidminer.com/
+https://sourceforge.net/projects/weka/
+https://www.knime.org/
+http://scikit-learn.org/stable/
+http://www.nltk.org/
+http://scikit-learn.org/stable/index.html
+http://orange.biolab.si/
+https://www.r-project.org/
+http://openann.github.io/OpenANN-apidoc/OtherLibs.html          # OpenANN
+https://apps.ubuntu.com/cat/applications/oneiric/libfannj-java/ # FannJ a Java binding to the Fast Artificial Neural Network (FANN) C library
 ---------------------------------------------------------
 
 ###################################################
@@ -58,6 +72,64 @@ http://cran.um.ac.ir/web/packages/darch/index.html
 #
 ###################################################
 
+Orange, R, RapidMiner, Statistica and WEKA
+http://blog.samibadawi.com/2010/06/orange-r-rapidminer-statistica-and-weka.html
+
+Six of the Best Open Source Data Mining Tools
+https://thenewstack.io/six-of-the-best-open-source-data-mining-tools/
+
+7 command-line tools for data science
+http://jeroenjanssens.com/2013/09/19/seven-command-line-tools-for-data-science.html
+
+All the best big data tools and how to use them
+https://www.import.io/post/all-the-best-big-data-tools-and-how-to-use-them/
+
+10+ Free Decision Tree Software
+http://www.butleranalytics.com/10-free-decision-tree-software/
+
+20 Big Data Repositories You Should Check Out
+http://www.datasciencecentral.com/m/blogpost?id=6448529%3ABlogPost%3A307383
+
+14 Great Machine Learning, Data Science, R , DataViz Cheat Sheets
+http://www.datasciencecentral.com/profiles/blogs/best-machine-learning-data-science-and-r-cheat-sheets
+
+Free Data Mining Tools
+http://www.rdatamining.com/resources/tools
+
+Deep Learning in a Nutshell: History and Training
+https://devblogs.nvidia.com/parallelforall/deep-learning-nutshell-history-training/
+
+Top 10 Deep Learning Projects on Github
+Top 10 Machine Learning Projects on Github
+http://www.kdnuggets.com/2016/01/top-10-deep-learning-github.html
+http://www.kdnuggets.com/2015/12/top-10-machine-learning-github.html
+
+7 Steps to Mastering Machine Learning With Python
+http://www.kdnuggets.com/2015/11/seven-steps-machine-learning-python.html
+
+7 Steps to Understanding Deep Learning
+http://www.kdnuggets.com/2016/01/seven-steps-deep-learning.html
+
+Machine Learning
+http://www.cs.cmu.edu/~ninamf/courses/601sp15/lectures.shtml
+
+Scipy Lecture Notes
+http://www.scipy-lectures.org/
+
+scikit-learn-intro
+http://nbviewer.jupyter.org/github/donnemartin/data-science-ipython-notebooks/blob/master/scikit-learn/scikit-learn-intro.ipynb
+
+Comparing machine learning models in scikit-learn
+https://github.com/justmarkham/scikit-learn-videos/blob/master/05_model_evaluation.ipynb
+
+An example machine learning notebook
+http://nbviewer.jupyter.org/github/rhiever/Data-Analysis-and-Machine-Learning-Projects/blob/master/example-data-science-notebook/Example%20Machine%20Learning%20Notebook.ipynb
+
+Clustering: K-Means In-Depth
+https://github.com/jakevdp/sklearn_pycon2015/blob/master/notebooks/04.2-Clustering-KMeans.ipynb
+
+scikit-learn-linear-reg
+http://nbviewer.jupyter.org/github/donnemartin/data-science-ipython-notebooks/blob/master/scikit-learn/scikit-learn-linear-reg.ipynb
 
 Python Machine Learning - Code Examples
 Chapter 2 - Training Machine Learning Algorithms for Classification
@@ -145,6 +217,64 @@ https://medium.com/@devnag/generative-adversarial-networks-gans-in-50-lines-of-c
 
 Google open-sources its software for making trippy images with deep learning
 http://venturebeat.com/2015/07/01/google-open-sources-its-software-for-making-trippy-images-with-deep-learning/
+
+how_do_i_learn_math_the_right_way
+https://www.reddit.com/r/learnmath/comments/4jid1d/how_do_i_learn_math_the_right_way/
+
+Install Tensorflow On Ubuntu With Virtualenv
+http://blog.niandrei.com/2016/03/01/install-tensorflow-on-ubuntu-with-virtualenv/
+
+TensorFlow for Poets
+https://petewarden.com/2016/02/28/tensorflow-for-poets/
+
+Mining Big Data using Weka 3
+http://www.cs.waikato.ac.nz/ml/weka/bigdata.html
+http://machinelearningmastery.com/how-to-run-your-first-classifier-in-weka/
+
+An overview Artificial Intelligence algorithms on (Machine Learning)
+https://codingsec.net/2016/06/overview-artificial-intelligence-algorithms-machine-learning/
+
+43 New External Machine Learning Resources and Updated Articles
+http://www.datasciencecentral.com/m/blogpost?id=6448529%3ABlogPost%3A401234
+
+Crash Course Python - Learn X in Y Minutes (X = Python)
+https://learnxinyminutes.com/docs/python/
+
+7 steps to master Machine Learning with python
+https://codingsec.net/2016/05/7-steps-master-machine-learning/
+
+Simple Wordcloud in R
+https://sites.google.com/site/miningtwitter/questions/talking-about/wordclouds/wordcloud1
+
+Neural Network Generative Art in Javascript
+http://blog.otoro.net/2015/06/19/neural-network-generative-art/
+
+31 external machine learning / data science resources and articles
+http://www.datasciencecentral.com/profiles/blogs/31-external-machine-learning-data-science-resources-and-articles
+
+Programming * Algorithms
+http://chessprogramming.wikispaces.com/Algorithms
+
+24 Data Science, R, Python, Excel, and Machine Learning Cheat Sheets
+http://www.datasciencecentral.com/profiles/blogs/20-data-science-r-python-excel-and-machine-learning-cheat-sheets
+
+Top 10 data mining algorithms in plain English
+https://rayli.net/blog/data/top-10-data-mining-algorithms-in-plain-english/
+
+Top 10 data mining algorithms in plain R
+https://rayli.net/blog/data/top-10-data-mining-algorithms-in-plain-r/
+
+PHP FANN (Fast Artificial Neural Network)
+http://php.net/manual/en/book.fann.php
+
+Artificial Neural Networks made easy with the FANN library
+https://www.codeproject.com/articles/13091/artificial-neural-networks-made-easy-with-the-fann
+
+Fast Artificial Neural Network Library
+http://fann.sourceforge.net/fann.html
+
+Using neural networks for credit scoring: a simple example
+https://www.r-bloggers.com/using-neural-networks-for-credit-scoring-a-simple-example/
 
 -----------------------
 ###################################################
