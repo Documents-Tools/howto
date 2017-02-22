@@ -11,6 +11,45 @@ sudo dpkg --configure -a"
 sudo apt-get -f install
 sudo apt-get install --reinstall ubuntu-desktop
 
+# http://releases.ubuntu.com/16.04/
+
+sudo apt-get install --reinstall ubuntu-desktop
+sudo apt-get autoremove --purge lubuntu-desktop
+
+sudo apt-get install lubuntu-desktop
+sudo apt-get install lubuntu-core
+sudo apt-get install lxde
+
+Ubuntu: apt-get install ubuntu-desktop
+Kubuntu: apt-get install kubuntu-desktop
+Xubuntu: apt-get install xubuntu-desktop
+Lubuntu: apt-get install lubuntu-desktop
+
+Kubuntu: apt-get install kubuntu-desktop (KDE)
+Xubuntu: apt-get install xubuntu-desktop (XFCE)
+Lubuntu: apt-get install lubuntu-desktop (LXDE)
+Ubuntu GNOME: apt-get install ubuntu-gnome-desktop (Gnome)
+
+apt-get autoremove --purge
+apt-get remove --purge kde-plasma-desktop kde-workspace kubuntu* plymouth-theme-kubuntu-logo plymouth-theme-kubuntu-text; apt-get autoremove --purge; apt-get auto-clean
+
+####################################################################################
+#
+# Check Blocks HDD
+#
+####################################################################################
+
+sudo badblocks -sv /dev/sda
+fsck - check /dev/sda1
+gnome-disk-utility
+
+unmount  /dev/device
+badblocks -v /dev/device oder e2fsck -c
+
+unmount  /dev/device
+e2fsck -b
+
+
 ------------------------------------------------------------------------------------
 
 manjaro Pacman Howto
