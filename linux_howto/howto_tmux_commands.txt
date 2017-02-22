@@ -22,7 +22,6 @@ tmux select-pane -t 1
 
 
 
-
 # gnome-terminal
 # gnome-terminal -x bash -c "command"
 # xterm
