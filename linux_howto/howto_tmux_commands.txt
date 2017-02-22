@@ -1,6 +1,28 @@
 sudo apt install tmux
 sudo apt install terminator
 
+
+
+
+tmux split-window
+tmux split-window "shell command"
+
+tmux set-option remain-on-exit on
+tmux split-window 'ping -c 3 127.0.0.1'
+tmux split-window 'ping -c 3 127.0.0.1 ; read'
+
+
+tmux  split-window -h
+tmux split-window -v
+
+tmux display-panes # shows 0 1
+tmux select-pane -t 0
+tmux select-pane -t 1
+
+
+
+
+
 # gnome-terminal
 # gnome-terminal -x bash -c "command"
 # xterm
