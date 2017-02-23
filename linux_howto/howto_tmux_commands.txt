@@ -1,8 +1,9 @@
 sudo apt install tmux
 sudo apt install terminator
 
+-------------------------------------------------------
 
-
+# https://wiki.ubuntuusers.de/tmux/
 
 tmux split-window
 tmux split-window "shell command"
@@ -19,8 +20,7 @@ tmux display-panes # shows 0 1
 tmux select-pane -t 0
 tmux select-pane -t 1
 
-
-
+--------------------------------------------------------
 
 # gnome-terminal
 # gnome-terminal -x bash -c "command"
