@@ -23,6 +23,7 @@
 - Skype                     - https://apps.ubuntu.com/cat/applications/skype/
 - Milkytracker              - https://apps.ubuntu.com/cat/applications/milkytracker/
 - Mysql Workbench           - https://apps.ubuntu.com/cat/applications/mysql-workbench/
+- DBeaver SQL Client        - http://dbeaver.jkiss.org/download/   # Free Universal SQL Client
 - Xpad (notes)              - https://apps.ubuntu.com/cat/applications/xpad/
 - Filezilla                 - https://apps.ubuntu.com/cat/applications/filezilla/
 - Darktable                 - https://apps.ubuntu.com/cat/applications/darktable/
