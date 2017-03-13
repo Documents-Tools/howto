@@ -1,0 +1,10 @@
+References:
+
+http://reviewsignal.com/blog/2013/08/22/long-running-processes-in-php/
+http://stackoverflow.com/questions/7485776/start-script-after-another-one-already-running-finishes
+http://stackoverflow.com/questions/10644051/execute-command-when-job-finishes
+https://superuser.com/questions/334272/how-to-run-a-command-after-an-already-running-existing-one-finishes
+http://stackoverflow.com/questions/2212635/best-way-to-manage-long-running-php-script
+http://symcbean.blogspot.de/2010/02/php-and-long-running-processes.html
+http://www.sitecrafting.com/blog/to-run-php-code-in/
+http://stackoverflow.com/questions/4626860/how-can-i-run-a-php-script-in-the-background-after-a-form-is-submitted

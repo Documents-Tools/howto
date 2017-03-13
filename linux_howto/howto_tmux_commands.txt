@@ -20,6 +20,52 @@ tmux display-panes # shows 0 1
 tmux select-pane -t 0
 tmux select-pane -t 1
 
+
+##########################################################
+#
+#   TMUX KEYBOARD SHORTCUTS
+#
+##########################################################
+
+# config tmux
+tmux show -g | cat > ~/.tmux.conf
+
+
+Ctrl-b then c to create a new window
+Ctrl-b then n to switch to the next window
+Ctrl-b then , then [type something] then ⌤ to rename the current window
+Ctrl-b then % to split the current window into panes vertically
+Ctrl-b then " to split the current window into panes horizontally
+Ctrl-b then ↑ to move to the above pane (works for all four arrows)
+Ctrl-b then q to show pane numbers, then (optionally) the number to switch to that pane
+Ctrl-b then ⎇↑ to resize the current pane up (works for all four arrows)
+Ctrl-b then x to kill the current pane (or window if it only has one pane)
+Ctrl-b then [ to enter copy mode, then four arrow keys to move,
+even past the visible point, which is great for scrolling--I don't use it much for copying/pasting.
+
+https://coderwall.com/p/mxzdrg/keyboard-shortcuts-i-use-every-day-in-tmux
+
+Ctrl-b q      next pane
+Ctrl-b "      split pane horizontally
+Ctrl-b %      split pane vertically
+Ctrl-b o      next pane
+Ctrl-b ;      prior pane
+Ctrl-b ←↑→↓   jump to pane
+Ctrl-b Ctrl-o swap panes
+Ctrl-b space  arrange panes
+Ctrl-b-←↑→↓   change pane size
+Ctrl-b !      pop a pane into a new window
+
+http://perltricks.com/article/an-introduction-to-tmux/
+
+Tmux Key Binding Commands
+
+http://dev.gentoo.org/~wired/conf/tmux.conf
+http://www.dayid.org/comp/tm.html
+https://gist.github.com/andreyvit/2921703
+https://gist.github.com/MohamedAlaa/2961058
+http://sourcedigit.com/12480-split-terminal-screen-linux-ubuntu-14-04/
+
 --------------------------------------------------------
 
 # gnome-terminal

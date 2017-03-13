@@ -53,3 +53,5 @@ ini_set('mysql.slow_query_log', 0);
 ini_set('mysql.long_query_time', 0);
 
 echo "Done \n";
+
+usleep(rand(100000,300000));
