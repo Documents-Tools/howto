@@ -48,6 +48,8 @@
 - OpenShot Video Editor     - https://apps.ubuntu.com/cat/applications/openshot/
 - PiTiVi video editor       - https://apps.ubuntu.com/cat/applications/pitivi/
 - VideoCut                  - https://apps.ubuntu.com/cat/applications/videocut/
+- Shotcut                   - http://linuxg.net/install-shotcut-on-ubuntu-via-ppa/
+                            - https://www.shotcut.org/tutorials/
 
 - Bluefish *                - https://apps.ubuntu.com/cat/applications/bluefish/
 - Geany                     - http://www.geany.org/Download/Releases

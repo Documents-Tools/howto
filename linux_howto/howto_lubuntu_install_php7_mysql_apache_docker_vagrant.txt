@@ -207,3 +207,54 @@ service mysql start
 https://www.unixmen.com/deploy-lamp-andor-lemp-stacks-easily-using-docker/
 
 ########################################################################################
+
+
+
+
+sudo apt update
+sudo apt full-upgrade
+
+sudo apt install xfce4
+sudo apt install gtk3-engines-xfce
+sudo apt install xfce4-goodies
+sudo apt install xfwm4-themes
+sudo apt install xubuntu-restricted-addons
+sudo apt install xubuntu-restricted-extras
+
+sudo update-rc.d -f bluetooth remove
+sudo apt install intel-microcode
+sudo ufw enable
+sudo systemctl enable ufw
+sudo apt install bleachbit
+
+sudo add-apt-repository ppa:libreoffice/ppa
+sudo apt update
+sudo apt install libreoffice
+
+sudo apt install libreoffice libreoffice-l10n-fr libreoffice-help-fr hyphen-fr libreoffice-gtk
+
+sudo apt install unace rar unrar unar p7zip-rar p7zip zip unzip arj
+
+sudo apt install xfce4-mixer
+sudo apt install xbacklight xfce4-power-manager-plugins
+
+sudo apt update
+sudo apt install xfce-theme-manager
+
+sudo apt update
+sudo apt full-upgrade
+sudo apt autoclean
+sudo apt clean
+sudo apt autoremove
+sudo reboot
+
+sudo apt-get install linux-firmware-nonfree
+
+sudo apt-get install ubuntu-restricted-addons
+sudo apt-get install ubuntu-restricted-extras
+
+sudo apt-get install lubuntu-restricted-addons
+sudo apt-get install lubuntu-restricted-extras
+
+sudo apt-get remove gnome-screensaver
+sudo apt-get install xscreensaver

@@ -1,5 +1,9 @@
 References:
 
+# repeat
+while true; do php -r "echo '123'.PHP_EOL;"; sleep 2; done
+
+
 http://reviewsignal.com/blog/2013/08/22/long-running-processes-in-php/
 http://stackoverflow.com/questions/7485776/start-script-after-another-one-already-running-finishes
 http://stackoverflow.com/questions/10644051/execute-command-when-job-finishes
