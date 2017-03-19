@@ -74,3 +74,31 @@ Simulating high CPU usage
 http://blog.scoutapp.com/articles/2014/11/04/restricting-process-cpu-usage-using-nice-cpulimit-and-cgroups
 https://www.maketecheasier.com/limit-cpu-usage-of-any-process-in-linux/
 https://www.howtoforge.com/how-to-limit-cpu-usage-of-a-process-with-cpulimit-debian-ubuntu
+
+---------------
+
+sudo apt-get install cpulimit
+sudo apt-get install gawk
+
+cpulimit -e apache2 -l 30
+ps aux | grep apache2
+cpulimit -P /usr/sbin/apache2 -l 30
+
+cpulimit -e foo -l 50
+cpulimit -P /usr/bin/foo -l 30
+cpulimit -p 1234 -l 20
+cpulimit -l 50 -p 1234
+
+cpulimit -e firefox -l 30
+cpulimit -p 1313 -l 30
+cpulimit -P /opt/firefox/firebox -l 30
+
+https://github.com/opsengine/cpulimit
+http://manpages.ubuntu.com/manpages/xenial/man1/cpulimit.1.html
+
+for j in `seq 1 4`; do md5sum /dev/zero & done
+for j in `seq 1 4`; do cpulimit -l 40 md5sum /dev/zero & done
+
+https://www.digitalocean.com/community/tutorials/how-to-limit-cpu-usage-on-ubuntu-12-10
+https://www.cyberciti.biz/faq/cpu-usage-limiter-for-linux/
+https://ubuntuforums.org/showthread.php?t=992706
