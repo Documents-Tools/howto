@@ -1,0 +1,8 @@
+https://www.oasishub.co.uk/dataset
+http://publicdata.eu/dataset.html
+https://www.europeandataportal.eu/data/en/dataset
+https://data.gov.uk/data/search
+https://datahub.io/dataset
+http://www.eea.europa.eu/data-and-maps/data#c5=all&c0=5&b_start=0
+http://publicdata.eu/dataset.html
+https://freegisdata.rtwilson.com/
