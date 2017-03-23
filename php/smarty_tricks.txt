@@ -26,3 +26,23 @@ http://www.smarty.net/docsv2/de/language.variables.smarty.tpl
 # debug
 
 {$foo|@print_r}
+
+
+http://www.smarty.net/docsv2/de/language.variables.smarty.tpl
+
+<pre>
+{$smarty.get|@print_r}
+{* anzeigen der variable 'page' welche mit POST übertragen wurde *}
+{$smarty.post|@print_r}
+{* anzeigen des cookies "benutzer" *}
+{$smarty.cookies|@print_r}
+{* anzeigen der Server-Variable "SERVER_NAME" *}
+{$smarty.server|@print_r}
+{$smarty.server.SCRIPT_NAME}
+{* anzeigen der Environment-Variable "PATH" *}
+{$smarty.env|@print_r}
+{* anzeigen der Session-Variable "id" *}
+{$smarty.session|@print_r}
+{* anzeigen der Variable "benutzer" aus dem $_REQUEST Array (Zusammenstellung von get/post/cookie/server/env) *}
+{$smarty.request|@print_r}
+</pre>
