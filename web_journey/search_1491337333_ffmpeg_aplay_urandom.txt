@@ -681,3 +681,163 @@ ffmpeg -i “meereis_%05d.exr” -threads 8 -c:v libvpx -b:v 3M -c:a libvorbis -
 ffmpeg -i output.mp4 -f image2pipe -pix_fmt rgb24 -vcodec rawvideo - | ffmpeg -f rawvideo -vcodec rawvideo -s 1920x1080 -pix_fmt rgb24 -r 24 -i - -an out.avi
 ffplay -i output.mp4 -f image2pipe -pix_fmt rgb24 -vcodec rawvideo - | ffmpeg -f rawvideo -vcodec rawvideo -s 1920x1080 -pix_fmt rgb24 -r 24 -i - -an
 
+
+
+
+
+
+ffmpeg -i <filename>.mkv -vcodec copy -acodec copy <filename>.mov
+ffmpeg -i avc.mp4 -pix_fmt yuv422p -vcodec prores -profile 3 -acodec pcm_s16le out.mov
+ffmpeg -i avc.mp4 -pix_fmt yuv422p -vcodec rawvideo -acodec pcm_s16le out.mov
+ffmpeg -i DVDE6.mkv -vf yadif=0 -pix_fmt yuv422p -vcodec prores -profile 2 -acodec pcm_s16le DVDE6ProRes2.mov # http://ffmpeg.org/ffmpeg.html#yadif
+----------------------------------------------------------------------------------------
+
+
+ffmpeg -i in.mp4 -f image2pipe -pix_fmt rgb24 -vcodec rawvideo - |
+ffmpeg -f rawvideo -vcodec rawvideo -s 1920x1080 -pix_fmt rgb24 -r 24 -i - -an out.avi
+
+# Glitches generation
+# https://tschoepler.net/2015/03/ffmpeg-glitches/
+ffmpeg -i “meereis_%05d.exr” -threads 8 -c:v libvpx -b:v 3M -c:a libvorbis -force_key_frames expr:1 meereis.webm
+
+# audio glitch
+-af aresample=async=1
+
+-------------------------
+http://blog.pkh.me/p/21-high-quality-gif-with-ffmpeg.html
+
+% ffmpeg -v warning -ss 45 -t 2 -i big_buck_bunny_1080p_h264.mov -vf scale=300:-1 -gifflags -transdiff -y bbb-notrans.gif
+% ffmpeg -v warning -ss 45 -t 2 -i big_buck_bunny_1080p_h264.mov -vf scale=300:-1 -gifflags +transdiff -y bbb-trans.gif
+ffmpeg -v warning -ss 45 -t 2 -i big_buck_bunny_1080p_h264.mov -vf scale=300:-1:sws_dither=ed -y bbb-error-diffusal.gif
+
+
+# usage ./gifenc.sh video.mkv anim.gif
+#!/bin/sh
+palette="/tmp/palette.png"
+filters="fps=15,scale=320:-1:flags=lanczos"
+ffmpeg -v warning -i $1 -vf "$filters,palettegen" -y $palette
+ffmpeg -v warning -i $1 -i $palette -lavfi "$filters [x]; [x][1:v] paletteuse" -y $2
+
+
+# Extracting just a sample - ffmpeg -ss 12:23 -t 35 -i full.mkv -c:v copy -map 0:v -y video.mkv
+#!/bin/sh
+start_time=12:23
+duration=35
+palette="/tmp/palette.png"
+filters="fps=15,scale=320:-1:flags=lanczos"
+ffmpeg -v warning -ss $start_time -t $duration -i $1 -vf "$filters,palettegen" -y $palette
+ffmpeg -v warning -ss $start_time -t $duration -i $1 -i $palette -lavfi "$filters [x]; [x][1:v] paletteuse" -y $2
+
+#################################################################################
+
+jpeg-LS glitching with FFmpeg
+http://nova.deviator.si/development-log/jpeg-ls-glitching
+
+#!/bin/bash
+
+# jpeg-LS glitcher by nova@deviator.si http://deviator.si
+
+# check existence of input argument
+# the $# variable will tell you the
+# number of input arguments the script was passed.
+if [ $# -eq 0 ]
+  then
+    echo "Error. No arguments supplied. Please define a video"
+    exit 1
+fi
+
+# does the movie file actually exist?
+if [ ! -f $1 ]; then
+    echo "Error. File not found!"
+    exit 1
+fi
+
+# get this session's "ID"
+SID=`date +%Y%m%d_%H%M%S`
+
+# jpegls glitch needs an older ffmpeg
+FFMPEG=/home/random/src/ffmpeg/ffmpeg-2.0.7/ffmpeg
+
+# create folder for this session
+DIR=jpegls_$SID
+echo "+++ creating folder $DIR ..."
+mkdir $DIR
+
+# create tmp folder
+echo "+++ creating folder $DIR/tmp/ ..."
+mkdir $DIR/tmp/
+
+echo "+++ extracting all frames as images..."
+echo
+echo "----------------------------------------------------------"
+echo
+ffmpeg -loglevel 16 -i $1 $DIR/tmp/frame%5d.jpg
+
+echo
+echo "----------------------------------------------------------"
+echo "+++ processing each image..."
+
+for i in $DIR/tmp/*.jpg
+do
+
+    echo "processing $i "
+    $FFMPEG -loglevel 16 -i $i -pred 80 -c:v jpegls $i.jpgls.jpg
+    ffmpeg -loglevel 16 -i $i.jpgls.jpg -c:v png $i.png
+
+done
+
+echo
+echo "----------------------------------------------------------"
+echo "+++ putting frames back into a movie ... "
+ffmpeg -loglevel 16 -i $DIR/tmp/frame%5d.jpg.png $DIR/$SID.$1
+
+echo
+echo "+++ removing temporary folder ..."
+rm -rf $DIR/tmp/
+
+echo "\n--- end of the program. "
+
+#################################################################################
+
+AviGlitch
+https://ucnv.github.io/aviglitch/
+
+
+require 'aviglitch'
+a = AviGlitch.open 'file.avi' # Rewrite this line for your file.
+a.glitch :keyframe do |f|     # To touch key frames, pass the symbol :keyframe.
+  nil                         # Returning nil in glitch method's yield block
+end                           # offers to remove the frame.
+a.output 'out.avi'
+
+----
+
+require 'aviglitch'
+a = AviGlitch.open 'file.avi'       # Rewrite this line for your file.
+d = []
+a.frames.each_with_index do |f, i|
+  d.push(i) if f.is_deltaframe?     # Collecting non-keyframes indices.
+end
+q = a.frames[0, 5]                  # Keep first key frame.
+100.times do
+  x = a.frames[d[rand(d.size)], 1]  # Select a certain non-keyframe.
+  q.concat(x * rand(50))            # Repeat the frame n times and concatenate with q.
+end
+o = AviGlitch.open q                # New AviGlitch instance using the frames.
+o.output 'out.avi'
+
+----
+
+require 'aviglitch'
+a = AviGlitch.open 'file.avi'
+a.glitch_with_index(:keyframe) do |data, i|
+  x = data[25..28].unpack('B*').first
+  w = rand(('0b' + x[0..12]).oct * 1.5)
+  h = rand(('0b' + x[14..26]).oct * 1.5)
+  x[0..12] = "%013b" % ((w > 50) ? w : 50)
+  x[14..26] = "%013b" % ((h > 50) ? h : 50)
+  (i == 0) ? data : data[0..24] + [x].pack('B*') + data[29..data.size]
+end
+a.output 'out.avi'
+
+
