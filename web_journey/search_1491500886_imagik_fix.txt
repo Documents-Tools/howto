@@ -1,0 +1,169 @@
+ERR:
+
+convert -background none -geometry !48x48 freeplane.svg freeplane.png
+
+convert.im6: delegate failed `"rsvg-convert" -o "%o" "%i"' @ error/delegate.c/InvokeDelegate/1065.
+
+convert --version
+convert -list configure | grep DELEGATES
+# DELEGATES     bzlib djvu gs gvc jpeg jng png rsvg tiff x11 zlib
+convert -list delegate | grep 'svg ='
+# svg =>          "rsvg-convert" -o "%o" "%i"
+convert -list format # check formats
+convert -list format | grep SVG
+
+	MSVG  SVG    rw+   ImageMagick's own SVG internal renderer
+	SVG  SVG     rw+   Scalable Vector Graphics (RSVG 2.40.16)
+	SVGZ  SVG    rw+   Compressed Scalable Vector Graphics (RSVG 2.40.16)
+
+----
+FIX?
+sudo apt-get update
+sudo apt-get install librsvg2-bin
+sudo apt-get install librsvg2-2
+sudo apt-get install libmagickcore4-extra
+
+http://blog.wjlr.org.uk/2013/04/10/imagemagick-insanity.html
+https://github.com/3snowp7im/urn/issues/12
+https://bugs.launchpad.net/openastro.org/+bug/1551488
+
+###
+
+avconv -threads 0 -i 00000.MTS -target ntsc-dvd -qscale 0 -deinterlace -s hd1080 00000.mpg
+
+https://glot.io/snippets/eek2wlmgar
+
+https://www.ostechnix.com/install-arch-linux-latest-version/
+https://www.ostechnix.com/install-microsoft-visual-studio-code-linux/
+https://www.ostechnix.com/easiest-way-install-configure-openvpn-server-linux/
+https://doc.owncloud.org/desktop/2.1/navigating.html
+https://www.ostechnix.com/find-geolocation-ip-address-commandline/
+https://doc.owncloud.org/
+https://docs.nextcloud.com/server/11/user_manual/
+https://www.ostechnix.com/change-priority-process-linux/
+https://www.ostechnix.com/owncloud-setup-your-local-own-cloud-server/
+https://www.ostechnix.com/get-notification-terminal-task-done/
+https://www.ostechnix.com/save-commands-terminal-use-demand/
+https://www.ostechnix.com/install-nextcloud-ubuntu-16-04-lts/
+https://www.ostechnix.com/find-rebooted-linux-system/
+
+convert -background magenta -density 100 -resize 150x pagetemplate_001.svg outfile2.png
+xmllint --format pagetemplate_001.svg > pagetemplate_001a.svg
+
+sudo update-alternatives --config x-terminal-emulator
+replace in settings xterm with gnome-terminal
+
+------------
+
+apt-get install imagemagick-devel
+
+Next, download the ImageMagick old package
+tar xvf ImageMagick-6.9.3-1.tar.bz2
+cd ImageMagick-6.9.3
+./configure
+make
+sudo make install
+
+# check version
+/usr/local/bin/convert -list configure
+which convert
+
+https://www.imagemagick.org/download/releases/
+https://www.imagemagick.org/download/
+http://www.nicksherlock.com/2013/11/installing-ubuntu-raring-imagemagick-package-on-precise/
+
+http://stackoverflow.com/questions/26075225/how-can-i-check-if-file-exists-with-exception-handeling
+https://packages.debian.org/de/wheezy/librsvg2-bin
+
+apt-show-versions <package>
+aptitude versions <package>
+http://unix.stackexchange.com/questions/6284/check-package-version-using-apt-get-aptitude
+
+
+########################################################
+#
+#   SVG XML Beautifying
+#
+########################################################
+
+xmllint --valid --noout order_test.xml
+# xmllint --valid --dtdvalid mydtd.dtd mydoc.xml
+# xmllint --noout --schema http://www.w3.org/2001/XMLSchema.xsd my_schema.xsd
+# xmllint --noout --schema test.xsd test.xml
+
+# https://linux.die.net/man/1/xmllint
+# http://xmlsoft.org/xmllint.html
+# http://infohost.nmt.edu/tcc/help/xml/lint.html
+# http://xmlstar.sourceforge.net/docs.php
+# http://www.sagehill.net/docbookxsl/ProfilingDuplicateID.html
+# http://manpages.ubuntu.com/manpages/trusty/man1/xmllint.1.html
+# http://www.commandlinefu.com/commands/view/4330/validate-xml-in-a-shell-script.
+
+xmllint --noout some.xml 2>&1 >/dev/null || exit 1
+# apt-get install xmlstarlet
+
+# xmllint --format --pretty 1 --load-trace --debug --schema /path/to/my_schema_file.xsd /path/to/my_xml_file.xml
+# xmllint --xpath '//element/@attribute' file.xml
+# xmlstarlet sel -t -v "//element/@attribute" file.xml
+# saxon-lint --xpath '//element/@attribute' file.xml
+# xmllint --valid --noout *.xml **/*.xml 2>&1 | awk "/no DTD found/ {e=0} /xsd/ {e=0}"
+
+# python -c "from lxml.etree import parse; from sys import stdin; print '\n'.join(parse(stdin).xpath('//element/@attribute'))"
+# python -c "import sys, xml.dom.minidom as d; d.parse(sys.argv[1])" FILE
+
+# xmllint  --noout doc.xml --schema schema.xsd
+# xmllint --schema schema.xsd doc.xml
+
+---
+a DTD stored in the same file:
+xmllint --valid --noout fileWithDTD.xml
+
+a DTD stored in a separate file:
+xmllint --dtdvalid DTD.dtd --noout fileWithoutDTD.xml
+
+an XSD stored in a separate file:
+xmllint --schema schema.xsd --noout file.xml
+
+# http://fahdshariff.blogspot.de/2011/10/validating-xml-with-xmllint.html
+
+-----------
+
+sudo apt-get install libxml2-utils
+# xmllint --noout file.xml
+
+xmllint –format file.xml
+xmllint -format -recover nonformatted.xml > formated.xml
+xmllint --format ugly.xml --output pretty.xml
+cat unformatted.json | python -m json.tool > formatted.json
+python -m json.tool > formatted.json
+tidy -xml -i your-file.xml > output.xml
+
+xmllint --format -
+xml_pp
+xmlstarlet format --indent-tab
+tidy -xml -i -
+python -c 'import sys;import xml.dom.minidom;s=sys.stdin.read();print xml.dom.minidom.parseString(s).toprettyxml()'
+java -cp /usr/share/java/saxon/saxon9he.jar net.sf.saxon.Query \ -s:- -qs:/ '!indent=yes'
+saxon-lint --indent --xpath '/' -
+
+http://stackoverflow.com/questions/16090869/how-to-pretty-print-xml-from-the-command-line
+http://stackoverflow.com/questions/21275928/how-to-format-xml-document-in-linux
+http://richardlog.com/post/12743073497/pretty-printing-json-and-xml-on-mac-osx
+http://stackoverflow.com/questions/16090869/how-to-pretty-print-xml-from-the-command-line
+
+http://stackoverflow.com/questions/306316/determine-if-two-rectangles-overlap-each-other
+http://stackoverflow.com/questions/13390333/two-rectangles-intersection
+http://stackoverflow.com/questions/2752349/fast-rectangle-to-rectangle-intersection
+http://math.stackexchange.com/questions/1278665/how-to-check-if-two-rectangles-intersect-rectangles-can-be-rotated
+
+https://nagios-plugins.org/doc/extra-opts.html
+http://www.perlmonks.org/?node_id=139970
+http://search.cpan.org/dist/App-Maisha/script/maisha#--config_|_-c
+http://stackoverflow.com/questions/2014862/how-can-i-access-ini-files-from-perl
+http://www.perl.com/pub/2007/07/12/options-and-configuration.html
+http://search.cpan.org/~shlomif/Config-IniFiles-2.94/lib/Config/IniFiles.pm
+http://perl.mines-albi.fr/perl5.8.5/site_perl/5.8.5/AppConfig.html
+
+
+
+
