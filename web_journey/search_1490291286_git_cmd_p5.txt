@@ -305,6 +305,9 @@ https://en.wikipedia.org/wiki/Disruptive_innovation
 https://de.wikipedia.org/wiki/Disruptive_Technologie
 http://www.openmediavault.org/
 
+http://www.timestampgenerator.com/ # generate timestamp
+https://www.certbase.de/Tools/PassGen.aspx  # Random Password Generator
+
 
 
 
