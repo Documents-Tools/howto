@@ -1,22 +1,23 @@
+
 http://stackoverflow.com/questions/10392340/how-to-get-svg-transform-matrix-values-from-rotate-scale
 http://jsfiddle.net/nw6ykszn/
 https://github.com/kartsims/easysvg
-
-
 https://github.com/arkascha/php-urithmetic
-
 https://sarasoueidan.com/blog/svg-transformations/
 https://mpetroff.net/2013/08/analysis-of-svg-units/
 https://css-tricks.com/transforms-on-svg-elements/
 https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
 
---
+---------------------------------------------------------
+
 http://stackoverflow.com/questions/306316/determine-if-two-rectangles-overlap-each-other
 http://stackoverflow.com/questions/13390333/two-rectangles-intersection
 http://stackoverflow.com/questions/7990285/math-algorithm-js-how-to-determine-if-2-rectangles-intersect-given-the-topl
 http://stackoverflow.com/questions/7030981/algorithm-for-determining-overlapping-geographic-areas
 
- <?php
+---------------------------------------------------------
+
+<?php
 
 //declare the points for your rectangles
 //'UL' means upper left points, and 'LR' means the lower right points
@@ -54,9 +55,9 @@ function rectIntersect($rectangles) {
 }
 
 
-#####
+#########################################################
 
-Use the Haversine formula:
+Use of the Haversine formula:
 
 a = sin²(Δlat/2) + cos(lat1)*cos(lat2)*sin²(Δlong/2)
 c = 2*atan2(√a, √(1−a))
@@ -73,8 +74,8 @@ var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.sin(dLon/2) * Math.sin(dLon/2
 var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
 var d = R * c;
 
+-----------------------------------------------------
 
------------
 http://commons.oreilly.com/wiki/index.php/SVG_Essentials/Transforming_the_Coordinate_System
 http://jsfiddle.net/2wpju/4/
 http://www.gamesfrommars.fr/live-svg-editor/
@@ -83,6 +84,7 @@ https://www.w3.org/TR/2004/WD-SVG12-20041027/flow.html
 http://tavmjong.free.fr/SVG/TEXT_FLOW/
 http://www.gamesfrommars.fr/live-svg-editor/
 
+-----------------------------------------------------
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Edit this text area to see live preview to the right -->
@@ -107,6 +109,7 @@ http://www.gamesfrommars.fr/live-svg-editor/
 
 </svg>
 
+-----------------------------------------------------
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Edit this text area to see live preview to the right -->
@@ -127,10 +130,7 @@ http://www.gamesfrommars.fr/live-svg-editor/
 
 </svg>
 
-
-
-
-
+-----------------------------------------------------
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Edit this text area to see live preview to the right -->
@@ -155,8 +155,7 @@ http://www.gamesfrommars.fr/live-svg-editor/
    </g>
 </svg>
 
-
-
+-----------------------------------------------------
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Edit this text area to see live preview to the right -->
@@ -185,10 +184,7 @@ http://www.gamesfrommars.fr/live-svg-editor/
    </g>
 </svg>
 
-
-
-
-
+-----------------------------------------------------
 
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="100mm" height="100mm" xmlns="http://www.w3.org/2000/svg"
@@ -202,16 +198,19 @@ http://www.gamesfrommars.fr/live-svg-editor/
   </g>
 </svg>
 
-
+-----------------------------------------------------
 
 <svg width="300px" height="200px" viewBox="0 0 300 200">
     <line x1="40" x2="260" y1="100" y2="100" stroke="#5184AF" stroke-width="20" stroke-linecap="round" stroke-dasharray="1, 30"/>
 </svg>
 
+-----------------------------------------------------
 
-
-##########################
-
+#####################################################
+#
+# Detect Pixel color in Images
+#
+#####################################################
 
 http://stackoverflow.com/questions/10290259/detect-main-colors-in-an-image-with-php
 http://stackoverflow.com/questions/7727843/detecting-colors-for-an-image-using-php
@@ -219,22 +218,19 @@ http://stackoverflow.com/questions/8730661/how-to-find-the-dominant-color-in-ima
 http://bubble.ro/How_to_create_the_histogram_of_an_image_using_PHP.html
 
 <?php
+
 $source_file = "test_image.jpg";
 
 // histogram options
-
 $maxheight = 300;
 $barwidth = 2;
 
 $im = ImageCreateFromJpeg($source_file);
-
 $imgw = imagesx($im);
 $imgh = imagesy($im);
 
 // n = total number or pixels
-
 $n = $imgw*$imgh;
-
 $histo = array();
 
 for ($i=0; $i<$imgw; $i++)
@@ -243,28 +239,23 @@ for ($i=0; $i<$imgw; $i++)
         {
 
                 // get the rgb value for current pixel
-
                 $rgb = ImageColorAt($im, $i, $j);
 
                 // extract each value for r, g, b
-
                 $r = ($rgb >> 16) & 0xFF;
                 $g = ($rgb >> 8) & 0xFF;
                 $b = $rgb & 0xFF;
 
                 // get the Value from the RGB value
-
                 $V = round(($r + $g + $b) / 3);
 
                 // add the point to the histogram
-
                 $histo[$V] += $V / $n;
 
         }
 }
 
 // find the maximum in the histogram in order to display a normated graph
-
 $max = 0;
 for ($i=0; $i<255; $i++)
 {
@@ -287,14 +278,7 @@ height=\"".$h."\" border=\"0\">";
 echo "</div>";
 ?>
 
-
-
-
-
-
-
-
-
+-----------------------------------------------------
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -312,50 +296,41 @@ function rgb2hex($rgb) {
    $hex .= str_pad(dechex($rgb[0]), 2, "0", STR_PAD_LEFT);
    $hex .= str_pad(dechex($rgb[1]), 2, "0", STR_PAD_LEFT);
    $hex .= str_pad(dechex($rgb[2]), 2, "0", STR_PAD_LEFT);
-
    return $hex; // returns the hex value including the number sign (#)
 }
-
 
 $source_file = "image.jpg";
 
 // histogram options
-
 $maxheight = 300;
 $barwidth = 2;
 
 $im = ImageCreateFromJpeg($source_file);
-
 $imgw = imagesx($im);
 $imgh = imagesy($im);
 
 // n = total number or pixels
 
 $n = $imgw*$imgh;
-
 $histo = array();
-
 for ($i=0; $i<$imgw; $i++)
 {
         for ($j=0; $j<$imgh; $j++)
         {
 
                 // get the rgb value for current pixel
-
                 $rgb = ImageColorAt($im, $i, $j);
-                //echo $rgb."<br>";
-                // extract each value for r, g, b
 
+                // extract each value for r, g, b
                 $r = ($rgb >> 16) & 0xFF;
                 $g = ($rgb >> 8) & 0xFF;
                 $b = $rgb & 0xFF;
 
                 // get the Value from the RGB value
-
                 $V = round(($r + $g + $b) / 3);
                 //echo $V."<br>";
-                // add the point to the histogram
 
+                // add the point to the histogram
                 $histo[$V] += $V / $n;
                 $histo_color[$V] = rgb2hex([$r,$g,$b]);
 
@@ -363,7 +338,6 @@ for ($i=0; $i<$imgw; $i++)
 }
 
 // find the maximum in the histogram in order to display a normated graph
-
 $max = 0;
 for ($i=0; $i<255; $i++)
 {
@@ -377,7 +351,6 @@ echo "<div style='width: ".(256*$barwidth)."px; border: 1px solid'>";
 for ($i=0; $i<255; $i++)
 {
         $val += $histo[$i];
-
         $h = ( $histo[$i]/$max )*$maxheight;
 
         echo "<img src=\"img.gif\" width=\"".$barwidth."\"
@@ -394,22 +367,7 @@ $col = $histo_color[$key];
 </body>
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-----------------------------------------------------
 
 function detectColors($image, $num, $level = 5) {
   $level = (int)$level;
@@ -455,7 +413,7 @@ foreach($palette as $color) {
 }
 echo '</table>';
 
-
+-----------------------------------------------------
 
 /**
  * Returns the colors of the image in an array, ordered in descending order, where the keys are the colors, and the values are the count of the color.
@@ -520,21 +478,8 @@ function Get_Color()
     else die("You must enter a filename! (\$image parameter)");
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Here is exactly what you are looking for in PHP : https://github.com/thephpleague/color-extractor
+-----------------------------------------------------
+here is exactly what you are looking for in PHP : https://github.com/thephpleague/color-extractor
 
 Example :
 
@@ -545,27 +490,19 @@ $image = $client->loadPng('./some/image.png');
 // Get the most used color hexadecimal codes from image.png
 $palette = $image->extract();
 
-
-
-
-
+-----------------------------------------------------
 
 $image=imagecreatefromjpeg('image.jpg');
   $thumb=imagecreatetruecolor(1,1); imagecopyresampled($thumb,$image,0,0,0,0,1,1,imagesx($image),imagesy($image));
     $mainColor=strtoupper(dechex(imagecolorat($thumb,0,0)));
   echo $mainColor;
 
-
-
-
+-----------------------------------------------------
 
 http://stackoverflow.com/questions/16228874/how-to-get-svg-tag-content-with-php
 http://php.net/manual/en/simplexmlelement.attributes.php
 http://stackoverflow.com/questions/29991284/php-get-svg-tag-from-svg-file-and-show-it-in-html-in-div
-
-
 http://stackoverflow.com/questions/4809194/convert-svg-image-to-png-with-php
-
 
 
 $usmap = '/path/to/blank/us-map.svg';
@@ -606,20 +543,19 @@ $im->writeImage('/path/to/colored/us-map.png');/*(or .jpg)*/
 $im->clear();
 $im->destroy();
 
-
+-----------------------------------------------------
 
 ####
 http://stackoverflow.com/questions/39661410/svg-to-png-image-conversion-in-php
 
-
  $image = new imagick();
-        //set transparent background
-        $image->setBackgroundColor(new ImagickPixel('transparent'));
-        $image->setFormat('svg');
-        $image->readImageBlob(file_get_contents("image.svg"));
-        $image->setImageFormat("png32");
-        $image->resizeImage(265,195, Imagick::FILTER_LANCZOS, 1);
-        $image->writeImage('result.png');
+//set transparent background
+$image->setBackgroundColor(new ImagickPixel('transparent'));
+$image->setFormat('svg');
+$image->readImageBlob(file_get_contents("image.svg"));
+$image->setImageFormat("png32");
+$image->resizeImage(265,195, Imagick::FILTER_LANCZOS, 1);
+$image->writeImage('result.png');
 
 
 http://stackoverflow.com/questions/10289686/rendering-an-svg-file-to-a-png-or-jpeg-in-php
@@ -630,7 +566,7 @@ $image->setImageFormat("png24");
 $image->resizeImage(1024, 768, imagick::FILTER_LANCZOS, 1);
 $image->writeImage('image.png')
 
-
+-----------------------------------------------------
 
 https://developer-blog.net/svg-zu-png-konvertieren-in-php/
 
@@ -649,7 +585,7 @@ $im->writeImage($phpbb_root_path."images/avatars/upload/".$avatar_salt."_".$foru
 $im->clear();
 $im->destroy();
 
-
+-----------------------------------------------------
 
 https://www.imagemagick.org/discourse-server/viewtopic.php?t=22631
 
@@ -660,8 +596,7 @@ $im->readimage('from.svg');
 $im->setImageFormat("png32");
 $im->writeimage('to.png'); //Image with transparent background
 
-
-
+-----------------------------------------------------
 
 $mw = NewMagickWand();
 $transparentColor = NewPixelWand();
@@ -674,22 +609,7 @@ MagickResizeImage($mw, 300, 300, MW_LanczosFilter, 0); //Key point
 MagickSetImageFormat($mw, 'png32');
 MagickWriteImage($mw, 'to.png'); //Black image if we use resize. Transparent else.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+-----------------------------------------------------
 
 https://www.drweb.de/magazin/html-5-und-svg-per-php-und-imagemagick-generiertes-png-fallback-fuer-aeltere-browser-45449/
 https://www.noupe.com/development/html-5-and-svg-providing-a-png-fallback-with-php-and-imagemagick-80508.html
@@ -721,4 +641,3 @@ if ($browser["browser"] == "IE" && $browser["majorver"] < 9) {
 }
 
 https://github.com/dirkgroenen/SVGMagic
-
