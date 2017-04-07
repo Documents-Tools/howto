@@ -1,20 +1,22 @@
 
-#############################
+######################################
+#
+# Git Commands Examples
+#
+#####################################
 
-git checkout develop
+git checkout developer
 Your branch is behind 'origin/develop' by 2 commits, and can be fast-forwarded.
 Your branch is behind  commits, and can be fast-forwarded.
 
 git branch -a
 
-  develop
+  developer
   master
 
 git branch -b <new_branch>
 
-find . -name "*.php" -exec grep -Hni "phpmailer" --color {} \;
-
----
+-------------------------------------------------------------
 
 Changes to be committed:
 #   (use "git reset HEAD <file>..." to unstage)
@@ -31,14 +33,11 @@ Changes to be committed:
 # Untracked files:
 #   (use "git add <file>..." to include in what will be committed)
 #
-#	htdocs/test.php
 
-
-
+-------------------------------------------------------------
 
 git commit -a -m "scripts" test.php    # single file
 git commit -m "scripts"  test.php    test2.php    # multiple files
-
 
 #########################################################
 #
@@ -46,7 +45,6 @@ git commit -m "scripts"  test.php    test2.php    # multiple files
 # http://stackoverflow.com/questions/16288176/your-branch-is-ahead-of-origin-master-by-3-commits
 #
 #########################################################
-
 
 git reset --hard origin/master
 
@@ -90,6 +88,7 @@ Host *
 User christopher
 
 --------------------------------------------------------------
+
 git ls-files -m
 git status | grep modified
 git status -uno
@@ -104,10 +103,13 @@ https://git-scm.com/docs/git-status/1.7.0
 # https://git-scm.com/docs/git-checkout
 
 --------------------------------------------------------------
+
 #brew upgrade
 #brew update -v
 #brew --config
+
 --------------------------------------------------------------
+
 ls -ld /usr/local
 ls -lA /usr/local
 find /usr/local -user root
@@ -128,6 +130,7 @@ git help status
 git status -uno
 git status -s # short format
 git status -b # branch format
+
 --------------------------------------------------------------
 # rebase stash
 
@@ -140,7 +143,8 @@ git pull -r
 #git pull --rebase
 git stash pop
 
----
+----
+
 git stash -u             	# This will stash everything, including unstaged files
 git stash pop stash@{1}  	# This will apply your original stash
 git stash drop 			# remove your "safe" stash.
@@ -158,6 +162,7 @@ usage: git stash list [<options>]
    or: git stash clear
 
 --------------------------------------------------------------
+
 # Show what git will be remove
 git clean -n
 
@@ -169,7 +174,9 @@ git clean --help
 
 # Finish
 git stash pop
+
 --------------------------------------------------------------
+
 #unstash
 
 git stash show -p stash@{0} | git apply -R
@@ -234,6 +241,7 @@ git clean -h
 git clean -xdn
 
 --------------------------------------------------------------
+
 https://git-scm.com/book/en/v1/Git-Tools-Stashing
 https://git-scm.com/book/en/v1/Git-Tools-Stashing
 http://de.gitready.com/intermediate/2009/02/18/temporarily-ignoring-files.html
@@ -245,12 +253,15 @@ http://lilypond.org/doc/v2.18/Documentation/contributor/pulling-and-rebasing
 https://git-scm.com/book/en/v2/Git-Branching-Rebasing
 https://git-scm.com/docs/git-status
 https://plugins.jetbrains.com/idea/plugin/7495--ignore
+
 --------------------------------------------------------------
+
 http://php.net/manual/de/migration70.new-features.php
 https://help.github.com/articles/testing-your-ssh-connection/
 https://git-scm.com/docs/git-merge
 http://stackoverflow.com/questions/28444011/how-do-i-ensure-that-my-local-branch-tracking-remote-is-identical-without-additi
 --------------------------------------------------------------
+
 http://stackoverflow.com/questions/28444011/how-do-i-ensure-that-my-local-branch-tracking-remote-is-identical-without-additi
 http://stackoverflow.com/questions/3564598/remove-file-from-commit
 https://nathanhoad.net/git-amend-your-last-commit
@@ -260,27 +271,30 @@ http://stackoverflow.com/questions/6802145/convert-shallow-clone-to-full-clone
 http://stackoverflow.com/questions/35509581/how-to-unshallow-a-clone-without-unshallow
 https://git-scm.com/docs/git-fetch
 --------------------------------------------------------------
+
 https://gitlab.com/gitlab-com/infrastructure/issues/290
 https://gitlab.com/gitlab-com/infrastructure/issues/290
+
 --------------------------------------------------------------
+
 http://www.smarty.net/docs/en/language.variables.smarty.tpl
 http://www.smarty.net/docsv2/de/language.variables.smarty.tpl
 
 -------------
+
 Intel(R) Xeon(R) CPU X3370 @ 3.00GHz vs Intel(R) Core(TM) i7-3770 CPU @ 3.40GHz
 
 http://www.cpu-world.com/Compare/218/Intel_Core_i7_i7-3770K_vs_Intel_Xeon_X3370.html
 https://www.cpubenchmark.net/singleThread.html
 http://codeception.com/docs/05-UnitTests
 
-
-------------------------
+-------------------------------------------------------------
 
 http://www.smarty.net/docs/en/language.function.html.select.date.tpl
 http://stackoverflow.com/questions/2431763/how-to-debug-variables-in-smarty-like-in-php-var-dump.
 
-
 --------------------------------------------------------------
+
 https://blog.jqueryui.com/2016/09/jquery-ui-1-12-1/
 https://jqueryui.com/download/all/
 https://code.jquery.com/ui/
@@ -289,7 +303,9 @@ https://jqueryui.com/upgrade-guide/1.12/
 http://jqueryui.com/dialog/#modal-message
 https://api.jqueryui.com/dialog/#option-dialogClass
 https://jqueryui.com/dialog/#modal-confirmation
+
 --------------------------------------------------------------
+
 https://dev.mysql.com/doc/refman/5.7/en/commit.html
 https://dev.mysql.com/doc/refman/5.7/en/create-trigger.html
 https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/lubuntu/releases/14.04/release/
@@ -300,18 +316,12 @@ https://shlomi-noach.github.io/awesome-mysql/
 https://www.wired.com/2008/12/top-5-disruptiv/
 https://www.kvraudio.com/product/koblo-studio-by-koblo
 https://twitter.com/DisruptiveNL
+
 --------------------------------------------------------------
+
 https://en.wikipedia.org/wiki/Disruptive_innovation
 https://de.wikipedia.org/wiki/Disruptive_Technologie
 http://www.openmediavault.org/
 
 http://www.timestampgenerator.com/ # generate timestamp
 https://www.certbase.de/Tools/PassGen.aspx  # Random Password Generator
-
-
-
-
-
-
-
-
