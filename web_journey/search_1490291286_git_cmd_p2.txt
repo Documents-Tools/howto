@@ -1,3 +1,9 @@
+######################################
+#
+# Git Commands Examples
+#
+#####################################
+
 ####################################################
 #
 #	FIX CRLF LF
@@ -112,7 +118,6 @@ git add .
 warning: CRLF will be replaced by LF in .bowerrc.
 The file will have its original line endings in your working directory.
 
-
 git clone git@github.com:yarnpkg/yarn
 cd yarn
 git status
@@ -153,24 +158,19 @@ git reset --hard HEAD
 git clean -f -d
 git pull
 
-
-
 git fetch --all
 rm .git/index.lock
 git reset --hard origin/master
 git reset --hard origin/develop
-
 
 git checkout master
 git branch new-branch-to-save-current-commits
 git fetch --all
 git reset --hard origin/master
 
-
 git reset --hard HEAD
 git pull
 git pull --rebase
-
 
 git diff branch_1 branch_2
 git diff branch_1 branch_2 -- # show files too
@@ -179,7 +179,6 @@ git log.
 
 git diff branch_1..branch_2
 git diff branch_1...branch_2
-
 
 #################################################################
 
@@ -230,14 +229,11 @@ git pull
 git fetch
 git reset --hard @{u}
 
-
-
 git fetch --all
 git reset --hard origin/master
 git reset --hard HEAD
 git clean -f -d
 git pull
-
 
 git reset --hard HEAD
 git checkout origin/master
@@ -268,78 +264,6 @@ git merge -s recursive -X theirs origin master
 
 
 # https://git-scm.com/docs/git-pull
-
-#############################################################################################
-
-sudo mount -t cifs -o user=testuser,domain=testdomain //192.168.1.100/freigabe /mnt
-
-sudo apt-get install sshfs
-sudo mkdir /mnt/droplet <--replace "droplet" whatever you prefer
-sudo sshfs -o allow_other,defer_permissions root@xxx.xxx.xxx.xxx:/ /mnt/droplet
-sudo sshfs -o allow_other,defer_permissions,IdentityFile=~/.ssh/id_rsa root@xxx.xxx.xxx.xxx:/ /mnt/droplet
-sudo umount /mnt/droplet
-
-sudo nano /etc/fstab
-sshfs#root@xxx.xxx.xxx.xxx:/ /mnt/droplet
-
-# https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh
-
-
-######################################################
-#
-#	MOUNT SAMBA SHARE USING GVFS-MOUNT AS NORMAL USER
-#	Mounting a mountpoint share using the username user and password
-#
-# 	https://pario.no/2015/06/24/mount-samba-share-using-gvfs-mount-as-normal-user/
-#	https://wiki.ubuntuusers.de/gvfs-mount/
-#
-######################################################
-
-# smb-share\:domain\=WORKGROUP\,server\=192.168.0.111\,share\=asmedia-hdd\,user\=root/
-
-gvfs-mount -l
-gvfs-mount -h
-
-[user@host] gvfs-mount smb://username@192.168.0.200/shared-folder
-
-If the command finishes without any errors you can now access your smb mount on the following path
-[user@host] ls -l /run/user/1000/gvfs/smb-share\:server\=192.168.0.200\,share\=shared-folder\,user\=username/
-
-1000 corresponds to your users id and can be determined by the id command
-[user@host] id
-
-uid=1000(username) gid=1000(username) groups=1000(username)
-
-# /run/user/1000/gvfs/smb-share:server=somedomain.com,share=username/git/some-project/
-
-gvfs-mount smb://10.10.2.4./music
-
-#sudo gedit /etc/hostname
-#sudo gedit /etc/hosts
-#sudo gedit /etc/samba/smb.conf
-sudo service smbd restart
-sudo service nmbd restart
-
-# https://wiki.samba.org/index.php/Mounting_samba_shares_from_a_unix_client
-
-sudo apt install samba-common-bin
-testparm -v | grep admin
-
-ldap admin dn =
-administrative share = No
-admin users =
-
-
-/usr/share/doc/nautilus-share/examples/smb.conf
-
-sudo /etc/init.d/samba restart
-sudo /etc/init.d/smbd restart
-sudo initctl restart smbd
-
-http://www.linuxtopia.org/online_books/network_administration_guides/samba_reference_guide/24_locking_08.html
-
-
-
 
 ######################################################
 
@@ -395,8 +319,6 @@ usage: git fetch [<options>] [<repository> [<refspec>...]]
 
 
 ##########################
-
-
 
 git show
 and undo the bad part by restoring the original symlink pathname into the file and git adding it. Or you could really get rid of the symlink properly with git rm, then create a new file and git add that. If you choose the first option, be aware that the content of a symlink is just a pathname. It's not a text file - it doesn't have a newline on the end. If you edit it with a text editor that adds a newline, you'll have a broken symlink (pointing to a file with a newline in its name).

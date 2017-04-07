@@ -1,3 +1,9 @@
+######################################
+#
+# Git Commands Examples
+#
+#####################################
+
 ##############################################################
 #
 #   install gitlab ce
@@ -20,8 +26,6 @@ sudo apt-get install gitlab-ce
 #dpkg -i gitlab-ce-XXX.deb
 
 sudo gitlab-ctl reconfigure
-
-
 sudo gitlab-ctl reconfigure
 sudo gitlab-ctl restart
 sudo gitlab-ctl tail nginx
@@ -102,7 +106,6 @@ git push -u origin --tags
 
 --------------------------------------------------------------
 
-
 sudo tail -1 /home/xyz/.ssh/id_rsa.pub
 ssh -T git@localhost
 
@@ -164,16 +167,13 @@ https://help.github.com/articles/connecting-to-github-with-ssh/
 https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
 https://help.github.com/articles/testing-your-ssh-connection/
 
-
 ##############################################################
 #
 #   copy ssh key into slave maschine
 #
 ##############################################################
 
-
 hostname
-
 ssh-keygen -t rsa
 
 cat ~/.ssh/id_rsa.pub | ssh user@123.45.56.78 "mkdir -p ~/.ssh && cat >>  ~/.ssh/authorized_keys"
@@ -190,7 +190,6 @@ http://www.commandlinefu.com/commands/view/610/add-your-public-ssh-key-to-a-serv
 http://www.computerhope.com/unix/uhostnam.htm
 https://www.cyberciti.biz/faq/find-my-linux-machine-name/
 https://www.cyberciti.biz/faq/howto-restart-ssh/
-
 
 ##############################################################
 #
@@ -394,7 +393,7 @@ https://git-scm.com/book/en/v2/Git-Branching-Rebasing
 https://git-scm.com/docs/git-status
 https://plugins.jetbrains.com/idea/plugin/7495--ignore
 
----------------
+----------------------------------------------------------
 
 https://marklodato.github.io/visual-git-guide/index-de.html
 https://www.frank-rahn.de/git-mit-github/
