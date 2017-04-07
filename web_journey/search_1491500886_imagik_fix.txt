@@ -1,8 +1,11 @@
-ERR:
+###############################################
+#
+# ERROR: ImageMagik SVG Lib
+# convert.im6: delegate failed `"rsvg-convert" -o "%o" "%i"' @ error/delegate.c/InvokeDelegate/1065.
+#
+###############################################
 
 convert -background none -geometry !48x48 freeplane.svg freeplane.png
-
-convert.im6: delegate failed `"rsvg-convert" -o "%o" "%i"' @ error/delegate.c/InvokeDelegate/1065.
 
 convert --version
 convert -list configure | grep DELEGATES
@@ -16,8 +19,8 @@ convert -list format | grep SVG
 	SVG  SVG     rw+   Scalable Vector Graphics (RSVG 2.40.16)
 	SVGZ  SVG    rw+   Compressed Scalable Vector Graphics (RSVG 2.40.16)
 
-----
-FIX?
+// How to fix
+
 sudo apt-get update
 sudo apt-get install librsvg2-bin
 sudo apt-get install librsvg2-2
@@ -27,11 +30,9 @@ http://blog.wjlr.org.uk/2013/04/10/imagemagick-insanity.html
 https://github.com/3snowp7im/urn/issues/12
 https://bugs.launchpad.net/openastro.org/+bug/1551488
 
-###
+------------------------------------------------------------------
 
 avconv -threads 0 -i 00000.MTS -target ntsc-dvd -qscale 0 -deinterlace -s hd1080 00000.mpg
-
-https://glot.io/snippets/eek2wlmgar
 
 https://www.ostechnix.com/install-arch-linux-latest-version/
 https://www.ostechnix.com/install-microsoft-visual-studio-code-linux/
@@ -47,15 +48,21 @@ https://www.ostechnix.com/save-commands-terminal-use-demand/
 https://www.ostechnix.com/install-nextcloud-ubuntu-16-04-lts/
 https://www.ostechnix.com/find-rebooted-linux-system/
 
-convert -background magenta -density 100 -resize 150x pagetemplate_001.svg outfile2.png
-xmllint --format pagetemplate_001.svg > pagetemplate_001a.svg
+convert -background magenta -density 100 -resize 150x page1.svg outfile2.png
+xmllint --format page1.svg > page1a.svg
 
 sudo update-alternatives --config x-terminal-emulator
 replace in settings xterm with gnome-terminal
 
-------------
+-------------------------------------------------------
 
-apt-get install imagemagick-devel
+#######################################################
+#
+# How to install old version of Image Magik
+#
+#######################################################
+
+apt-get install imagemagick imagemagick-devel imagemagick-dbg
 
 Next, download the ImageMagick old package
 tar xvf ImageMagick-6.9.3-1.tar.bz2
@@ -67,6 +74,8 @@ sudo make install
 # check version
 /usr/local/bin/convert -list configure
 which convert
+
+---------------------------------------------------------------------
 
 https://www.imagemagick.org/download/releases/
 https://www.imagemagick.org/download/
