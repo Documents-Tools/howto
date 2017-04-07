@@ -84,6 +84,8 @@
 - Mixxx 2.0.0 ( DJ )				http://mixxx.org/download/
 - Sonic Visualiser					http://sonicvisualiser.org/
 
+- Xpad sticker (List App)     https://apps.ubuntu.com/cat/applications/xpad/
+
 * official repos
 https://apps.ubuntu.com/cat/
 

@@ -69,9 +69,7 @@ $ git merge origin/other-branch
 $ git commit  # And commit the merge!
 
 --------------------------------------------------------------
-https://apps.ubuntu.com/cat/applications/xpad/
-todo / sticky note application for X
---------------------------------------------------------------
+
 /etc/aliases
 /etc/passwd
 
