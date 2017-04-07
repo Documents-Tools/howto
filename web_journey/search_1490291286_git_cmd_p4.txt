@@ -13,8 +13,11 @@ gvfs-mount smb://WORKGROUP\;root@192.168.0.186/asmedia-hdd
 gvfs-mount -l
 cd ~/.gvfs/smb-share\:domain\=WORKGROUP\,server\=192.168.0.186\,share\=asmedia-hdd\,user\=root/
 watch -- du -h test.mkv
-//192.168.0.186/asmedia-hdd          /media/asmedia-hdd          cifs            rw,workgroup=WORKGROUP,username=root,password=xxxxx,noauto,users,iocharset=utf8      0     0
-chmod 0755 /usr/sbin/mount.cifs
+
+//192.168.0.186/asmedia-hdd  \
+    /media/asmedia-hdd cifs rw,workgroup=WORKGROUP,username=root,password=xxxxx,noauto,users,iocharset=utf8 \
+     0 0 \
+     chmod 0755 /usr/sbin/mount.cifs
 
 ------------------------------------------------------
 
