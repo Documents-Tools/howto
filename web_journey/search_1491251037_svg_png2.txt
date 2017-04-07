@@ -1,7 +1,13 @@
+################################################
+#
+#  PNG SVG Conversion
+#
+################################################
+
 convert 'Desktop/convert/06.jpg' -resize 50x50 'Desktop/convert/06a.jpg'"
 convert source.svg -density 1200 -resize 200x200  target.png
 
---
+-----------------------------------------------------
 
 npm install svgexport -g
 svgexport input.svg output.png 64x
@@ -24,6 +30,7 @@ sudo service apache2 restart
 php -m | grep imagick.
 sudo apt-get remove --purge php5-imagick && sudo apt-get install php5-imagick
 
+-----------------------------------------------------
 
 apt-get install pkg-config libmagickwand-dev -y
 cd /tmp
@@ -39,6 +46,8 @@ echo extension=imagick.so >> /etc/php/7.0/fpm/php.ini
 service php7.0-fpm restart
 service nginx restart
 
+-----------------------------------------------------
+
 https://www.elxsy.com/2009/07/installing-imagemagick-on-windows-and-using-with-php-imagick/
 http://www.microhowto.info/howto/resize_an_image_using_imagemagick.html
 http://www.linuxjournal.com/content/resizing-images-imagemagick
@@ -51,9 +60,8 @@ https://github.com/filamentgroup/svg-to-png
 https://github.com/seedalpha/svg2pnguri
 http://www.rapidtables.com/web/color/magenta-color.htm
 http://www.php.net/manual/en/imagick.construct.php
--------------------------------------------------
 
-
+-----------------------------------------------------
 
 convert -background none -density 1000 -resize 1000x compass.svg compass.png
 convert -quiet -regard-warnings image.jpg -colorspace RGB +repage /tmp/tempfile.img
@@ -70,6 +78,8 @@ convert image.gif -alpha off -monochrome -compress Zip -quality 100 \
 
 # http://www.imagemagick.org/Usage/formats/#vector
 # convert -list configure
+
+-----------------------------------------------------
 
 magick image.jpg image.png
 magick label.gif +matte \
@@ -102,6 +112,8 @@ magick '*.jpg[120x120+10+5]' thumbnail%03d.png
 
 http://www.imagemagick.org/script/command-line-processing.php
 
+-----------------------------------------------------
+
 Multi-paged PDF Documents...
 You can use perl to combine multiple PDF files, without resorting to a IM, and its rasterization problem...
 ----8<----
@@ -133,7 +145,7 @@ echo Merging...
 java tool.pdf.Merge *.pdf
 ----8<----
 
-
+-----------------------------------------------------
 
 <?php
 function scaleImage($imagePath) {
@@ -143,8 +155,7 @@ function scaleImage($imagePath) {
     echo $imagick->getImageBlob();
 }
 
-
-##########
+-----------------------------------------------------
 
 <?php
 $im = new Imagick($filename);
@@ -164,7 +175,7 @@ $im->writeImage($filename);
 header("Content-Type: image/png");
 echo $base;
 
-##################################################
+-----------------------------------------------------
 
 <?php
 # http://php.net/manual/de/imagick.setbackgroundcolor.php
@@ -176,22 +187,20 @@ header('Content-type: image/png');
 echo $im;
 ?>
 
-#############################################
+-----------------------------------------------------
 
 convert -background magenta -density 100 test.svg test.png # ok
 
-#############################################
+-----------------------------------------------------
+
+
 
 // generate PNG
 // magenta	#FF00FF	rgb(255,0,255)
 
 //$fh = fopen($fileSVG, "rb");
 //$data = fread($fh, 16096);
-//echo "<textarea>".$data."</textarea>"; die();
 //$svg = file_get_contents($fileSVG);
-
-$svg = '<?xml version="1.0" encoding="UTF-8"?></svg>';
-//echo "<textarea>".$svg."</textarea>"; die();
 
 $image = new Imagick();
 $image->setBackgroundColor(new ImagickPixel('#FF00FF'));
@@ -200,13 +209,8 @@ $image->scaleImage(450, 450, true);
 $image->setImageFormat("png");
 $image->writeImage( $filename );
 //header("Content-Type: image/png");
-//echo $image; die();
-
-/*$im = new Imagick(); // $fileSVG
-
 //$im->setImageBackgroundColor('#FF00FF');
 $im->setBackgroundColor(new ImagickPixel('#FF00FF'));
-
 $im->readImageBlob(file_get_contents($fileSVG));
 #$im->readimage($fileSVG);
 #$im->cropThumbnailImage( 80, 80 );
@@ -224,7 +228,7 @@ echo $im->getImageBlob();*/
 //header('Content-type: image/png');
 //echo $im;
 
-##########
+-----------------------------------------------------
 
 $handle = fopen("inputfile.txt", "r");
 if ($handle) {
@@ -237,9 +241,7 @@ if ($handle) {
     // error opening the file.
 }
 
-
-
-
+-----------------------------------------------------
 
 if ($file = fopen("file.txt", "r")) {
     while(!feof($file)) {
@@ -249,6 +251,7 @@ if ($file = fopen("file.txt", "r")) {
     fclose($file);
 }
 
+-----------------------------------------------------
 
 <?php
 $file = new SplFileObject("file.txt");
@@ -257,18 +260,19 @@ while (!$file->eof()) {
 }
 ?>
 
-
-##############################################################
-
+-----------------------------------------------------
 
 <?php
 
-# convert from Pixel to mm in a PDF file you need this Php Function:
-function toMM($v) {
+# Pixel / MM / CM conversion:
+function toMM($v)
+{
    return round(($v * 26.2) / 25.4);
 }
-/*
-function px2cmFromImage($image, $dpi) {
+
+function px2cmFromImage($image, $dpi)
+{
+
    #Create a new image from file or URL
    $img = ImageCreateFromJpeg($image);
 
@@ -292,7 +296,7 @@ function px2cmFromImage($image, $dpi) {
    #$px2cm[0] = X
    #$px2cm[1] = Y
    return $px2cm;
-}*/
+}
 
 function px2cmFromSVG($width,$height, $dpi) {
 
@@ -314,7 +318,6 @@ function px2cmFromSVG($width,$height, $dpi) {
 
    $px2cm[] = $h;
    $px2cm[] = $l;
-
 
    #return array w values
    #$px2cm[0] = X
@@ -341,56 +344,11 @@ function pixel2cm($pixels,$dpi){
 }
 
 $dpi = 72;
-/*
-echo "wrapper in cm";
-echo str_replace("mm","",$svgWrapper["width"])/10 ."cm x ". str_replace("mm","",$svgWrapper["height"])/10;
-echo "<br>";
-echo "wrapper in px (cm2pixel) :".  cm2pixel(35,$dpi)."pixel x ".cm2pixel(35,$dpi);
-echo "<hr>";
 
-$resultPic1 = px2cmFromSVG("615","615", $dpi);
-echo "bild in cm:". $resultPic1[0]."cm x ".$resultPic1[1];
-echo "<br>";
-echo "bild in cm (pixel2cm) :". pixel2cm(615,$dpi)."cm x ".pixel2cm(615,$dpi);
-echo "<br>";
-echo "bild in px (cm2pixel) :".  cm2pixel($resultPic1[0],$dpi)."pixel x ".cm2pixel($resultPic1[1],$dpi);
-
-*/
-
-
-/////////////////////////////////
-
-echo "wrapper in cm --- ";
-echo str_replace("mm","",(98)/10 ."cm x ". str_replace("mm","",(75))/10);
-echo "<br>";
-echo "wrapper in px (cm2pixel) : --- ".  cm2pixel(9.8,$dpi)." pixel x ".cm2pixel(7.5,$dpi);
-echo "<hr>";
-
-$resultPic1 = px2cmFromSVG("98","75", $dpi);
-echo "bild in cm: --- ". $resultPic1[0]." cm x ".$resultPic1[1];
-echo "<br>";
-echo "bild in cm (pixel2cm) : --- ". pixel2cm(615,$dpi)." cm x ".pixel2cm(615,$dpi);
-echo "<br>";
-echo "bild in px (cm2pixel) : --- ".  cm2pixel($resultPic1[0],$dpi)." pixel x ".cm2pixel($resultPic1[1],$dpi);
-
-/////////////////////////////////
-
-
-//echo "<br>";
-//echo "bild in mm (toMM) :".   toMM(615)."mm x ".toMM(615);
-
-
-/*
-echo "<hr>";
-$resultPic2 = px2cmFromSVG("149","91", $dpi);
-print ($resultPic2[0]."cm x ".$resultPic2[1]);
-echo "<br>";
-print cm2pixel($resultPic2[0],$dpi)."pixel x ".cm2pixel($resultPic2[1],$dpi);
-*/
 
 // http://php.net/manual/de/function.imagesx.php
-/*
 
+/*
 // Create a200 x200 canvas image
 $canvas = imagecreatetruecolor(250,200);
  // Allocate color for rectangle
@@ -400,19 +358,18 @@ imagerectangle($canvas,50,50,200,150, $pink);
  // Output and free from memory
 header('Content-Type: image/jpeg');
 imagejpeg($canvas);
-imagedestroy($canvas);*/
+imagedestroy($canvas);
+*/
 
 
 http://www.smarty.net/forums/viewtopic.php?p=62320&sid=0e4a4eac100546900eef44e90326b1f4
 http://www.smarty.net/forums/viewtopic.php?p=66431&sid=ead6d330a99240fa4064befd0224c145
 http://www.smarty.net/docsv2/de/smarty.constants.tpl
 
-
+# Smarty DEFINE
 define('HomePageTitle', 'Welcome to my website');
 {$smarty.const.HomePageTitle}
 define('SMARTY_DIR', '/usr/local/lib/php/Smarty/libs/');
-
-
 
 sudo apt-get install flashplugin-installer
 sudo apt-get install adobe-flashplugin
