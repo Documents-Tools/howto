@@ -1,5 +1,10 @@
-http://www.coffeecup.com/forums/website-design-and-development/need-a-random-mp3-to-play-on-page-load/
+################################################
+#
+# Play Audio files in Python / Javascript
+#
+################################################
 
+http://www.coffeecup.com/forums/website-design-and-development/need-a-random-mp3-to-play-on-page-load/
 
 http://stackoverflow.com/questions/9830375/start-html5-audio-at-random-position
 http://stackoverflow.com/questions/11039984/how-can-i-play-a-random-sound-on-click-in-a-web-page
@@ -15,18 +20,13 @@ http://w3schools.invisionzone.com/index.php?/topic/45838-how-do-i-make-a-random-
 https://www.html5rocks.com/en/tutorials/webaudio/games/
 http://arunkumarsekar.github.io/audioControls/
 
-
-
-
 http://wavesurfer-js.org/examples/
 https://wavesurfer-js.org/
 http://tombyrer.github.io/wavesurfer.js/
 
 
 
-
- get 2 random files at once
-
+# get 2 random files at once
 $files = glob('music/*.m4a');
 $random = array_rand($files, 2); // get 2 random keys that won't be the same
 $fname1 = $files[$random[0]];
@@ -42,9 +42,7 @@ audioElement.play();
 http://www.position-absolute.com/articles/introduction-to-the-html5-audio-tag-javascript-manipulation/
 http://devblog.lastrose.com/html5-audio-video-playlist/
 
-
-
-
+-------------------------------------------------------------
 
 Loops
 <audio src=”audio/sample.mp3″ autoplay loop></audio>
@@ -59,9 +57,7 @@ https://blogs.msdn.microsoft.com/ie/2011/05/13/unlocking-the-power-of-html5-audi
 
 http://createjs.com/soundjs
 
-
-
-
+-------------------------------------------------------------
 
 php x
 https://github.com/codazoda/txt2mp3
@@ -132,7 +128,11 @@ https://github.com/RecursiveGreen/pymod
 ruby
 https://github.com/markusn/modmeta
 
-#################################
+###########################################
+#
+# nagios in Ubuntu
+#
+###########################################
 
 https://www.digitalocean.com/community/tutorials/how-to-create-nagios-plugins-with-php-on-ubuntu-12-10
 https://github.com/pulse00/nagios-php
@@ -167,9 +167,6 @@ switch ($used_space) {
 
 # chmod +x /usr/lib/nagios/plugins/usedspace.php
 
-
-
-
 Step 3 - Add Your Script to NRPE configuration on client host
 Config Nagios
 /etc/nagios/nrpe.cfg and add the following lines to it:
@@ -190,8 +187,6 @@ command[usedspace_php]=/usr/lib/nagios/plugins/usedspace.php
 ----
 service nagios-nrpe-server restart
 
-
-
 4. Add Your New Command to Nagios Checks on Nagios Monitoring Server
 Define new command in /etc/nagios/objects/commands.cfg
 
@@ -200,8 +195,7 @@ define command{
         command_line    $USER1$/check_nrpe -H $HOSTADDRESS$ -c usedspace_php
         }
 
-
-
+-----
 
 add cfg
 
@@ -216,15 +210,3 @@ define service {
 
 
 service nagios restart
-
-
-
-
-
-
-
-
-
-
-
-
