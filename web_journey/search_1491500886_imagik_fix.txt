@@ -234,5 +234,13 @@ exec("java -jar batik-1.7/batik-rasterizer.jar batik-1.7/Epl01.svg -w 300 -h 300
 
 https://people.kth.se/~maguire/DEGREE-PROJECT-REPORTS/100313-Alejandro_Arcos-with-cover.pdf
 
+java -Djava.awt.headless=true -jar batik-rasterizer.jar -m image/png -d temp/out.png temp/in.svg 2>&1
+
+java -jar "<PATH TO JAR>/batik-rasterizer.jar" -d "/<output folder>/" -m image/png --snapshotTime <TIME> "/<INPUTFILE>.SVG"
+ffmpeg -i "%d.png" -r 25 -b:v 10000k --f avi -vcodec msmpeg4v3 <OUTPUT FILENAME>.mpg
+
+http://www.codegists.com/search?q=batik-rasterizer
+https://oliverbinns.com/articles/making-animated-cartograms/
+
 
 
