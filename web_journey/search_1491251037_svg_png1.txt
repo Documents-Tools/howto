@@ -641,3 +641,122 @@ if ($browser["browser"] == "IE" && $browser["majorver"] < 9) {
 }
 
 https://github.com/dirkgroenen/SVGMagic
+
+#################################################################
+
+sudo apt install aptitude
+aptitude versions librsvg2-bin
+
+/ 2.40.16-1
+/ 2.40.2-1
+/ 2.36.1 RSVG
+
+https://github.com/ImageMagick/librsvg/blob/master/NEWS
+https://gitlab.com/ImageMagick/librsvg/blob/master/NEWS
+http://www.imagemagick.org/discourse-server/viewtopic.php?t=28767
+http://www.imagemagick.org/discourse-server/viewtopic.php?t=27021
+
+------------------------------------------------------------------------------------------------
+
+
+<filter id="pr_dropshadow_real_1" x="-40%" y="0" width="200%" height="200%">
+	<feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur"></feGaussianBlur>
+	<feOffset dx="20" dy="0" result="offsetblur"></feOffset>
+	<feOffset dx="-20" dy="0" result="offsetblur2" in="blur"></feOffset>
+	<feOffset dx="0" dy="25" result="offsetblur3" in="blur"></feOffset>
+	<feComponentTransfer result="shadow1" in="offsetblur">
+		<feFuncA type="linear" slope="0.30"></feFuncA>
+	</feComponentTransfer>
+	<feComponentTransfer result="shadow2" in="offsetblur2">
+		<feFuncA type="linear" slope="0.30"></feFuncA>
+	</feComponentTransfer>
+	<feComponentTransfer result="shadow3" in="offsetblur3">
+		<feFuncA type="linear" slope="0.30"></feFuncA>
+	</feComponentTransfer>
+	<feMerge>
+		<feMergeNode in="shadow1"></feMergeNode>
+		<feMergeNode in="shadow2"></feMergeNode>
+		<feMergeNode in="shadow3"></feMergeNode>
+		<feMergeNode in="SourceGraphic"></feMergeNode>
+	</feMerge>
+</filter>
+
+<filter id="pr_dropshadow_real_2" x="-40%" y="0" width="200%" height="200%">
+	<feOffset dx="-5" dy="5"></feOffset>
+	<feGaussianBlur stdDeviation="10" result="offset-blur"></feGaussianBlur>
+	<feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"></feComposite>
+	<feFlood flood-color="black" flood-opacity="1" result="color"></feFlood>
+	<feComposite operator="in" in="color" in2="inverse" result="shadow"></feComposite>
+	<feComponentTransfer in="shadow" result="shadow">
+		<feFuncA type="linear" slope="1.2"></feFuncA>
+	</feComponentTransfer>
+	<feMerge>
+		<feMergeNode in="SourceGraphic"></feMergeNode>
+		<feMergeNode></feMergeNode>
+	</feMerge>
+</filter>
+
+<text id="text_field_shadow_1" x="??" y="??" width="3300" height="1300" fill="#0000b5" font-family="SomeFont" filter="url(#pr_dropshadow_real_1)" stroke-linecap="butt" stroke-linejoin="miter" style="font-size: 1010px;">Oliver</text>
+
+<text id="text_field_1" x="??" y="??" width="3300" height="1300" stroke="" stroke-width="4" fill="#ffffff" font-family="SomeFont" filter="url(#pr_dropshadow_real_2)" stroke-linecap="butt" stroke-linejoin="miter" style="font-size: 1010px;">Oliver</text>
+
+----------------------------------------------------------------------------------------------------------------
+
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="New document 1">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="375"
+     inkscape:cy="520"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1002"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1" inkscape:groupmode="layer" id="layer1">
+	<!-- http://png-pixel.com/   1x1 pixel images  -->
+    <image y="755.07648" x="590.71429" id="image2993" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
+       height="46" width="70" />
+  </g>
+</svg>
+
