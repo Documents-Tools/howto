@@ -254,6 +254,13 @@ git checkout master && git merge tmp
 git reset origin/master
 
 
+git add -A stages All
+git add . stages new and modified, without deleted
+git add -u stages modified and deleted, without new
+
+http://stackoverflow.com/questions/572549/difference-between-git-add-a-and-git-add
+
+
 
 git checkout -b tmp
 git add *; git commit -am "my temporary files"

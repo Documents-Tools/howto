@@ -18,6 +18,10 @@ cpulimit -e apache2 -l 30
 cpulimit -P /usr/lib/jvm/java-8-openjdk-amd64/bin/java -l 80 # phpstorm
 cpulimit -p 11016 -l 80 # phpstorm
 
+cpulimit -P /opt/PhpStorm-163.10504.2/jre64/bin/java -l 50 -c 2
+cpulimit -e chromium-browser  -l 95 -c 2
+cpulimit -e firefox  -l 95 -c 2
+
 
 sudo cpulimit -p PID -l CPU%
 sudo apt-get install cpulimit gawk
