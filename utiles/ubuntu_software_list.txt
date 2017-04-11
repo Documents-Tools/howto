@@ -19,6 +19,7 @@
 - Chrome                    - https://www.google.com/chrome/browser/desktop/index.html
 - Firefox                   - https://apps.ubuntu.com/cat/applications/firefox/
 - Midori                    - https://apps.ubuntu.com/cat/applications/midori/
+- Vivaldi                   - https://vivaldi.com/
 
 - Skype                     - https://apps.ubuntu.com/cat/applications/skype/
 - Milkytracker              - https://apps.ubuntu.com/cat/applications/milkytracker/
@@ -26,15 +27,7 @@
 - DBeaver SQL Client        - http://dbeaver.jkiss.org/download/   # Free Universal SQL Client
 - Xpad (notes)              - https://apps.ubuntu.com/cat/applications/xpad/
 - Filezilla                 - https://apps.ubuntu.com/cat/applications/filezilla/
-- Darktable                 - https://apps.ubuntu.com/cat/applications/darktable/
-
-
-- Backintime rsync snapshots    - https://apps.ubuntu.com/cat/applications/backintime-gnome/
-
-- Gimp                      - https://apps.ubuntu.com/cat/applications/gimp/
-- Pinta                     - https://apps.ubuntu.com/cat/applications/pinta/
-- Pencil                    - https://apps.ubuntu.com/cat/applications/precise/pencil/
-- Krita                     - https://apps.ubuntu.com/cat/applications/krita/
+- fman File Manager         - https://fman.io/
 
 - BitTorrent                - https://apps.ubuntu.com/cat/applications/gnome-btdownload/
 - qbittorrent               - https://apps.ubuntu.com/cat/applications/qbittorrent/
@@ -42,6 +35,19 @@
 - LibreOffice               - https://apps.ubuntu.com/cat/applications/libreoffice/
 - LibreOffice database      - https://apps.ubuntu.com/cat/applications/libreoffice-base/
 
+
+- Stacer                     - https://github.com/oguzhaninan/Stacer/releases
+- Backintime rsync snapshots - https://apps.ubuntu.com/cat/applications/backintime-gnome/
+
+// GRAPH  ---------------------------
+- Gimp                      - https://apps.ubuntu.com/cat/applications/gimp/
+- Pinta                     - https://apps.ubuntu.com/cat/applications/pinta/
+- Pencil                    - https://apps.ubuntu.com/cat/applications/precise/pencil/
+- Krita                     - https://apps.ubuntu.com/cat/applications/krita/
+- Darktable                 - http://www.darktable.org/         # An Adobe Lightroom Alternative for Linux
+- Darktable                 - https://apps.ubuntu.com/cat/applications/darktable/
+
+// VIDEO --------------------------------
 - openmovieeditor           - https://apps.ubuntu.com/cat/applications/openmovieeditor/
 - Avidemux (GTK+)           - https://apps.ubuntu.com/cat/applications/avidemux/
 - Lombard Video Editor      - https://apps.ubuntu.com/cat/applications/lombard/
@@ -50,6 +56,9 @@
 - VideoCut                  - https://apps.ubuntu.com/cat/applications/videocut/
 - Shotcut                   - http://linuxg.net/install-shotcut-on-ubuntu-via-ppa/
                             - https://www.shotcut.org/tutorials/
+- OpenShot 2.3              - http://www.openshot.org/download/
+
+
 
 - Bluefish *                - https://apps.ubuntu.com/cat/applications/bluefish/
 - Geany                     - http://www.geany.org/Download/Releases
@@ -462,6 +471,11 @@ sudo apt-get install libavcodec-extra
 sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder
 sudo apt update
 sudo apt install simplescreenrecorder simplescreenrecorder-lib # install
+
+
+# openshot
+sudo add-apt-repository ppa:openshot.developers/ppa
+sudo apt update && sudo apt install openshot-qt
 
 
 

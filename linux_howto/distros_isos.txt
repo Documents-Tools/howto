@@ -86,4 +86,17 @@ http://releases.ubuntu.com/xenial/
 
 -------------------------------------------------
 
+http://ftp1.scientificlinux.org/linux/scientific/7x/x86_64/iso/
+http://ftp1.scientificlinux.org/linux/scientific/6x/i386/iso/
+http://ftp1.scientificlinux.org/linux/scientific/6x/x86_64/iso/
+
+http://distro.ibiblio.org/blacklab/8/
+
+http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1611.iso
+http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-Everything-1611.iso
+http://isoredirect.centos.org/centos/7/isos/x86_64/CentOS-7-x86_64-DVD-1611.iso
+
+https://getfedora.org/de_CH/workstation/download/
+https://getfedora.org/de_CH/atomic/download/
+https://alt.fedoraproject.org/
 

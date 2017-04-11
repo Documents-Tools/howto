@@ -59,6 +59,23 @@ sudo gvfs-mount smb://servername/user/
 sudo sshfs -o nonempty,default_permissions,uid=1000,gid=1000,sshfs_debug,IdentityFile=~/.ssh/id_rsa username@192.168.178.22:/username /media
 ssh -xA user@servername
 
+gvfs-mount smb://name.srv/user.name/ # mount
+gvfs-mount -u smb://name.srv/user.name/ # unmount
+
+###############################################################
+#
+# limit cpu PhpStorm
+#
+###############################################################
+
+cpulimit -e "/opt/PhpStorm-163.10504.2/jre64/bin/java" -l 50
+cpulimit -P "/opt/PhpStorm-163.10504.2/jre64/bin/java" -l 50
+cpulimit -P "/opt/PhpStorm-163.10504.2/jre64/bin/java" -l 50 -c 4 # Allow to use only 4 CPU at 50%
+cpulimit -P "/opt/PhpStorm-163.10504.2/jre64/bin/java" -l 95 -c 6 # Allow to use only 4 CPU at 95%
+
+increase XMX to 3048 #
+sudo sysctl vm.swappiness=20
+
 ##############################################################
 #
 #	How can I completely remove the License Information
