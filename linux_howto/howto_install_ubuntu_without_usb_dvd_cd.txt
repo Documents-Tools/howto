@@ -332,6 +332,24 @@ https://ftp.heanet.ie/mirrors/ftp.archlinux.org/iso/latest/
 http://ftp.jaist.ac.jp/pub/Linux/ArchLinux/iso/2017.02.01/
 
 
+http://ftp.hosteurope.de/mirror/www.knoppix.org/KNOPPIX_V7.0.5CD-2012-12-21-DE.iso
+http://ftp.hosteurope.de/mirror/www.knoppix.org/KNOPPIX_V7.0.5CD-2012-12-21-EN.iso
+
+http://ftp.hosteurope.de/mirror/ftp.opensuse.org/distribution/11.4/iso/openSUSE-11.4-GNOME-LiveCD-i686.iso
+http://ftp.hosteurope.de/mirror/ftp.opensuse.org/distribution/11.4/iso/openSUSE-11.4-KDE-LiveCD-i686.iso
+
+http://ftp.hosteurope.de/mirror/ftp.debian.org/debian-cd/8.7.1/i386/iso-cd/debian-8.7.1-i386-netinst.iso
+http://ftp.hosteurope.de/mirror/ftp.debian.org/debian-cd/8.7.1/amd64/iso-cd/debian-mac-8.7.1-amd64-netinst.iso
+
+http://ftp.hosteurope.de/mirror/centos.org/5.6/isos/i386/CentOS-5.6-i386-LiveCD.iso
+http://ftp.hosteurope.de/mirror/centos.org/5.6/isos/x86_64/CentOS-5.6-x86_64-LiveCD.iso
+
+http://ftp.hosteurope.de/mirror/centos.org/6.8/isos/i386/CentOS-6.8-i386-LiveCD.iso
+http://ftp.hosteurope.de/mirror/centos.org/6.8/isos/x86_64/CentOS-6.8-x86_64-LiveCD.iso
+
+http://ftp.hosteurope.de/mirror/centos.org/7.3.1611/isos/x86_64/CentOS-7-x86_64-Minimal-1611.iso
+
+
 
 
 

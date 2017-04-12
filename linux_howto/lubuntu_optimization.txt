@@ -66,8 +66,8 @@ sudo apt-get install xfce4
 sudo apt-get install xfce4-goodies
 
 
-
-
+# apt install gnome # ~ 1.0GB
+# apt install xfce4 # ~100 MB
 
 
 sudo apt install xfce4
