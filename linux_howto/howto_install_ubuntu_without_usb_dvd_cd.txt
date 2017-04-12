@@ -275,3 +275,40 @@ title installer
 root (hd0,5)
 kernel /vmlinuz root=/dev/ram ramdisk_size=1048576 rw
 initrd /initrd.gz
+
+
+
+
+
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/ubuntu-gnome/releases/14.04/release/
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/ubuntu-gnome/releases/16.04/release/
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/ubuntu-gnome/releases/16.04/release/
+http://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/kubuntu/releases/14.04/release/
+http://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/kubuntu/releases/16.04/release/
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/ubuntu-mate/releases/16.04/release/
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/ubuntu-mate/releases/16.04/release/
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/lubuntu/releases/16.04/release/
+
+
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/ubuntu-gnome/releases/14.04/release/ubuntu-gnome-14.04-desktop-amd64.iso
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/ubuntu-gnome/releases/14.04/release/ubuntu-gnome-14.04-desktop-i386.iso
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/ubuntu-gnome/releases/16.04/release/ubuntu-gnome-16.04-desktop-amd64.iso
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/ubuntu-gnome/releases/16.04/release/ubuntu-gnome-16.04-desktop-i386.iso
+
+
+http://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/kubuntu/releases/14.04/release/kubuntu-14.04-desktop-amd64.iso
+http://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/kubuntu/releases/14.04/release/kubuntu-14.04-desktop-i386.iso
+http://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/kubuntu/releases/16.04/release/kubuntu-16.04-desktop-amd64.iso
+http://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/kubuntu/releases/16.04/release/kubuntu-16.04-desktop-i386.iso
+
+
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/ubuntu-mate/releases/16.04/release/ubuntu-mate-16.04-desktop-amd64.iso
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/ubuntu-mate/releases/16.04/release/ubuntu-mate-16.04-desktop-i386.iso
+
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/lubuntu/releases/16.04/release/lubuntu-16.04-desktop-amd64.iso
+https://ftp-stud.hs-esslingen.de/Mirrors/cdimage.ubuntu.com/lubuntu/releases/16.04/release/lubuntu-16.04-desktop-i386.iso
+
+
+
+
+
