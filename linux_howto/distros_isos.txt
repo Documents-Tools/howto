@@ -100,3 +100,5 @@ https://getfedora.org/de_CH/workstation/download/
 https://getfedora.org/de_CH/atomic/download/
 https://alt.fedoraproject.org/
 
+http://cdimages.ubuntu.com/ubuntu-budgie/releases/17.04/release/ubuntu-budgie-17.04-desktop-amd64.iso
+http://cdimages.ubuntu.com/ubuntu-budgie/releases/17.04/release/ubuntu-budgie-17.04-desktop-i386.iso
