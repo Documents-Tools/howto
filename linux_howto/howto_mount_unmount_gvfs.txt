@@ -193,3 +193,74 @@ pkill nautilus
 
 
 
+######################################
+#
+#   gvfsd-smb
+#
+######################################
+
+mount | grep gvfs
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+
+sudo mount -t cifs -o username=root,password=xxxxx //192.168.0.1/asmedia-hdd /media/asmedia-hdd
+sudo mount -t cifs -o nounix,uid=LOCALUSR,user=SHAREUSR,password=SHAREPWD //192.168.0.1/SHARENAME/ /media/mountpoint
+sudo mount -t cifs //192.168.0.106/dev /home/gabriel/mnt/test -o username=gabriel,uid=gabriel,gid=gabriel
+sudo mount -t cifs /lappy.coyote.den/genesdir /lappy-samba/mount
+
+/usr/share/gvfs/mounts/smb.mount
+
+[Mount]
+Type=smb-share
+Exec=/usr/libexec/gvfsd-smb
+AutoMount=false
+Scheme=smb
+
+gvfs-mount smb://WORKGROUP\;root@192.168.0.186/asmedia-hdd
+gvfs-mount -l
+watch -- du -h test.mkv
+
+fstab:
+//192.168.0.186/asmedia-hdd  /media/asmedia-hdd  cifs   rw,workgroup=WORKGROUP,username=root,password=xxxxx,noauto,users,iocharset=utf8 0 0
+chmod 4755 /usr/sbin/mount.cifs
+
+id
+uid=1000(sam) gid=100(users) groups=10(wheel),74(sshd),100(users),498(pulse-rt),501(libvirt)
+gvfs-mount smb://10.0.1.69/Drobo01
+ls .gvfs/drobo01\ on\ 10.0.1.69/
+
+
+#########################################################
+#	gvfsd-smb-browse - browses Windows Shares Filesystem volumes
+# 	To remove gvfsd-smb-browse
+#	http://askubuntu.com/questions/762977/what-is-the-process-gvfsd-smb-browse
+#########################################################
+
+killall gvfsd-smb-browse
+sudo apt-get remove gvfs-backends
+
+dpkg -S /usr/lib/gvfs/gvfsd-smb-browse
+gvfs-backends: /usr/lib/gvfs/gvfsd-smb-browse
+dpkg -L gvfs-backends
+sudo apt-get remove gvfs-backends
+
+######################################
+#
+#   nbtscan 192.168.100.0/24
+#   https://www.reddit.com/r/PHP/
+#
+######################################
+
+You want to kill process name “httpd” in the name
+
+[root@localhost ~]# kill -9 `ps -ef | grep ‘httpd’ | grep -v grep | awk ‘{print $2}’`
+Syntax:
+
+kill -9 `ps -ef | grep ‘name’ | grep -v grep | awk ‘{print $2}’`
+3. Check the process on ps
+
+[root@localhost ~]# ps -ef | grep httpd
+root 47217 46944 0 02:58 pts/1 00:00:00 grep httpd
+[root@localhost ~]#
+
+
+

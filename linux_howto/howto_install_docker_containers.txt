@@ -67,6 +67,18 @@ php -v # PHP 7.0.8-0ubuntu0.16.04.3 (cli) ( NTS ) with Zend OPcache v7.0.8-0ubun
 mysql --version # mysql  Ver 14.14 Distrib 5.7.16, for Linux (x86_64) using  EditLine wrapper
 apache2 -v # Server version: Apache/2.4.18 (Ubuntu) Server built:   2016-07-14T12:32:26
 
+// stop services
+sudo service mysql stop
+sudo service apache2 stop
+sudo service nginx stop
+
+// remove services
+sudo apt remove mysql-*
+sudo apt remove php*
+sudo apt remove apache*
+
+
+
 service apache2 start
 service mysql start
 mysql -u root -p

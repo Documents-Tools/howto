@@ -323,3 +323,9 @@ http://www.openmediavault.org/
 
 http://www.timestampgenerator.com/ # generate timestamp
 https://www.certbase.de/Tools/PassGen.aspx  # Random Password Generator
+
+##################################################
+#	Git error on commit after merge - fatal: cannot do a partial commit during a merge
+#	fatal: cannot do a partial commit during a merge.
+# 	Fix: git commit -i my_filename
+##################################################

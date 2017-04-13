@@ -210,3 +210,15 @@ define service {
 
 
 service nagios restart
+
+###########################################
+#
+# firstname-database - gender database
+#
+###########################################
+
+
+https://github.com/MatthiasWinkelmann/firstname-database
+https://github.com/HBehrens/phonet4n/blob/master/src/Tests/c/ph_ext.h
+https://kowa.hs-augsburg.de/beispiele/db/postgresql/volltext/phonet/dict_phonet/ph_ext.h
+https://kowa.hs-augsburg.de/beispiele/db/postgresql/volltext/phonet/dict_phonet/phonet/phonet.c
