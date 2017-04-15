@@ -224,6 +224,9 @@ http://venturebeat.com/2015/07/01/google-open-sources-its-software-for-making-tr
 how_do_i_learn_math_the_right_way
 https://www.reddit.com/r/learnmath/comments/4jid1d/how_do_i_learn_math_the_right_way/
 
+Big Picture Machine Learning: Classifying Text with Neural Networks and TensorFlow
+https://medium.freecodecamp.com/big-picture-machine-learning-classifying-text-with-neural-networks-and-tensorflow-d94036ac2274
+
 Install Tensorflow On Ubuntu With Virtualenv
 http://blog.niandrei.com/2016/03/01/install-tensorflow-on-ubuntu-with-virtualenv/
 
@@ -297,4 +300,23 @@ https://www.youtube.com/watch?v=x1kf4Zojtb0
 
 Deep learning certificate lesson 0ne
 https://www.youtube.com/watch?v=ACU-T9L4_lI
+
+
+################################################################
+#
+#   10 Top Open Source Artificial Intelligence Tools for Linux
+#   http://www.tecmint.com/open-source-artificial-intelligence-tools-softwares-linux/
+#
+################################################################
+
+1. Deep Learning For Java (Deeplearning4j)
+2. Caffe – Deep Learning Framework
+3. H20 – Distributed Machine Learning Framework
+4. MLlib – Machine Learning Library
+5. Apache Mahout
+6. Open Neural Networks Library (OpenNN)
+7. Oryx 2
+8. OpenCyc
+9. Apache SystemML
+10. NuPIC
 

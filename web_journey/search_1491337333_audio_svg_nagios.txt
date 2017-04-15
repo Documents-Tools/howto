@@ -222,3 +222,42 @@ https://github.com/MatthiasWinkelmann/firstname-database
 https://github.com/HBehrens/phonet4n/blob/master/src/Tests/c/ph_ext.h
 https://kowa.hs-augsburg.de/beispiele/db/postgresql/volltext/phonet/dict_phonet/ph_ext.h
 https://kowa.hs-augsburg.de/beispiele/db/postgresql/volltext/phonet/dict_phonet/phonet/phonet.c
+
+
+
+################################################################
+How to Install Ntfy in Linux
+http://www.tecmint.com/ntfy-get-desktop-or-phone-alerts-for-linux-commands/
+################################################################
+
+sudo pip install ntfy
+
+sudo apt-get install libdbus-glib-1-dev libdbus-1-dev [On Debian/Ubuntu]
+sudo yum install dbus-1-glib-devel libdbus-1-devel    [On Fedora/CentOS]
+pip install --user dbus-python
+
+eval  "$(ntfy shell-integration)" # Integrate Ntfy with Linux Shells
+export AUTO_NTFY_DONE_IGNORE="vim screen meld"
+
+How to Use Nfty in Linux
+
+ntfy send "This is TecMint, we’re testing ntfy"
+ntfy done sleep 5
+ntfy -t 'TecMint' send "Using custom notification title"
+ntfy send ":wink: Using emoji extra! :joy:"
+ntfy done --pid 2099
+
+sudo add-apt-repository ppa:jconti/recent-notifications
+sudo apt update && sudo apt install indicator-notifications
+
+ntfy -h
+
+Install Additional Ntfy Features
+pip install ntfy[pid]
+pip install ntfy[emoji]
+pip install ntfy[xmpp]
+pip install ntfy[telegram]
+pip install ntfy[instapush]
+pip install ntfy[slack]
+pip install ntfy[pid,emjoi,xmpp, telegram]
+

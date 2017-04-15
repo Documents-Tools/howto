@@ -74,10 +74,11 @@ sudo pear channel-discover components.ez.no
 sudo pear install phpunit/phpcpd
 
 References:phpcpd --exclude subfolder1/,subfolder2/,subfolder3/subsubfolder1/ /var/www/myproject > ~/report.txt
-
 pdepend --ignore=subfolder1/,subfolder2/,subfolder3/subsubfolder1/ --summary-xml=/tmp/summary.xml --jdepend-chart=/tmp/jdepend.svg --overview-pyramid=/tmp/pyramid.svg /var/www/myproject
 
 
+pw --filter test_im_currently_working_on or pw tests/unit/MyCurrentTest.php
+find . -name "*.php" -not -path "./vendor/*" | entr -c vendor/bin/phpunit
 
 
 https://en.wikipedia.org/wiki/PHPDoc

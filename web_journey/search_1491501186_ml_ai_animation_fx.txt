@@ -155,3 +155,16 @@ https://github.com/danielgindi/Instagram-Filters
 https://github.com/alexmic/filtrr
 https://github.com/vigetlabs/canvas-instagram-filters
 
+
+###################################################
+#
+#   API Design Guides
+#
+###################################################
+
+Google Cloud APIs API Design Guide
+https://cloud.google.com/apis/design/
+
+Microsoft API guidelines
+https://github.com/Microsoft/api-guidelines
+
