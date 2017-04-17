@@ -72,6 +72,18 @@ https://apps.ubuntu.com/cat/applications/oneiric/libfannj-java/ # FannJ a Java b
 #
 ###################################################
 
+One Dataset, Visualized 25 Ways
+http://flowingdata.com/2017/01/24/one-dataset-visualized-25-ways/
+
+Deep Learning 101 - Part 1: History and Background
+http://beamandrew.github.io/deeplearning/2017/02/23/deep_learning_101_part1.html
+
+Data Science Resources : Cheat Sheets
+http://www.datasciencefree.com/cheatsheets.html
+
+Top 15 data structures and algorithms interview questions
+https://codingsec.net/2016/06/top-15-data-structures-algorithms-interview-questions/
+
 Orange, R, RapidMiner, Statistica and WEKA
 http://blog.samibadawi.com/2010/06/orange-r-rapidminer-statistica-and-weka.html
 
