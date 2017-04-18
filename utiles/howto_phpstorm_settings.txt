@@ -507,6 +507,28 @@ https://hakre.wordpress.com/2013/02/09/debug-with-xdebug-on-the-commandline-with
 export XDEBUG_CONFIG="idekey=PHPSTORM"
 unset XDEBUG_CONFIG
 
+https://confluence.jetbrains.com/display/PhpStorm/Xdebug+Installation+Guide
+https://confluence.jetbrains.com/display/PhpStorm/Browser+Debugging+Extensions
+https://confluence.jetbrains.com/display/PhpStorm/Zero-configuration+Web+Application+Debugging+with+Xdebug+and+PhpStorm
+
+https://www.jetbrains.com/phpstorm/marklets/
+https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc/related
+https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/
+https://xdebug.org/docs/index.php?action=index
+
+# get xdebug port with phpinfo()
+# get xdebug ip machine with ping or phpinfo()
+
+XDEBUG
+javascript:(/** @version 0.5.2 */function() {document.cookie='XDEBUG_SESSION='+'PHPSTORM'+';path=/;';})()
+javascript:(/** @version 0.5.2 */function() {document.cookie='XDEBUG_SESSION='+''+';expires=Mon, 05 Jul 2000 00:00:00 GMT;path=/;';})()
+
+PROFILER
+javascript:(/** @version 0.5.2 */function() {document.cookie='XDEBUG_PROFILE='+'1'+';path=/;';})()
+javascript:(/** @version 0.5.2 */function() {document.cookie='XDEBUG_PROFILE='+''+';expires=Mon, 05 Jul 2000 00:00:00 GMT;path=/;';})()
+
+
+
 
 
 

@@ -5,6 +5,10 @@
 #
 ###################################################
 
+http://php-ml.readthedocs.io/en/latest/
+https://github.com/php-ai/php-ml
+
+
 
 https://github.com/eboreapps/Scikit-Learn-Playground
 https://github.com/tensorflow/skflow
