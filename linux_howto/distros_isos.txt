@@ -1,3 +1,21 @@
+
+#######################################################
+#
+#   Best Linux ISO for VM 2CPU/64x
+#
+#######################################################
+
+debian-8.7.1-i386-netinst.iso		    # very slow install
+KNOPPIX_V7.0.5CD-2012-12-21-DE.iso	    # xfce4 live - fast!
+lubuntu-16.04-desktop-amd64.iso		    # fast install *****
+kubuntu-16.04-desktop-amd64.iso		    # very slow install
+manjaro-xfce-minimal-0.8.9-x86_64.iso	# fast install ***** xfce4
+
+openSUSE-11.4-KDE-LiveCD-i686.iso	    # fast install *****
+ubuntu-17.04-desktop-amd64.iso		    # fast install ** slow UI - replace Unity with xfce4
+
+-----------------------------------------------------------------------------------------------
+
 http://lxde.org/
 https://www.archlinux.org/download/
 http://www.gutscheindrache.com/mirror/archlinux/iso/2016.03.01/?C=N&O=D
